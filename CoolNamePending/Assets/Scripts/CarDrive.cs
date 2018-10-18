@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class CarDrive : MonoBehaviour {
 
-    public int speed;
+    public float speed;
+    private Rigidbody rb;
 
 	// Use this for initialization
 	void Start () {
-		
+        rb = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
@@ -18,9 +19,13 @@ public class CarDrive : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.W))
         {
-            transform.position += transform.forward * -speed;
+            rb.AddForce(transform.forward * speed, ForceMode.VelocityChange);
+        } 
+        else if (Input.GetKey(KeyCode.S))
+        {
+            rb.AddForce(transform.forward * -speed, ForceMode.VelocityChange);
         }
     }
 }
