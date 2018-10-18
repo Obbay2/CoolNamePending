@@ -61,7 +61,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\CarDrive.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_TestThrow.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_TestTrackedCamera.cs" />
