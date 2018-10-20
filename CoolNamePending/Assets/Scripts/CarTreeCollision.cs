@@ -20,7 +20,7 @@ public class CarTreeCollision : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        print(rb.velocity.magnitude);
+        //print(rb.velocity.magnitude);
     }
 
     void OnCollisionEnter(Collision col)
