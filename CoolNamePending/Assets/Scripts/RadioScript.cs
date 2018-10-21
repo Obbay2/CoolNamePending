@@ -6,6 +6,7 @@ public class RadioScript : MonoBehaviour {
 
     public AudioSource audioSource1;
     public AudioSource audioSource2;
+    public float maxVolume = 0.25f;
     public int crossFadeTime = 5;
     public bool DEBUG = false;
 
@@ -53,13 +54,13 @@ public class RadioScript : MonoBehaviour {
         {
             if (changing)
             {
-                playingSource.volume = playingSource.volume += (0.25f / crossFadeTime) * Time.fixedDeltaTime;
-                waitingSource.volume = waitingSource.volume -= (0.25f / crossFadeTime) * Time.fixedDeltaTime;
+                playingSource.volume = playingSource.volume += (maxVolume / crossFadeTime) * Time.fixedDeltaTime;
+                waitingSource.volume = waitingSource.volume -= (maxVolume / crossFadeTime) * Time.fixedDeltaTime;
             }
 
-            if (playingSource.volume > 0.25f - 0.025f)
+            if (playingSource.volume > maxVolume - 0.025f)
             {
-                playingSource.volume = 0.25f;
+                playingSource.volume = maxVolume;
             }            
 
             if (waitingSource.clip != null && waitingSource.volume < 0.025f && waitingSource.isPlaying)
