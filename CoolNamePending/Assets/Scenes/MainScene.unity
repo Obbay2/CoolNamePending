@@ -3394,11 +3394,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource1: {fileID: 718562709}
   audioSource2: {fileID: 1895391132}
-  crossFadeTime: 5
+  crossFadeTime: 10
+  DEBUG: 0
   audioClips:
-  - {fileID: 8300000, guid: db23dae1e4fa86341a6f02da519f9a94, type: 3}
-  - {fileID: 8300000, guid: 9d3efa7aa89487d4188abc36c0a85012, type: 3}
-  - {fileID: 8300000, guid: b0bfb2612c37a4a438ed280ea8eb1c38, type: 3}
+  - {fileID: 8300000, guid: a962f39f72504554196bdbe102cbd102, type: 3}
+  - {fileID: 8300000, guid: b6fb85c2ddcd0eb47b9f2bdcf0ccc0d3, type: 3}
+  - {fileID: 8300000, guid: 3137935a0636f084693195061a53964f, type: 3}
+  - {fileID: 8300000, guid: 0febb6e0114baf049b7b8a52edc044f9, type: 3}
+  - {fileID: 8300000, guid: 5696a873a90819b49af23b68aaa58f74, type: 3}
+  - {fileID: 8300000, guid: 5ef758dfb5b21ab48a96d5994ee5e6f9, type: 3}
+  - {fileID: 8300000, guid: b08f3392a39697a448ed502bf957e7f9, type: 3}
 --- !u!1001 &799375978
 Prefab:
   m_ObjectHideFlags: 0
@@ -6874,7 +6879,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1661116756
 Light:
   m_ObjectHideFlags: 0

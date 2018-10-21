@@ -7,6 +7,7 @@ public class RadioScript : MonoBehaviour {
     public AudioSource audioSource1;
     public AudioSource audioSource2;
     public int crossFadeTime = 5;
+    public bool DEBUG = false;
 
     public static int numberOfClips = 0;
     [SerializeField] private AudioClip[] audioClips = new AudioClip[numberOfClips];
@@ -34,7 +35,7 @@ public class RadioScript : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        print(playingSource.time + "s" + " " + waitingSource.time + "s" + " " + changing + " " + playingSource.volume + " " + waitingSource.volume + " " + playingIndex);
+        if (DEBUG) { print(playingSource.time + "s" + " " + waitingSource.time + "s" + " " + changing + " " + playingSource.volume + " " + waitingSource.volume + " " + playingIndex); }
         if (audioClips[playingIndex % audioClips.Length].length - playingSource.time < crossFadeTime && !changing)
         {    
             changing = true;
