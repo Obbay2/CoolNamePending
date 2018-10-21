@@ -1423,6 +1423,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bcae914220acd4907840a029bb9d9aec, type: 2}
+      propertyPath: m_TagString
+      value: Water
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcae914220acd4907840a029bb9d9aec, type: 2}
   m_IsPrefabAsset: 0
@@ -3479,9 +3483,9 @@ GameObject:
   - component: {fileID: 793846400}
   - component: {fileID: 793846401}
   - component: {fileID: 793846397}
-  - component: {fileID: 793846402}
   - component: {fileID: 793846403}
   - component: {fileID: 793846404}
+  - component: {fileID: 793846402}
   m_Layer: 0
   m_Name: Vehicle
   m_TagString: Untagged
@@ -3526,7 +3530,7 @@ MonoBehaviour:
   highPitchMultiplier: 0.25
   maxRolloffDistance: 500
   dopplerLevel: 1
-  useDoppler: 1
+  useDoppler: 0
 --- !u!4 &793846398
 Transform:
   m_ObjectHideFlags: 0
@@ -3619,6 +3623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96468c245ae8e0d4f8f1c7a7b8b0542e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Controller: 0
 --- !u!114 &793846402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3630,7 +3635,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7ad16efb2bbb3f4bb154c765870d4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionParent: {fileID: 0}
 --- !u!114 &793846403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5600,6 +5604,23 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94ac0f7807b256d4b866c2b3ec1a6de7, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1249956650 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: bcae914220acd4907840a029bb9d9aec,
+    type: 2}
+  m_PrefabInternal: {fileID: 331715031}
+--- !u!65 &1249956651
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1249956650}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9999993, y: 0, z: 1.9999988}
+  m_Center: {x: -0.00000032782555, y: 0, z: 0.00000032782555}
 --- !u!1 &1253545730
 GameObject:
   m_ObjectHideFlags: 0
@@ -6370,6 +6391,10 @@ Prefab:
     - target: {fileID: 100000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
+      propertyPath: m_TagString
+      value: Water
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
@@ -7289,7 +7314,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &1661116756
 Light:
   m_ObjectHideFlags: 0
@@ -8398,6 +8423,23 @@ Transform:
   m_Father: {fileID: 16494158}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2003433999 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 780611a67e8e941a2b3aa96e5915a793,
+    type: 2}
+  m_PrefabInternal: {fileID: 1438863565}
+--- !u!65 &2003434000
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2003433999}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9999993, y: 0, z: 1.9999988}
+  m_Center: {x: -0.00000032782555, y: 0, z: 0.00000032782555}
 --- !u!1001 &2015505236
 Prefab:
   m_ObjectHideFlags: 0

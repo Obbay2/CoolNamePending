@@ -24,12 +24,17 @@ public class CarReset : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            Transform t = Car.GetComponent<Transform>();
-            t.position = initialPosition;
-            t.eulerAngles = initialRotation;
-            Rigidbody rb = Car.GetComponent<Rigidbody>();
-            rb.velocity = Vector3.zero;
-            rb.Sleep();
+            Reset();
         }
+    }
+
+    public void Reset()
+    {
+        Transform t = Car.GetComponent<Transform>();
+        t.position = initialPosition;
+        t.eulerAngles = initialRotation;
+        Rigidbody rb = Car.GetComponent<Rigidbody>();
+        rb.velocity = Vector3.zero;
+        rb.Sleep();
     }
 }
