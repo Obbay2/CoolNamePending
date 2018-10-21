@@ -14,13 +14,13 @@ public class RadioScript : MonoBehaviour {
     [SerializeField] private AudioClip[] audioClips = new AudioClip[numberOfClips];
 
     private int playingIndex;
-    private AudioSource playingSource;
+    public AudioSource playingSource { get; private set; }
     private AudioSource waitingSource;
     private bool changing = false;
 
 	// Use this for initialization
 	void Start () {
-        playingIndex = 0;
+        playingIndex = (int) Random.Range(0, audioClips.Length);
         audioSource1.clip = audioClips[playingIndex];
         audioSource1.volume = 0.25f;
         audioSource2.volume = 0.0f;

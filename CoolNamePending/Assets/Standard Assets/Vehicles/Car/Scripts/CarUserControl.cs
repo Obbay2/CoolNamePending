@@ -7,6 +7,7 @@ namespace UnityStandardAssets.Vehicles.Car
     [RequireComponent(typeof (CarController))]
     public class CarUserControl : MonoBehaviour
     {
+        public bool Controller;
         private CarController m_Car; // the car controller we want to use
 
 
@@ -22,6 +23,13 @@ namespace UnityStandardAssets.Vehicles.Car
             // pass the input to the car!
             float h = CrossPlatformInputManager.GetAxis("Horizontal");
             float v = CrossPlatformInputManager.GetAxis("Vertical");
+
+            if (Controller)
+            {
+                v = Input.GetAxis("Right Trigger") - Input.GetAxis("Left Trigger");
+                h = Input.GetAxis("Left Joystick");
+            }
+            
 #if !MOBILE_INPUT
             float handbrake = CrossPlatformInputManager.GetAxis("Jump");
             m_Car.Move(h, v, v, handbrake);
