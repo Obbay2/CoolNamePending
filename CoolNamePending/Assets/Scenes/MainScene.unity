@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 49212187}
   - component: {fileID: 49212188}
   m_Layer: 0
-  m_Name: Headlight Left (1)
+  m_Name: Headlight Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -418,7 +418,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &62764725
 Transform:
   m_ObjectHideFlags: 0
@@ -1954,7 +1954,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &488345806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3244,7 +3244,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 488345805}
   m_LocalRotation: {x: -0, y: -0.039131477, z: -0, w: -0.9992341}
-  m_LocalPosition: {x: -0.42, y: 0.37, z: -0.47}
+  m_LocalPosition: {x: -0.41, y: -0.275, z: -0.288}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 913288174}
@@ -3603,7 +3603,7 @@ MonoBehaviour:
   m_MaximumSteerAngle: 15
   m_SteerHelper: 1
   m_TractionControl: 1
-  m_FullTorqueOverAllWheels: 1000
+  m_FullTorqueOverAllWheels: 2000
   m_ReverseTorque: 500
   m_MaxHandbrakeTorque: 100000000
   m_Downforce: 100
@@ -4164,6 +4164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 913288174}
   - component: {fileID: 913288175}
+  - component: {fileID: 913288176}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -4226,6 +4227,18 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &913288176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 913288173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 0}
 --- !u!4 &921954722 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 94ac0f7807b256d4b866c2b3ec1a6de7,
@@ -5089,8 +5102,8 @@ Terrain:
   serializedVersion: 3
   m_TerrainData: {fileID: 15600000, guid: 5ae3333f68b84154699c168e3a946c30, type: 2}
   m_TreeDistance: 2000
-  m_TreeBillboardDistance: 80
-  m_TreeCrossFadeLength: 5
+  m_TreeBillboardDistance: 300
+  m_TreeCrossFadeLength: 200
   m_TreeMaximumFullLODCount: 50
   m_DetailObjectDistance: 250
   m_DetailObjectDensity: 1
@@ -7314,7 +7327,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1661116756
 Light:
   m_ObjectHideFlags: 0
