@@ -61,6 +61,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Logitech SDK\LogitechGSDK.cs" />
+    <Compile Include="Assets\Logitech SDK\Script Sample\LogitechArxControl.cs" />
+    <Compile Include="Assets\Logitech SDK\Script Sample\LogitechGKey.cs" />
+    <Compile Include="Assets\Logitech SDK\Script Sample\LogitechLCD.cs" />
+    <Compile Include="Assets\Logitech SDK\Script Sample\LogitechLed.cs" />
+    <Compile Include="Assets\Logitech SDK\Script Sample\LogitechSteeringWheel.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
