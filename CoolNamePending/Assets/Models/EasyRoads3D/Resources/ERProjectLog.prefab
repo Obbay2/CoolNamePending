@@ -1,14 +1,14 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &124348
+--- !u!1 &102934
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 493484}
-  - component: {fileID: 11423194}
+  - component: {fileID: 478378}
+  - component: {fileID: 11461768}
   m_Layer: 0
   m_Name: ERProjectLog
   m_TagString: Untagged
@@ -16,12 +16,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &493484
+--- !u!4 &478378
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 124348}
+  m_GameObject: {fileID: 102934}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -29,12 +29,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &11423194
+--- !u!114 &11461768
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 124348}
+  m_GameObject: {fileID: 102934}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 353395545, guid: f56d46228aee4734f9114056c53bb57e, type: 3}
@@ -43,11 +43,11 @@ MonoBehaviour:
   QOQDQOOQDDQOOQ: []
   ints: 
   roadPresets:
-  - roadTypeName: Default Road 1
-    id: 0
-    timestamp: 1450386558.4872544
+  - roadTypeName: Default Road
+    id: 1
+    timestamp: 1481875527.1197023
     roadWidth: 5
-    faceDistance: 4
+    faceDistance: 2
     angleTreshold: 45
     uvTiling: 1
     uv4Type: 0
@@ -84,10 +84,58 @@ MonoBehaviour:
       type: 2}
     isSideObject: 0
     isCustomRoad: 0
-    subSegments: 0
+    subSegments: 1
     soData: []
     soDataExt: []
-    soDataLog: []
+    soDataLog:
+    - id: 1439970267.5877771
+      active: 0
+    - id: 4
+      active: 0
+    - id: 3
+      active: 0
+    - id: 1422295189.0945766
+      active: 0
+    - id: 1422205435.6632535
+      active: 0
+    - id: 1422205525.016364
+      active: 0
+    - id: 1422201194.1206512
+      active: 0
+    - id: 1422201446.4010808
+      active: 0
+    - id: 1
+      active: 0
+    - id: 2
+      active: 0
+    - id: 1422283879.5397072
+      active: 0
+    - id: 1422283828.2437732
+      active: 0
+    - id: 1422360239.977985
+      active: 0
+    - id: 1422360127.2965398
+      active: 0
+    - id: 1477318170.983913
+      active: 0
+    - id: 1422283787.149423
+      active: 0
+    - id: 1422280172.2846642
+      active: 0
+    - id: 1454519638.6173558
+      active: 0
+    - id: 6
+      active: 0
+    - id: 5
+      active: 0
+    - id: 1438703293.2729063
+      active: 0
+    - id: 1454521147.777675
+      active: 0
+    - id: 1424540279.96035
+      active: 0
+    - id: 1424540150.6289527
+      active: 0
     layer: 0
     tag: 
     splatMapActive: 0
@@ -134,6 +182,14 @@ Prefab:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[4].uvs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[5].uvs.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].hardEdge.Array.size
       value: 18
       objectReference: {fileID: 0}
@@ -142,24 +198,16 @@ Prefab:
       value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].roadShape.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].soDataLog.Array.size
-      value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[2].roadShape.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[2].soDataLog.Array.size
-      value: 21
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[3].soDataLog.Array.size
-      value: 21
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.size
@@ -167,7 +215,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].soDataLog.Array.size
-      value: 21
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[5].roadShape.Array.size
@@ -175,7 +223,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[5].soDataLog.Array.size
-      value: 21
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.size
@@ -194,8 +242,12 @@ Prefab:
       value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[0].soDataLog.Array.size
-      value: 0
+      propertyPath: roadPresets.Array.data[1].roadShape.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.size
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[4].nodeList.Array.size
@@ -222,10 +274,6 @@ Prefab:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].roadShapeUVs.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[2].roadShapeUVs.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -244,6 +292,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShapeUVs.Array.size
       value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].roadShapeUVs.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[4].uvDistances.Array.size
@@ -274,6 +326,14 @@ Prefab:
       value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[4].snapWeightList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[5].snapWeightList.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[0].version
       value: 2.0.0
       objectReference: {fileID: 0}
@@ -287,15 +347,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[0].timestamp
-      value: 1427360602.5535519
+      value: 1485437615.22346
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[0].m_distance
-      value: 1.89999998
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[0].uvx
-      value: .100000001
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[0].uvy
@@ -310,6 +370,10 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[0].clampUVYValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[0].weld
       value: 1
       objectReference: {fileID: 0}
@@ -319,10 +383,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[0].combineInstantiated
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: QOQDQOOQDDQOOQ.Array.data[0].markerActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -359,7 +419,7 @@ Prefab:
       objectReference: {fileID: 100016, guid: 0f179c0f837b6de41a6563d4e0898474, type: 2}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[0].middleZDistance
-      value: 1.89999998
+      value: 1.9
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[0].minStartZ
@@ -384,6 +444,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[0].maxEndZ
       value: -10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[0].isStatic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[0].castShadows
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[0].boxColliderScale.x
@@ -422,6 +490,10 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[0].category
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[1].version
       value: 2.0.0
       objectReference: {fileID: 0}
@@ -435,7 +507,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[1].timestamp
-      value: 1427360606.4627757
+      value: 1485437618.4966471
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[1].objectType
@@ -447,7 +519,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[1].uvx
-      value: .100000001
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[1].uvy
@@ -459,6 +531,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[1].clampUVY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[1].clampUVYValue
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -502,52 +578,64 @@ Prefab:
       value: 
       objectReference: {fileID: 100000, guid: 7b01fe94b84d1934684ce0f07aa9c874, type: 2}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[1].boxSize.x
+      value: 0.11403225
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[1].boxSize.y
+      value: 0.82628006
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[1].boxOffset.x
+      value: 0.013701253
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[1].boxOffset.y
+      value: 0.41314003
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[1].includeEndSegment
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[1].endOffset
-      value: .110965252
+      value: 0.11096525
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[1].totalZDistance
-      value: 3.04859018
+      value: 3.038815
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[1].middleZDistance
-      value: 2.93178749
+      value: 2.9317875
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[1].startZDistance
-      value: 2.93178749
+      value: 2.9317875
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[1].endZDistance
-      value: 3.03881526
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: QOQDQOOQDDQOOQ.Array.data[1].minStartZ
-      value: .0097749969
+      value: 3.0388153
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[1].maxStartZ
-      value: 2.94156241
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: QOQDQOOQDDQOOQ.Array.data[1].minMiddleZ
-      value: .0097749969
+      value: 2.9317875
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[1].maxMiddleZ
-      value: 2.94156241
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: QOQDQOOQDDQOOQ.Array.data[1].minEndZ
-      value: .0097749969
+      value: 2.9317875
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[1].maxEndZ
-      value: 3.04859018
+      value: 3.0388153
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[1].isStatic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[1].castShadows
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[1].boxColliderScale.x
@@ -586,6 +674,10 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[1].category
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[2].version
       value: 2.0.0
       objectReference: {fileID: 0}
@@ -599,7 +691,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[2].timestamp
-      value: 1428149487.0643909
+      value: 1485437601.5116756
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[2].objectType
@@ -611,7 +703,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[2].uvx
-      value: .100000001
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[2].uvy
@@ -623,6 +715,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[2].clampUVY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[2].clampUVYValue
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -666,6 +762,22 @@ Prefab:
       value: 
       objectReference: {fileID: 100000, guid: 4a902bc400f0ea849b43f1f27539e776, type: 2}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[2].boxSize.x
+      value: 7.905511
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[2].boxSize.y
+      value: 1.3188846
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[2].boxOffset.x
+      value: -0.00053977966
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[2].boxOffset.y
+      value: 0.14052486
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[2].includeStartSegment
       value: 1
       objectReference: {fileID: 0}
@@ -679,55 +791,51 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[2].xOffset
-      value: 3.51535773
+      value: 3.5153577
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[2].startOffset
-      value: .459288061
+      value: 0.4595058
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[2].endOffset
-      value: .459505796
+      value: 0.4592874
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[2].totalZDistance
-      value: 2.89515448
+      value: 2.8951545
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[2].middleZDistance
-      value: 1.97657466
+      value: 1.9765747
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[2].startZDistance
-      value: 2.43564939
+      value: 2.4360805
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[2].endZDistance
-      value: 2.43608069
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: QOQDQOOQDDQOOQ.Array.data[2].minStartZ
-      value: -4.76837158e-07
+      value: 2.4356487
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[2].maxStartZ
-      value: 2.43564892
+      value: 2.4360805
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[2].minMiddleZ
-      value: .459074259
+      value: 0.4595058
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[2].maxMiddleZ
-      value: 2.43564892
+      value: 2.4360805
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[2].minEndZ
-      value: .459074259
+      value: 0.4595058
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[2].maxEndZ
-      value: 2.89515495
+      value: 2.8951545
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[2].smoothStart
@@ -747,6 +855,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[2].isStatic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[2].castShadows
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -786,6 +898,10 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[2].category
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[3].version
       value: 2.0.0
       objectReference: {fileID: 0}
@@ -799,7 +915,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[3].timestamp
-      value: 1427360618.7974813
+      value: 1485437596.9134126
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[3].objectType
@@ -807,11 +923,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[3].m_distance
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[3].uvx
-      value: .100000001
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[3].uvy
@@ -826,8 +942,8 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: QOQDQOOQDDQOOQ.Array.data[3].align
-      value: 3
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[3].clampUVYValue
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[3].weld
@@ -883,7 +999,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[3].xOffset
-      value: 3.66870451
+      value: 3.6687045
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[3].startOffset
@@ -891,27 +1007,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[3].endOffset
-      value: 1.50973225
+      value: 1.5097322
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[3].totalZDistance
-      value: 7.57661247
+      value: 7.5766125
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[3].middleZDistance
-      value: 5.04626083
+      value: 5.046261
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[3].startZDistance
-      value: 6.06688118
+      value: 6.066881
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[3].endZDistance
-      value: 6.55599308
+      value: 6.555993
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[3].minStartZ
-      value: -4.47034836e-07
+      value: -0.00000044703484
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[3].maxStartZ
@@ -919,7 +1035,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[3].minMiddleZ
-      value: 1.02061963
+      value: 1.0206196
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[3].maxMiddleZ
@@ -927,11 +1043,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[3].minEndZ
-      value: 1.02061963
+      value: 1.0206196
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[3].maxEndZ
-      value: 7.57661295
+      value: 7.576613
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[3].bridgeObject
@@ -939,6 +1055,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[3].isStatic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[3].castShadows
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -978,6 +1098,10 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[3].category
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[4].version
       value: 2.0.0
       objectReference: {fileID: 0}
@@ -991,7 +1115,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[4].timestamp
-      value: 1428338253.3836563
+      value: 1485437678.9601054
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[4].objectType
@@ -999,11 +1123,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[4].m_distance
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[4].uvx
-      value: .100000001
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[4].uvy
@@ -1018,6 +1142,10 @@ Prefab:
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[4].uvs.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[4].uvDistances.Array.data[1]
       value: 1
       objectReference: {fileID: 0}
@@ -1028,6 +1156,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[4].clampUVY
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[4].clampUVYValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[4].totalDistance
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[4].colorList.Array.data[0].r
@@ -1095,7 +1231,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[4].middleZDistance
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[4].minStartZ
@@ -1127,6 +1263,10 @@ Prefab:
       objectReference: {fileID: 100000, guid: 9485b0c79d11e2e4d0007da98d76c639, type: 2}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[4].isStatic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[4].castShadows
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -1166,6 +1306,10 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[4].category
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[5].version
       value: 2.0.0
       objectReference: {fileID: 0}
@@ -1179,7 +1323,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[5].timestamp
-      value: 1430501026.1764953
+      value: 1485437675.592913
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[5].objectType
@@ -1187,11 +1331,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[5].m_distance
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[5].uvx
-      value: .100000001
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[5].uvy
@@ -1223,7 +1367,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[5].nodeList.Array.data[3].x
-      value: .0443768203
+      value: 0.04437682
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[5].nodeList.Array.data[3].y
@@ -1243,7 +1387,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[5].nodeList.Array.data[5].y
-      value: 1.75999999
+      value: 1.76
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[5].nodeList.Array.data[6].x
@@ -1254,24 +1398,48 @@ Prefab:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[5].uvs.Array.data[1]
+      value: 0.16341989
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[5].uvs.Array.data[2]
+      value: 0.2540878
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[5].uvs.Array.data[3]
+      value: 0.50107425
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[5].uvs.Array.data[4]
+      value: 0.7457506
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[5].uvs.Array.data[5]
+      value: 0.8366343
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[5].uvs.Array.data[6]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[5].uvDistances.Array.data[1]
-      value: .163419887
+      value: 0.16341989
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[5].uvDistances.Array.data[2]
-      value: .254087806
+      value: 0.2540878
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[5].uvDistances.Array.data[3]
-      value: .501074255
+      value: 0.50107425
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[5].uvDistances.Array.data[4]
-      value: .745750606
+      value: 0.7457506
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[5].uvDistances.Array.data[5]
-      value: .836634278
+      value: 0.8366343
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[5].uvDistances.Array.data[6]
@@ -1286,8 +1454,12 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[5].clampUVYValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[5].totalDistance
-      value: 37.5035439
+      value: 37.503544
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[5].snapList.Array.data[0]
@@ -1295,6 +1467,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[5].snapList.Array.data[6]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[5].snapWeightList.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[5].snapWeightList.Array.data[6]
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -1451,7 +1631,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: e33421fd571168f44a5b61a33e759750, type: 2}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[5].middleZDistance
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[5].minStartZ
@@ -1479,6 +1659,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[5].deformationObject
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[5].castShadows
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -1518,6 +1702,10 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[5].category
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[6].version
       value: 2.0.0
       objectReference: {fileID: 0}
@@ -1531,7 +1719,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[6].timestamp
-      value: 1427360634.0523539
+      value: 1485437555.1580243
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[6].objectType
@@ -1543,7 +1731,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[6].uvx
-      value: .100000001
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[6].uvy
@@ -1555,6 +1743,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[6].clampUVY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[6].clampUVYValue
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -1594,9 +1786,33 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[6].collider
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[6].sourceObject
       value: 
       objectReference: {fileID: 100000, guid: 62f0b6a4ea5c54142b968f43aad7decb, type: 2}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[6].flipMesh
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[6].boxSize.x
+      value: 0.3937
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[6].boxSize.y
+      value: 0.0235175
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[6].boxOffset.x
+      value: 0.19494501
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[6].boxOffset.y
+      value: 0.01175875
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[6].includeStartSegment
       value: 1
@@ -1607,50 +1823,54 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[6].startOffset
-      value: 1.31233764
+      value: 1.3123375
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[6].endOffset
-      value: 1.31233752
+      value: 1.3123375
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[6].totalZDistance
-      value: 3.93701005
+      value: 3.93701
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[6].middleZDistance
-      value: 1.31233513
+      value: 1.3123349
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[6].startZDistance
-      value: 2.62467265
+      value: 2.6246724
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[6].endZDistance
-      value: 2.62467241
+      value: 2.6246724
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[6].maxStartZ
-      value: 2.62467265
+      value: 2.6246724
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[6].minMiddleZ
-      value: 1.31233752
+      value: 1.3123375
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[6].maxMiddleZ
-      value: 2.62467265
+      value: 2.6246724
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[6].minEndZ
-      value: 1.31233752
+      value: 1.3123375
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[6].maxEndZ
-      value: 3.93701005
+      value: 3.93701
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[6].isStatic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[6].castShadows
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -1703,7 +1923,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[7].timestamp
-      value: 1427360638.1055856
+      value: 1485437558.3252056
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[7].objectType
@@ -1715,7 +1935,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[7].uvx
-      value: .100000001
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[7].uvy
@@ -1727,6 +1947,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[7].clampUVY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[7].clampUVYValue
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -1766,12 +1990,28 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[7].collider
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[7].sourceObject
       value: 
       objectReference: {fileID: 100000, guid: 62f0b6a4ea5c54142b968f43aad7decb, type: 2}
     - target: {fileID: 0}
-      propertyPath: QOQDQOOQDDQOOQ.Array.data[7].flipMesh
-      value: 1
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[7].boxSize.x
+      value: 0.3937
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[7].boxSize.y
+      value: 0.0235175
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[7].boxOffset.x
+      value: 0.19494501
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[7].boxOffset.y
+      value: 0.01175875
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[7].includeStartSegment
@@ -1783,50 +2023,54 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[7].startOffset
-      value: 1.31233764
+      value: 1.3123375
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[7].endOffset
-      value: 1.31233752
+      value: 1.3123375
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[7].totalZDistance
-      value: 3.93701005
+      value: 3.93701
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[7].middleZDistance
-      value: 1.31233513
+      value: 1.3123349
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[7].startZDistance
-      value: 2.62467265
+      value: 2.6246724
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[7].endZDistance
-      value: 2.62467241
+      value: 2.6246724
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[7].maxStartZ
-      value: 2.62467265
+      value: 2.6246724
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[7].minMiddleZ
-      value: 1.31233752
+      value: 1.3123375
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[7].maxMiddleZ
-      value: 2.62467265
+      value: 2.6246724
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[7].minEndZ
-      value: 1.31233752
+      value: 1.3123375
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[7].maxEndZ
-      value: 3.93701005
+      value: 3.93701
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[7].isStatic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[7].castShadows
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -1879,7 +2123,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[8].timestamp
-      value: 1427359113.9844108
+      value: 1485437547.5585897
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[8].objectType
@@ -1891,7 +2135,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[8].uvx
-      value: .100000001
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[8].uvy
@@ -1903,6 +2147,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[8].clampUVY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[8].clampUVYValue
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -1950,9 +2198,25 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[8].collider
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[8].sourceObject
       value: 
       objectReference: {fileID: 100000, guid: 01a84106b7d9bba42a8a22721e24c9ec, type: 2}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[8].boxSize.x
+      value: 0.423245
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[8].boxSize.y
+      value: 1.0286549
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[8].boxOffset.y
+      value: 0.51432747
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[8].includeStartSegment
       value: 1
@@ -1963,50 +2227,66 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[8].startOffset
-      value: .367097616
+      value: 0.37414014
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[8].endOffset
-      value: .374140143
+      value: 0.36709762
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[8].totalZDistance
-      value: 2.70974255
+      value: 2.7097425
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[8].middleZDistance
-      value: 1.96850491
+      value: 1.968505
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[8].startZDistance
-      value: 2.33560252
+      value: 2.3426452
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[8].endZDistance
-      value: 2.34264493
+      value: 2.3356023
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[8].maxStartZ
-      value: 2.33560252
+      value: 2.3426452
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[8].minMiddleZ
-      value: .367097616
+      value: 0.37414014
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[8].maxMiddleZ
-      value: 2.33560252
+      value: 2.3426452
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[8].minEndZ
-      value: .367097616
+      value: 0.37414014
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[8].maxEndZ
-      value: 2.70974255
+      value: 2.7097425
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[8].smoothStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[8].smoothMiddle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[8].smoothEnd
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[8].isStatic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[8].castShadows
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -2055,11 +2335,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[9].id
-      value: 1422205525.0163641
+      value: 1422205525.016364
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[9].timestamp
-      value: 1427359125.1500497
+      value: 1485437550.8597784
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[9].objectType
@@ -2071,7 +2351,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[9].uvx
-      value: .100000001
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[9].uvy
@@ -2083,6 +2363,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[9].clampUVY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[9].clampUVYValue
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -2130,9 +2414,25 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[9].collider
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[9].sourceObject
       value: 
       objectReference: {fileID: 100000, guid: 01a84106b7d9bba42a8a22721e24c9ec, type: 2}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[9].boxSize.x
+      value: 0.423245
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[9].boxSize.y
+      value: 1.0286549
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[9].boxOffset.y
+      value: 0.51432747
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[9].includeStartSegment
       value: 1
@@ -2143,50 +2443,66 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[9].startOffset
-      value: .367097616
+      value: 0.37414014
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[9].endOffset
-      value: .374140143
+      value: 0.36709762
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[9].totalZDistance
-      value: 2.70974255
+      value: 2.7097425
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[9].middleZDistance
-      value: 1.96850491
+      value: 1.968505
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[9].startZDistance
-      value: 2.33560252
+      value: 2.3426452
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[9].endZDistance
-      value: 2.34264493
+      value: 2.3356023
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[9].maxStartZ
-      value: 2.33560252
+      value: 2.3426452
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[9].minMiddleZ
-      value: .367097616
+      value: 0.37414014
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[9].maxMiddleZ
-      value: 2.33560252
+      value: 2.3426452
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[9].minEndZ
-      value: .367097616
+      value: 0.37414014
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[9].maxEndZ
-      value: 2.70974255
+      value: 2.7097425
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[9].smoothStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[9].smoothMiddle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[9].smoothEnd
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[9].isStatic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[9].castShadows
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -2239,7 +2555,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[10].timestamp
-      value: 1427360648.8101981
+      value: 1485437672.5547392
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[10].m_distance
@@ -2247,7 +2563,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[10].uvx
-      value: .100000001
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[10].uvy
@@ -2259,6 +2575,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[10].clampUVY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[10].clampUVYValue
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -2287,11 +2607,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[10].minScale
-      value: .600000024
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[10].maxScale
-      value: .699999988
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[10].xPosition
@@ -2311,7 +2631,7 @@ Prefab:
       objectReference: {fileID: 100000, guid: 4c85abd0a4d974473b97e81d10a3a6bc, type: 3}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[10].totalZDistance
-      value: 9.23972607
+      value: 9.239726
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[10].middleZDistance
@@ -2319,35 +2639,39 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[10].startZDistance
-      value: 7.91400528
+      value: 7.9140053
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[10].endZDistance
-      value: 9.23972607
+      value: 9.239726
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[10].minStartZ
-      value: 2.94172382
+      value: 2.9417238
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[10].maxStartZ
-      value: 10.8557291
+      value: 10.855729
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[10].minMiddleZ
-      value: 2.94172382
+      value: 2.9417238
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[10].maxMiddleZ
-      value: 10.8557291
+      value: 10.855729
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[10].minEndZ
-      value: 2.94172382
+      value: 2.9417238
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[10].maxEndZ
-      value: 12.1814499
+      value: 12.18145
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[10].castShadows
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[10].boxColliderScale.x
@@ -2386,6 +2710,10 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[10].category
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[11].version
       value: 2.0.0
       objectReference: {fileID: 0}
@@ -2395,11 +2723,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[11].id
-      value: 1422283787.1494229
+      value: 1422283787.149423
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[11].timestamp
-      value: 1427360652.6174157
+      value: 1485437669.1855464
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[11].m_distance
@@ -2407,7 +2735,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[11].uvx
-      value: .100000001
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[11].uvy
@@ -2419,6 +2747,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[11].clampUVY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[11].clampUVYValue
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -2447,11 +2779,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[11].minScale
-      value: .600000024
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[11].maxScale
-      value: .699999988
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[11].xPosition
@@ -2498,6 +2830,10 @@ Prefab:
       value: -10000
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[11].castShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[11].boxColliderScale.x
       value: 1
       objectReference: {fileID: 0}
@@ -2534,6 +2870,10 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[11].category
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[12].version
       value: 2.0.0
       objectReference: {fileID: 0}
@@ -2547,7 +2887,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[12].timestamp
-      value: 1439107684.5589411
+      value: 1485437564.941584
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[12].objectType
@@ -2559,7 +2899,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[12].uvx
-      value: .100000001
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[12].uvy
@@ -2571,6 +2911,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[12].clampUVY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[12].clampUVYValue
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -2607,7 +2951,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[12].xPosition
-      value: -.550000012
+      value: -0.55
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[12].relativeTo
@@ -2618,24 +2962,32 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[12].collider
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[12].sourceObject
       value: 
       objectReference: {fileID: 100002, guid: 64d1c191574179f4aa0e4ee4ca26b634, type: 2}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[12].flipMesh
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[12].boxSize.x
-      value: .105660006
+      value: 0.10566001
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[12].boxSize.y
-      value: .823074996
+      value: 0.823075
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[12].boxOffset.x
-      value: -.00384750217
+      value: -0.0038475022
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[12].boxOffset.y
-      value: .141467482
+      value: 0.14146748
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[12].includeStartSegment
@@ -2647,47 +2999,47 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[12].startOffset
-      value: 1.0466876
+      value: 1.012275
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[12].endOffset
-      value: 1.01227498
+      value: 1.0466876
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[12].totalZDistance
-      value: 4.05896282
+      value: 4.058963
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[12].middleZDistance
-      value: 2.0000577
+      value: 2.0000575
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[12].startZDistance
-      value: 3.0466876
+      value: 3.0123324
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[12].endZDistance
-      value: 3.01233292
+      value: 3.0466878
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[12].maxStartZ
-      value: 3.0466876
+      value: 3.0123324
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[12].minMiddleZ
-      value: 1.04663002
+      value: 1.012275
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[12].maxMiddleZ
-      value: 3.0466876
+      value: 3.0123324
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[12].minEndZ
-      value: 1.04663002
+      value: 1.012275
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[12].maxEndZ
-      value: 4.05896282
+      value: 4.058963
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[12].smoothStart
@@ -2699,6 +3051,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[12].smoothEnd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[12].castShadows
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -2751,7 +3107,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[13].timestamp
-      value: 1427359152.5136147
+      value: 1485437641.5269644
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[13].objectType
@@ -2763,7 +3119,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[13].uvx
-      value: .100000001
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[13].uvy
@@ -2775,6 +3131,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[13].clampUVY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[13].clampUVYValue
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -2811,7 +3171,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[13].xPosition
-      value: .550000012
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[13].relativeTo
@@ -2822,12 +3182,28 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[13].collider
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[13].sourceObject
       value: 
       objectReference: {fileID: 100002, guid: 64d1c191574179f4aa0e4ee4ca26b634, type: 2}
     - target: {fileID: 0}
-      propertyPath: QOQDQOOQDDQOOQ.Array.data[13].flipMesh
-      value: 1
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[13].boxSize.x
+      value: 0.10566001
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[13].boxSize.y
+      value: 0.823075
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[13].boxOffset.x
+      value: -0.0038475022
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[13].boxOffset.y
+      value: 0.14146748
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[13].includeStartSegment
@@ -2839,47 +3215,47 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[13].startOffset
-      value: 1.0466876
+      value: 1.012275
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[13].endOffset
-      value: 1.01227498
+      value: 1.0466876
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[13].totalZDistance
-      value: 4.05896282
+      value: 4.058963
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[13].middleZDistance
-      value: 2.0000577
+      value: 2.0000575
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[13].startZDistance
-      value: 3.0466876
+      value: 3.0123324
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[13].endZDistance
-      value: 3.01233292
+      value: 3.0466878
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[13].maxStartZ
-      value: 3.0466876
+      value: 3.0123324
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[13].minMiddleZ
-      value: 1.04663002
+      value: 1.012275
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[13].maxMiddleZ
-      value: 3.0466876
+      value: 3.0123324
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[13].minEndZ
-      value: 1.04663002
+      value: 1.012275
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[13].maxEndZ
-      value: 4.05896282
+      value: 4.058963
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[13].smoothStart
@@ -2891,6 +3267,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[13].smoothEnd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[13].isStatic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[13].castShadows
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -2943,7 +3327,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[14].timestamp
-      value: 1427359138.2407982
+      value: 1485437629.6212833
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[14].objectType
@@ -2955,7 +3339,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[14].uvx
-      value: .100000001
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[14].uvy
@@ -2970,8 +3354,8 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: QOQDQOOQDDQOOQ.Array.data[14].align
-      value: 3
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[14].clampUVYValue
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[14].weld
@@ -2983,10 +3367,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[14].combineInstantiated
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: QOQDQOOQDDQOOQ.Array.data[14].markerActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -3006,9 +3386,25 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[14].collider
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[14].sourceObject
       value: 
       objectReference: {fileID: 100000, guid: 442317cd787504b4d9e246b8db92ebbf, type: 2}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[14].boxSize.x
+      value: 0.794425
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[14].boxSize.y
+      value: 0.99479747
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[14].boxOffset.y
+      value: 0.48951125
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[14].includeStartSegment
       value: 1
@@ -3019,47 +3415,47 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[14].startOffset
-      value: .491112649
+      value: 0.49741757
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[14].endOffset
-      value: .497417629
+      value: 0.4911126
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[14].totalZDistance
-      value: 2.95703506
+      value: 2.957035
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[14].middleZDistance
-      value: 1.96850514
+      value: 1.9685048
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[14].startZDistance
-      value: 2.45961761
+      value: 2.4659224
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[14].endZDistance
-      value: 2.46592259
+      value: 2.4596176
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[14].maxStartZ
-      value: 2.45961761
+      value: 2.4659224
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[14].minMiddleZ
-      value: .49111253
+      value: 0.49741757
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[14].maxMiddleZ
-      value: 2.45961761
+      value: 2.4659224
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[14].minEndZ
-      value: .49111253
+      value: 0.49741757
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[14].maxEndZ
-      value: 2.95703506
+      value: 2.957035
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[14].smoothStart
@@ -3071,6 +3467,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[14].smoothEnd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[14].isStatic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[14].castShadows
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -3123,7 +3527,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[15].timestamp
-      value: 1427360664.9781227
+      value: 1485437664.4482753
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[15].m_distance
@@ -3131,7 +3535,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[15].uvx
-      value: .100000001
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[15].uvy
@@ -3143,6 +3547,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[15].clampUVY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[15].clampUVYValue
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -3175,7 +3583,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[15].xPosition
-      value: -.300000012
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[15].relativeTo
@@ -3226,6 +3634,10 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[15].castShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[15].boxColliderScale.x
       value: 1
       objectReference: {fileID: 0}
@@ -3262,6 +3674,10 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[15].category
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[16].version
       value: 2.0.0
       objectReference: {fileID: 0}
@@ -3271,11 +3687,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[16].id
-      value: 1422360239.9779849
+      value: 1422360239.977985
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[16].timestamp
-      value: 1427360670.4814374
+      value: 1485437660.1530297
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[16].m_distance
@@ -3283,7 +3699,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[16].uvx
-      value: .100000001
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[16].uvy
@@ -3295,6 +3711,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[16].clampUVY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[16].clampUVYValue
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -3327,7 +3747,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[16].xPosition
-      value: .300000012
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[16].relativeTo
@@ -3374,6 +3794,10 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[16].castShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[16].boxColliderScale.x
       value: 1
       objectReference: {fileID: 0}
@@ -3410,6 +3834,10 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[16].category
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[17].version
       value: 2.0.0
       objectReference: {fileID: 0}
@@ -3423,7 +3851,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[17].timestamp
-      value: 1427360675.6957357
+      value: 1485437626.6551137
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[17].objectType
@@ -3435,7 +3863,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[17].uvx
-      value: .100000001
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[17].uvy
@@ -3451,6 +3879,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[17].clampUVY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[17].clampUVYValue
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -3490,47 +3922,79 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[17].collider
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[17].sourceObject
       value: 
       objectReference: {fileID: 100000, guid: 21db1914bf668cf429fe4c207c990af2, type: 2}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[17].flipMesh
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[17].boxSize.x
+      value: 0.3296225
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[17].boxSize.y
+      value: 2.2723024
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[17].boxOffset.x
+      value: -0.13492626
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[17].boxOffset.y
+      value: 1.1361512
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[17].includeEndSegment
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[17].endOffset
-      value: .0549900532
+      value: 0.054990053
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[17].totalZDistance
-      value: 3.03457499
+      value: 3.034575
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[17].middleZDistance
-      value: 2.98598766
+      value: 2.9845526
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[17].startZDistance
-      value: 2.98598766
+      value: 2.9845526
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[17].endZDistance
-      value: 3.03457499
+      value: 3.034575
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[17].maxStartZ
-      value: 2.98598766
+      value: 2.9845526
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[17].maxMiddleZ
-      value: 2.98598766
+      value: 2.9845526
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[17].maxEndZ
-      value: 3.03457499
+      value: 3.034575
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[17].snapToTerrain
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[17].isStatic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[17].castShadows
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -3570,6 +4034,10 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[17].category
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[18].version
       value: 2.0.0
       objectReference: {fileID: 0}
@@ -3583,7 +4051,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[18].timestamp
-      value: 1427360682.1591053
+      value: 1485437621.9508448
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[18].objectType
@@ -3595,7 +4063,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[18].uvx
-      value: .100000001
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[18].uvy
@@ -3611,6 +4079,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[18].clampUVY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[18].clampUVYValue
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -3650,12 +4122,28 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[18].collider
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[18].sourceObject
       value: 
       objectReference: {fileID: 100000, guid: 21db1914bf668cf429fe4c207c990af2, type: 2}
     - target: {fileID: 0}
-      propertyPath: QOQDQOOQDDQOOQ.Array.data[18].flipMesh
-      value: 1
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[18].boxSize.x
+      value: 0.3296225
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[18].boxSize.y
+      value: 2.2723024
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[18].boxOffset.x
+      value: -0.13492626
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[18].boxOffset.y
+      value: 1.1361512
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[18].includeEndSegment
@@ -3663,38 +4151,46 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[18].endOffset
-      value: .0549900532
+      value: 0.054990053
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[18].totalZDistance
-      value: 3.03457499
+      value: 3.034575
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[18].middleZDistance
-      value: 2.98598766
+      value: 2.9845526
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[18].startZDistance
-      value: 2.98598766
+      value: 2.9845526
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[18].endZDistance
-      value: 3.03457499
+      value: 3.034575
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[18].maxStartZ
-      value: 2.98598766
+      value: 2.9845526
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[18].maxMiddleZ
-      value: 2.98598766
+      value: 2.9845526
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[18].maxEndZ
-      value: 3.03457499
+      value: 3.034575
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[18].snapToTerrain
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[18].isStatic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[18].castShadows
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -3734,6 +4230,10 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[18].category
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[19].version
       value: 2.0.0
       objectReference: {fileID: 0}
@@ -3747,7 +4247,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[19].timestamp
-      value: 1438704182.5257688
+      value: 1485437687.9296184
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[19].m_distance
@@ -3755,7 +4255,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[19].uvx
-      value: .100000001
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[19].uvy
@@ -3767,6 +4267,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[19].clampUVY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[19].clampUVYValue
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -3803,7 +4307,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[19].yPosition
-      value: -.0799999982
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[19].adjustUV
@@ -3842,6 +4346,14 @@ Prefab:
       value: -10000
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[19].isStatic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[19].castShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[19].boxColliderScale.x
       value: 1
       objectReference: {fileID: 0}
@@ -3878,6 +4390,10 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[19].category
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[20].version
       value: 2.0.0
       objectReference: {fileID: 0}
@@ -3891,22 +4407,18 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[20].timestamp
-      value: 1452189558.9429069
+      value: 1485437650.6494863
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[20].m_distance
-      value: 50
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[20].uvx
-      value: .100000001
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[20].uvy
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: QOQDQOOQDDQOOQ.Array.data[20].selectedRotation
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -3918,15 +4430,15 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[20].clampUVYValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[20].weld
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[20].combineInstantiated
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: QOQDQOOQDDQOOQ.Array.data[20].markerActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -3943,7 +4455,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[20].yPosition
-      value: -.600000024
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[20].adjustUV
@@ -3982,6 +4494,14 @@ Prefab:
       value: -10000
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[20].isStatic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[20].castShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: QOQDQOOQDDQOOQ.Array.data[20].boxColliderScale.x
       value: 1
       objectReference: {fileID: 0}
@@ -4018,176 +4538,524 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].roadTypeName
-      value: Motorway 2x2
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].id
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].timestamp
-      value: 1453047074.4723315
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].roadWidth
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].uvTiling
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].roadShape.Array.data[0].x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].roadShape.Array.data[1].x
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].roadShapeUVs.Array.data[1]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].sidewalkHeight
-      value: .200000003
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].sidewalkWidth
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].roadMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: 0f71a7ceb8cc7464294ce5808b7666e4, type: 2}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].roadPhysicsMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: 0f71a7ceb8cc7464294ce5808b7666e4, type: 2}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[0].id
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[1].id
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[2].id
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[20].category
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[3].id
-      value: 4
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].version
+      value: 2.0.0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[4].id
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].name
+      value: Powerline
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].id
+      value: 1454519638.6173558
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].timestamp
+      value: 1485437699.949306
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].objectType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].m_distance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].uvx
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].uvy
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].clampUVs
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].clampUVY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].clampUVYValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].weld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].combine
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].combineInstantiated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].markerActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].uv
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].minScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].maxScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].adjustUV
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].sourceObject
+      value: 
+      objectReference: {fileID: 100000, guid: c31993688b764bd4b9c2d91ac05685cd, type: 2}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].endObject
+      value: 
+      objectReference: {fileID: 100000, guid: bf1fbf8d57568f14b82c92e43ee20d87, type: 2}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].connectionObject
+      value: 
+      objectReference: {fileID: 100000, guid: bf1fbf8d57568f14b82c92e43ee20d87, type: 2}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].boxSize.x
+      value: 4.330461
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].boxSize.y
+      value: 7.1639233
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].boxOffset.x
+      value: -0.013101339
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].boxOffset.y
+      value: 8.482538
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].totalZDistance
+      value: 39.38241
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].middleZDistance
+      value: 39.38241
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].startZDistance
+      value: -2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].endZDistance
+      value: -2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].minStartZ
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].maxStartZ
+      value: -1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].maxMiddleZ
+      value: 39.38241
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].minEndZ
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].maxEndZ
+      value: -1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].isStatic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].castShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].boxColliderScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].boxColliderScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].boxColliderScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].bridgeHeight
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[5].id
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].markerSplineController
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].bridgeLength
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].scale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].scale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].scale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[21].category
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[6].id
-      value: 1422201194.1206512
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].version
+      value: 2.0.0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[7].id
-      value: 1422201446.4010808
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].name
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[8].id
-      value: 1422205435.6632535
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].id
+      value: 1454521147.777675
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[9].id
-      value: 1422205525.0163641
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].timestamp
+      value: 1485437611.9062703
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[10].id
-      value: 1422280172.2846642
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].m_distance
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[10].active
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].uvx
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].uvy
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[11].id
-      value: 1422283787.1494229
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[11].active
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].clampUVs
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[12].id
-      value: 1422283828.2437732
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[12].active
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].clampUVY
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[13].id
-      value: 1422283879.5397072
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[13].active
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].clampUVYValue
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[14].id
-      value: 1422295189.0945766
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[14].active
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].weld
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[15].id
-      value: 1422360127.2965398
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[15].active
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].combine
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[16].id
-      value: 1422360239.9779849
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[16].active
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].combineInstantiated
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[17].id
-      value: 1424540150.6289527
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[17].active
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].uv
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[18].id
-      value: 1424540279.96035
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[18].active
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].minScale
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[19].id
-      value: 1438703293.2729063
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[20].id
-      value: 1439970267.5877771
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[1].terrainDeformation
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].maxScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].childOrderActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].meshBoundsAlignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].relativeTo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].yPosition
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].adjustUV
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].sourceObject
+      value: 
+      objectReference: {fileID: 100000, guid: 577437d53f514944abc6f55dc2469ddc, type: 2}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].endObject
+      value: 
+      objectReference: {fileID: 100000, guid: 4150d2961782a54479f49bbae7d66f15, type: 2}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].middleZDistance
+      value: 4.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].minStartZ
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].maxStartZ
+      value: -10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].minMiddleZ
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].maxMiddleZ
+      value: -10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].minEndZ
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].maxEndZ
+      value: -10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].isStatic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].castShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].boxColliderScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].boxColliderScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].boxColliderScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].bridgeHeight
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].markerSplineController
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].bridgeLength
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].scale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].scale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].scale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[22].category
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].version
+      value: 2.0.0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].name
+      value: Motorway_2L_Bridge1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].id
+      value: 1477318170.983913
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].timestamp
+      value: 1485437605.0658789
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].m_distance
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].uvx
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].uvy
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].clampUVs
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].clampUVY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].clampUVYValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].weld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].combine
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].combineInstantiated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].uv
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].minScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].maxScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].adjustUV
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].sourceObject
+      value: 
+      objectReference: {fileID: 186798, guid: c3c7c7691fe79c741bd8dbb869e3a8d4, type: 2}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].middleZDistance
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].minStartZ
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].maxStartZ
+      value: -10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].minMiddleZ
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].maxMiddleZ
+      value: -10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].minEndZ
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].maxEndZ
+      value: -10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].bridgeObject
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].isStatic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].castShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].boxColliderScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].boxColliderScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].boxColliderScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].bridgeHeight
+      value: 6.4662166
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].markerSplineController
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].bridgeLength
+      value: 24.105896
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].markerIndent
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].markerSurrounding
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].scale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].scale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].scale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: QOQDQOOQDDQOOQ.Array.data[23].category
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[2].roadTypeName
@@ -4199,11 +5067,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[2].timestamp
-      value: 1430492554.7489574
+      value: 1473146638.3992405
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[2].roadWidth
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[2].faceDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[2].angleTreshold
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[2].roadShape.Array.data[0].x
@@ -4219,7 +5095,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[2].sidewalkHeight
-      value: .200000003
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[2].sidewalkWidth
@@ -4267,7 +5143,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[2].soDataLog.Array.data[9].id
-      value: 1422205525.0163641
+      value: 1422205525.016364
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[2].soDataLog.Array.data[10].id
@@ -4275,7 +5151,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[2].soDataLog.Array.data[11].id
-      value: 1422283787.1494229
+      value: 1422283787.149423
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[2].soDataLog.Array.data[12].id
@@ -4295,7 +5171,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[2].soDataLog.Array.data[16].id
-      value: 1422360239.9779849
+      value: 1422360239.977985
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[2].soDataLog.Array.data[17].id
@@ -4314,6 +5190,14 @@ Prefab:
       value: 1439970267.5877771
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[2].soDataLog.Array.data[21].id
+      value: 1454519638.6173558
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[2].soDataLog.Array.data[22].id
+      value: 1454521147.777675
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[3].roadTypeName
       value: Fence 2
       objectReference: {fileID: 0}
@@ -4323,15 +5207,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[3].timestamp
-      value: 1430492554.7489574
+      value: 1473146645.5356488
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[3].roadWidth
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[3].faceDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[3].angleTreshold
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[3].sidewalkHeight
-      value: .200000003
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[3].sidewalkWidth
@@ -4383,7 +5275,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[3].soDataLog.Array.data[9].id
-      value: 1422205525.0163641
+      value: 1422205525.016364
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[3].soDataLog.Array.data[10].id
@@ -4391,7 +5283,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[3].soDataLog.Array.data[11].id
-      value: 1422283787.1494229
+      value: 1422283787.149423
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[3].soDataLog.Array.data[12].id
@@ -4411,7 +5303,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[3].soDataLog.Array.data[16].id
-      value: 1422360239.9779849
+      value: 1422360239.977985
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[3].soDataLog.Array.data[17].id
@@ -4430,6 +5322,14 @@ Prefab:
       value: 1439970267.5877771
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[3].soDataLog.Array.data[21].id
+      value: 1454519638.6173558
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[3].soDataLog.Array.data[22].id
+      value: 1454521147.777675
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadTypeName
       value: Train Rail
       objectReference: {fileID: 0}
@@ -4439,207 +5339,219 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].timestamp
-      value: 1439992457.3959615
+      value: 1473146652.9310715
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadWidth
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[4].faceDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[4].angleTreshold
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[4].uvTiling
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].outerIndent
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[0].x
-      value: -.707300007
+      value: -0.7073
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[0].y
-      value: .0562000014
+      value: 0.0562
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[1].x
-      value: -.683799982
+      value: -0.6838
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[1].y
-      value: .0705000013
+      value: 0.0705
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[2].x
-      value: -.683300018
+      value: -0.6833
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[2].y
-      value: .1017
+      value: 0.1017
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[3].x
-      value: -.701999962
+      value: -0.70199996
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[3].y
-      value: .1197
+      value: 0.1197
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[4].x
-      value: -.702099979
+      value: -0.7021
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[4].y
-      value: .139799997
+      value: 0.1398
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[5].x
-      value: -.682600021
+      value: -0.6826
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[5].y
-      value: .1567
+      value: 0.1567
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[6].x
-      value: -.640599966
+      value: -0.64059997
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[6].y
-      value: .1567
+      value: 0.1567
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[7].x
-      value: -.621100008
+      value: -0.6211
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[7].y
-      value: .139799997
+      value: 0.1398
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[8].x
-      value: -.621100008
+      value: -0.6211
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[8].y
-      value: .1197
+      value: 0.1197
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[9].x
-      value: -.639899969
+      value: -0.63989997
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[9].y
-      value: .1017
+      value: 0.1017
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[10].x
-      value: -.639999986
+      value: -0.64
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[10].y
-      value: .0705000013
+      value: 0.0705
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[11].x
-      value: -.61650002
+      value: -0.6165
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[11].y
-      value: .0562000014
+      value: 0.0562
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[12].x
-      value: .61650008
+      value: 0.6165001
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[12].y
-      value: .0562000014
+      value: 0.0562
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[13].x
-      value: .640000045
+      value: 0.64000005
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[13].y
-      value: .0705000013
+      value: 0.0705
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[14].x
-      value: .640500009
+      value: 0.6405
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[14].y
-      value: .1017
+      value: 0.1017
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[15].x
-      value: .621699989
+      value: 0.6217
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[15].y
-      value: .1197
+      value: 0.1197
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[16].x
-      value: .621699989
+      value: 0.6217
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[16].y
-      value: .139799997
+      value: 0.1398
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[17].x
-      value: .641200006
+      value: 0.6412
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[17].y
-      value: .1567
+      value: 0.1567
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[18].x
-      value: .683200061
+      value: 0.68320006
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[18].y
-      value: .1567
+      value: 0.1567
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[19].x
-      value: .702700078
+      value: 0.7027001
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[19].y
-      value: .139799997
+      value: 0.1398
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[20].x
-      value: .702599943
+      value: 0.70259994
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[20].y
-      value: .1197
+      value: 0.1197
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[21].x
-      value: .683900058
+      value: 0.68390006
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[21].y
-      value: .1017
+      value: 0.1017
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[22].x
-      value: .683799922
+      value: 0.6837999
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[22].y
-      value: .0705000013
+      value: 0.0705
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[23].x
-      value: .707300007
+      value: 0.7073
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShape.Array.data[23].y
-      value: .0562000014
+      value: 0.0562
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].doConnectionTri.Array.data[0]
@@ -4735,43 +5647,43 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShapeUVs.Array.data[1]
-      value: .090724498
+      value: 0.0907245
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShapeUVs.Array.data[2]
-      value: .193635359
+      value: 0.19363536
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShapeUVs.Array.data[3]
-      value: .279236645
+      value: 0.27923664
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShapeUVs.Array.data[4]
-      value: .345527291
+      value: 0.3455273
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShapeUVs.Array.data[5]
-      value: .43062973
+      value: 0.43062973
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShapeUVs.Array.data[6]
-      value: .569145977
+      value: 0.569146
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShapeUVs.Array.data[7]
-      value: .654248416
+      value: 0.6542484
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShapeUVs.Array.data[8]
-      value: .720538259
+      value: 0.72053826
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShapeUVs.Array.data[9]
-      value: .80637747
+      value: 0.8063775
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShapeUVs.Array.data[10]
-      value: .909275651
+      value: 0.90927565
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShapeUVs.Array.data[11]
@@ -4779,43 +5691,43 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShapeUVs.Array.data[13]
-      value: .0907242373
+      value: 0.09072424
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShapeUVs.Array.data[14]
-      value: .193635017
+      value: 0.19363502
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShapeUVs.Array.data[15]
-      value: .279474348
+      value: 0.27947435
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShapeUVs.Array.data[16]
-      value: .34576416
+      value: 0.34576416
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShapeUVs.Array.data[17]
-      value: .430866718
+      value: 0.43086672
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShapeUVs.Array.data[18]
-      value: .569382966
+      value: 0.56938297
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShapeUVs.Array.data[19]
-      value: .654485524
+      value: 0.6544855
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShapeUVs.Array.data[20]
-      value: .720776081
+      value: 0.7207761
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShapeUVs.Array.data[21]
-      value: .806377172
+      value: 0.8063772
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShapeUVs.Array.data[22]
-      value: .909275353
+      value: 0.90927535
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].roadShapeUVs.Array.data[23]
@@ -4829,7 +5741,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].sidewalkHeight
-      value: .200000003
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].sidewalkWidth
@@ -4881,7 +5793,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].soDataLog.Array.data[9].id
-      value: 1422205525.0163641
+      value: 1422205525.016364
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].soDataLog.Array.data[10].id
@@ -4889,7 +5801,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].soDataLog.Array.data[11].id
-      value: 1422283787.1494229
+      value: 1422283787.149423
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].soDataLog.Array.data[12].id
@@ -4909,7 +5821,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].soDataLog.Array.data[16].id
-      value: 1422360239.9779849
+      value: 1422360239.977985
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].soDataLog.Array.data[17].id
@@ -4930,6 +5842,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].soDataLog.Array.data[20].id
       value: 1439970267.5877771
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[4].soDataLog.Array.data[21].id
+      value: 1454519638.6173558
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[4].soDataLog.Array.data[22].id
+      value: 1454521147.777675
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[4].smoothLevel
@@ -4953,47 +5873,59 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[5].timestamp
-      value: 1439992462.9172771
+      value: 1473146659.3034363
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[5].roadWidth
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[5].faceDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[5].angleTreshold
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[5].uvTiling
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[5].outerIndent
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[5].roadShape.Array.data[0].x
-      value: -1.45274997
+      value: -1.45275
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[5].roadShape.Array.data[0].y
-      value: .00270000007
+      value: 0.0027
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[5].roadShape.Array.data[1].x
-      value: -1.41314995
+      value: -1.41315
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[5].roadShape.Array.data[1].y
-      value: .0399000011
+      value: 0.0399
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[5].roadShape.Array.data[2].x
-      value: 1.40814996
+      value: 1.40815
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[5].roadShape.Array.data[2].y
-      value: .0399000011
+      value: 0.0399
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[5].roadShape.Array.data[3].x
-      value: 1.45274997
+      value: 1.45275
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[5].roadShape.Array.data[3].y
-      value: .00270000007
+      value: 0.0027
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[5].doConnectionTri.Array.data[0]
@@ -5013,11 +5945,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[5].roadShapeUVs.Array.data[1]
-      value: .018520005
+      value: 0.018520005
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[5].roadShapeUVs.Array.data[2]
-      value: .98020339
+      value: 0.9802034
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[5].roadShapeUVs.Array.data[3]
@@ -5029,7 +5961,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[5].sidewalkHeight
-      value: .200000003
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[5].sidewalkWidth
@@ -5081,7 +6013,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[5].soDataLog.Array.data[9].id
-      value: 1422205525.0163641
+      value: 1422205525.016364
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[5].soDataLog.Array.data[10].id
@@ -5089,7 +6021,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[5].soDataLog.Array.data[11].id
-      value: 1422283787.1494229
+      value: 1422283787.149423
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[5].soDataLog.Array.data[12].id
@@ -5109,7 +6041,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[5].soDataLog.Array.data[16].id
-      value: 1422360239.9779849
+      value: 1422360239.977985
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[5].soDataLog.Array.data[17].id
@@ -5126,6 +6058,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[5].soDataLog.Array.data[20].id
       value: 1439970267.5877771
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[5].soDataLog.Array.data[21].id
+      value: 1454519638.6173558
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[5].soDataLog.Array.data[22].id
+      value: 1454521147.777675
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[5].smoothLevel
@@ -5145,7 +6085,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].id
-      value: 1447879021.3270271
+      value: 1447879021.327027
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].timestamp
@@ -5169,15 +6109,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].outerIndent
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[0].x
-      value: .00402879715
+      value: 0.004028797
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[0].y
-      value: -.645622492
+      value: -0.6456225
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[1].x
@@ -5185,79 +6125,79 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[1].y
-      value: -.543085039
+      value: -0.54308504
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[2].x
-      value: -3.93700624
+      value: -3.9370062
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[2].y
-      value: -.360597491
+      value: -0.3605975
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[3].x
-      value: -4.04711914
+      value: -4.047119
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[3].y
-      value: .0135550005
+      value: 0.013555001
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[4].x
-      value: -4.04711914
+      value: -4.047119
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[4].y
-      value: .341639996
+      value: 0.34164
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[5].x
-      value: -3.93700624
+      value: -3.9370062
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[5].y
-      value: .687225044
+      value: 0.68722504
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[6].x
-      value: -3.79498887
+      value: -3.7949889
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[6].y
-      value: .703317523
+      value: 0.7033175
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[7].x
-      value: -3.65452361
+      value: -3.6545236
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[7].y
-      value: .687225044
+      value: 0.68722504
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[8].x
-      value: -3.50359893
+      value: -3.503599
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[8].y
-      value: .0106925005
+      value: 0.0106925005
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[9].x
-      value: 3.50359869
+      value: 3.5035987
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[9].y
-      value: .0106925005
+      value: 0.0106925005
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[10].x
-      value: 3.65452385
+      value: 3.6545238
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[10].y
-      value: .687225044
+      value: 0.68722504
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[11].x
@@ -5265,55 +6205,55 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[11].y
-      value: .704927504
+      value: 0.7049275
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[12].x
-      value: 3.93700886
+      value: 3.9370089
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[12].y
-      value: .687225044
+      value: 0.68722504
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[13].x
-      value: 4.04711914
+      value: 4.047119
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[13].y
-      value: .341639996
+      value: 0.34164
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[14].x
-      value: 4.04711914
+      value: 4.047119
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[14].y
-      value: .0135550005
+      value: 0.013555001
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[15].x
-      value: 3.93700886
+      value: 3.9370089
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[15].y
-      value: -.360597491
+      value: -0.3605975
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[16].x
-      value: 2.63702106
+      value: 2.637021
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[16].y
-      value: -.543085039
+      value: -0.54308504
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[17].x
-      value: .00402879715
+      value: 0.004028797
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShape.Array.data[17].y
-      value: -.645622492
+      value: -0.6456225
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].doConnectionTri.Array.data[0]
@@ -5389,67 +6329,67 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShapeUVs.Array.data[1]
-      value: .109099999
+      value: 0.1091
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShapeUVs.Array.data[2]
-      value: .187000006
+      value: 0.187
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShapeUVs.Array.data[3]
-      value: .203899994
+      value: 0.2039
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShapeUVs.Array.data[4]
-      value: .221499994
+      value: 0.2215
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShapeUVs.Array.data[5]
-      value: .238199994
+      value: 0.2382
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShapeUVs.Array.data[6]
-      value: .244800001
+      value: 0.2448
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShapeUVs.Array.data[7]
-      value: .250499994
+      value: 0.2505
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShapeUVs.Array.data[8]
-      value: .275999993
+      value: 0.276
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShapeUVs.Array.data[9]
-      value: .72420001
+      value: 0.7242
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShapeUVs.Array.data[10]
-      value: .744599998
+      value: 0.7446
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShapeUVs.Array.data[11]
-      value: .753899992
+      value: 0.7539
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShapeUVs.Array.data[12]
-      value: .760999978
+      value: 0.761
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShapeUVs.Array.data[13]
-      value: .779900014
+      value: 0.7799
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShapeUVs.Array.data[14]
-      value: .796000004
+      value: 0.796
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShapeUVs.Array.data[15]
-      value: .814499974
+      value: 0.8145
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShapeUVs.Array.data[16]
-      value: .893400013
+      value: 0.8934
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].roadShapeUVs.Array.data[17]
@@ -5471,7 +6411,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].sidewalkHeight
-      value: .200000003
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].sidewalkWidth
@@ -5523,7 +6463,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].soDataLog.Array.data[9].id
-      value: 1422205525.0163641
+      value: 1422205525.016364
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].soDataLog.Array.data[10].id
@@ -5531,7 +6471,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].soDataLog.Array.data[11].id
-      value: 1422283787.1494229
+      value: 1422283787.149423
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].soDataLog.Array.data[12].id
@@ -5551,7 +6491,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].soDataLog.Array.data[16].id
-      value: 1422360239.9779849
+      value: 1422360239.977985
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[6].soDataLog.Array.data[17].id
@@ -5611,151 +6551,151 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].outerIndent
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[0].x
-      value: .0613565445
+      value: 0.061356544
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[0].y
-      value: -.645622492
+      value: -0.6456225
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[1].x
-      value: -1.04232311
+      value: -1.0423231
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[1].y
-      value: -.543085039
+      value: -0.54308504
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[2].x
-      value: -2.49235415
+      value: -2.4923542
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[2].y
-      value: -.360597491
+      value: -0.3605975
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[3].x
-      value: -2.60246491
+      value: -2.602465
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[3].y
-      value: .0135550005
+      value: 0.013555001
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[4].x
-      value: -2.60246491
+      value: -2.602465
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[4].y
-      value: .341639996
+      value: 0.34164
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[5].x
-      value: -2.49235415
+      value: -2.4923542
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[5].y
-      value: .687225044
+      value: 0.68722504
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[6].x
-      value: -2.35033727
+      value: -2.3503373
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[6].y
-      value: .703317523
+      value: 0.7033175
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[7].x
-      value: -2.20987129
+      value: -2.2098713
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[7].y
-      value: .687225044
+      value: 0.68722504
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[8].x
-      value: -2.05894446
+      value: -2.0589445
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[8].y
-      value: .0106925005
+      value: 0.0106925005
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[9].x
-      value: 2.05894256
+      value: 2.0589426
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[9].y
-      value: .0106925005
+      value: 0.0106925005
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[10].x
-      value: 2.20987058
+      value: 2.2098706
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[10].y
-      value: .687225044
+      value: 0.68722504
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[11].x
-      value: 2.34554458
+      value: 2.3455446
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[11].y
-      value: .704927504
+      value: 0.7049275
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[12].x
-      value: 2.49235272
+      value: 2.4923527
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[12].y
-      value: .687225044
+      value: 0.68722504
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[13].x
-      value: 2.60246491
+      value: 2.602465
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[13].y
-      value: .341639996
+      value: 0.34164
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[14].x
-      value: 2.60246491
+      value: 2.602465
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[14].y
-      value: .0135550005
+      value: 0.013555001
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[15].x
-      value: 2.49235272
+      value: 2.4923527
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[15].y
-      value: -.360597491
+      value: -0.3605975
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[16].x
-      value: 1.03133702
+      value: 1.031337
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[16].y
-      value: -.543085039
+      value: -0.54308504
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[17].x
-      value: .0613565445
+      value: 0.061356544
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShape.Array.data[17].y
-      value: -.645622492
+      value: -0.6456225
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].doConnectionTri.Array.data[0]
@@ -5831,71 +6771,71 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShapeUVs.Array.data[0]
-      value: .000899999985
+      value: 0.0009
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShapeUVs.Array.data[1]
-      value: .893400013
+      value: 0.8934
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShapeUVs.Array.data[2]
-      value: .814499974
+      value: 0.8145
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShapeUVs.Array.data[3]
-      value: .796000004
+      value: 0.796
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShapeUVs.Array.data[4]
-      value: .779900014
+      value: 0.7799
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShapeUVs.Array.data[5]
-      value: .760999978
+      value: 0.761
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShapeUVs.Array.data[6]
-      value: .753899992
+      value: 0.7539
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShapeUVs.Array.data[7]
-      value: .744599998
+      value: 0.7446
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShapeUVs.Array.data[8]
-      value: .724300027
+      value: 0.7243
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShapeUVs.Array.data[9]
-      value: .275900006
+      value: 0.2759
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShapeUVs.Array.data[10]
-      value: .250499994
+      value: 0.2505
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShapeUVs.Array.data[11]
-      value: .244800001
+      value: 0.2448
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShapeUVs.Array.data[12]
-      value: .238199994
+      value: 0.2382
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShapeUVs.Array.data[13]
-      value: .221499994
+      value: 0.2215
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShapeUVs.Array.data[14]
-      value: .203899994
+      value: 0.2039
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShapeUVs.Array.data[15]
-      value: .187000006
+      value: 0.187
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShapeUVs.Array.data[16]
-      value: .109099999
+      value: 0.1091
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].roadShapeUVs.Array.data[17]
@@ -5917,7 +6857,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].sidewalkHeight
-      value: .200000003
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].sidewalkWidth
@@ -5969,7 +6909,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].soDataLog.Array.data[9].id
-      value: 1422205525.0163641
+      value: 1422205525.016364
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].soDataLog.Array.data[10].id
@@ -5977,7 +6917,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].soDataLog.Array.data[11].id
-      value: 1422283787.1494229
+      value: 1422283787.149423
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].soDataLog.Array.data[12].id
@@ -5997,7 +6937,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].soDataLog.Array.data[16].id
-      value: 1422360239.9779849
+      value: 1422360239.977985
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: roadPresets.Array.data[7].soDataLog.Array.data[17].id
@@ -6028,98 +6968,198 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[0].soDataLog.Array.data[0].id
-      value: 1
+      propertyPath: roadPresets.Array.data[1].roadTypeName
+      value: Motorway 2x2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[0].soDataLog.Array.data[1].id
+      propertyPath: roadPresets.Array.data[1].id
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[0].soDataLog.Array.data[2].id
-      value: 3
+      propertyPath: roadPresets.Array.data[1].timestamp
+      value: 1473146630.3317792
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[0].soDataLog.Array.data[3].id
-      value: 4
+      propertyPath: roadPresets.Array.data[1].roadWidth
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[0].soDataLog.Array.data[4].id
-      value: 5
+      propertyPath: roadPresets.Array.data[1].faceDistance
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[0].soDataLog.Array.data[5].id
-      value: 6
+      propertyPath: roadPresets.Array.data[1].angleTreshold
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[0].soDataLog.Array.data[6].id
-      value: 1422201194.1206512
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[0].soDataLog.Array.data[7].id
-      value: 1422201446.4010808
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[0].soDataLog.Array.data[8].id
-      value: 1422205435.6632535
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[0].soDataLog.Array.data[9].id
-      value: 1422205525.0163641
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[0].soDataLog.Array.data[10].id
-      value: 1422280172.2846642
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[0].soDataLog.Array.data[11].id
-      value: 1422283787.1494229
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[0].soDataLog.Array.data[12].id
-      value: 1422283828.2437732
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[0].soDataLog.Array.data[13].id
-      value: 1422283879.5397072
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[0].soDataLog.Array.data[14].id
-      value: 1422295189.0945766
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[0].soDataLog.Array.data[15].id
-      value: 1422360127.2965398
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[0].soDataLog.Array.data[16].id
-      value: 1422360239.9779849
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[0].soDataLog.Array.data[17].id
-      value: 1424540150.6289527
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[0].soDataLog.Array.data[18].id
-      value: 1424540279.96035
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[0].soDataLog.Array.data[19].id
-      value: 1438703293.2729063
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[0].soDataLog.Array.data[20].id
-      value: 1439970267.5877771
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[0].uvTiling
+      propertyPath: roadPresets.Array.data[1].uvTiling
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: roadPresets.Array.data[0].faceDistance
+      propertyPath: roadPresets.Array.data[1].roadShape.Array.data[0].x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].roadShape.Array.data[1].x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].roadShapeUVs.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].sidewalkHeight
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].sidewalkWidth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].roadMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 0f71a7ceb8cc7464294ce5808b7666e4, type: 2}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].roadPhysicsMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 0f71a7ceb8cc7464294ce5808b7666e4, type: 2}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[0].id
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[1].id
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[2].id
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[3].id
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[4].id
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[5].id
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[6].id
+      value: 1422201194.1206512
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[7].id
+      value: 1422201446.4010808
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[8].id
+      value: 1422205435.6632535
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[9].id
+      value: 1422205525.016364
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[10].id
+      value: 1422280172.2846642
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[10].active
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[11].id
+      value: 1422283787.149423
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[11].active
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[12].id
+      value: 1422283828.2437732
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[12].active
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[13].id
+      value: 1422283879.5397072
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[13].active
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[14].id
+      value: 1422295189.0945766
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[14].active
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[15].id
+      value: 1422360127.2965398
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[15].active
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[16].id
+      value: 1422360239.977985
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[16].active
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[17].id
+      value: 1424540150.6289527
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[17].active
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[18].id
+      value: 1424540279.96035
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[18].active
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[19].id
+      value: 1438703293.2729063
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[20].id
+      value: 1439970267.5877771
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[21].id
+      value: 1454519638.6173558
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].soDataLog.Array.data[22].id
+      value: 1454521147.777675
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[1].terrainDeformation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: roadPresets.Array.data[0].id
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 124348}
+  m_RootGameObject: {fileID: 102934}
   m_IsPrefabAsset: 1

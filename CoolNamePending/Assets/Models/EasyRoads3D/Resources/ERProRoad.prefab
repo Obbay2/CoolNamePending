@@ -110,8 +110,8 @@ MonoBehaviour:
   soSplinePoints: []
   soSplinePointsLeft: []
   soSplinePointsRight: []
-  ODDQCOQCCQ: []
-  OCOODCDQCQ: []
+  OOQDQQOQCD: []
+  OQCODCDCDC: []
   meshVecs: []
   meshUVs: []
   meshUVs2: []
@@ -177,8 +177,8 @@ MonoBehaviour:
   segPoints: []
   testPoints: []
   testPoints2: []
-  OQCQDCCCCD: {x: 0, y: 0, z: 0}
-  OOQODCQCDC: {x: 0, y: 0, z: 0}
+  ODODCOOOCD: {x: 0, y: 0, z: 0}
+  OOOQOODOCD: {x: 0, y: 0, z: 0}
   endLeft: {x: 0, y: 0, z: 0}
   endRight: {x: 0, y: 0, z: 0}
   testmesh: {fileID: 0}

@@ -95,31 +95,31 @@
     <Compile Include="Assets\PostProcessing\Editor\Utils\EditorResources.cs" />
     <Compile Include="Assets\PostProcessing\Editor\Utils\FxStyles.cs" />
     <Compile Include="Assets\PostProcessing\Editor\Utils\ReflectionUtils.cs" />
-    <Compile Include="Assets\SteamVR\Editor\SteamVR_Editor.cs" />
-    <Compile Include="Assets\SteamVR\Editor\SteamVR_Preferences.cs" />
-    <Compile Include="Assets\SteamVR\Editor\SteamVR_RenderModelEditor.cs" />
-    <Compile Include="Assets\SteamVR\Editor\SteamVR_Settings.cs" />
-    <Compile Include="Assets\SteamVR\Editor\SteamVR_SkyboxEditor.cs" />
-    <Compile Include="Assets\SteamVR\Editor\SteamVR_UnitySettingsWindow.cs" />
-    <Compile Include="Assets\SteamVR\Editor\SteamVR_Update.cs" />
-    <Compile Include="Assets\SteamVR\Editor\SteamVR_UpdateModeEditor.cs" />
-    <Compile Include="Assets\SteamVR\Input\Editor\SteamVR_CopyExampleInputFiles.cs" />
-    <Compile Include="Assets\SteamVR\Input\Editor\SteamVR_Input_Action_Boolean_PropertyEditor.cs" />
-    <Compile Include="Assets\SteamVR\Input\Editor\SteamVR_Input_Action_GenericPropertyEditor.cs" />
-    <Compile Include="Assets\SteamVR\Input\Editor\SteamVR_Input_Action_In_PropertyEditor.cs" />
-    <Compile Include="Assets\SteamVR\Input\Editor\SteamVR_Input_Action_Out_PropertyEditor.cs" />
-    <Compile Include="Assets\SteamVR\Input\Editor\SteamVR_Input_Action_Pose_PropertyEditor.cs" />
-    <Compile Include="Assets\SteamVR\Input\Editor\SteamVR_Input_Action_PropertyEditor.cs" />
-    <Compile Include="Assets\SteamVR\Input\Editor\SteamVR_Input_Action_Single_PropertyEditor.cs" />
-    <Compile Include="Assets\SteamVR\Input\Editor\SteamVR_Input_Action_Skeleton_PropertyEditor.cs" />
-    <Compile Include="Assets\SteamVR\Input\Editor\SteamVR_Input_Action_Vector2_PropertyEditor.cs" />
-    <Compile Include="Assets\SteamVR\Input\Editor\SteamVR_Input_Action_Vector3_PropertyEditor.cs" />
-    <Compile Include="Assets\SteamVR\Input\Editor\SteamVR_Input_Action_Vibration_PropertyEditor.cs" />
-    <Compile Include="Assets\SteamVR\Input\Editor\SteamVR_Input_ActionSetPropertyEditor.cs" />
-    <Compile Include="Assets\SteamVR\Input\Editor\SteamVR_Input_EditorWindow.cs" />
-    <Compile Include="Assets\SteamVR\Input\Editor\SteamVR_Input_Generator.cs" />
-    <Compile Include="Assets\SteamVR\Input\Editor\SteamVR_Input_LiveWindow.cs" />
-    <Compile Include="Assets\SteamVR\Input\Editor\SteamVR_Input_PostProcessBuild.cs" />
+    <Compile Include="Assets\SDKs\SteamVR\Editor\SteamVR_Editor.cs" />
+    <Compile Include="Assets\SDKs\SteamVR\Editor\SteamVR_Preferences.cs" />
+    <Compile Include="Assets\SDKs\SteamVR\Editor\SteamVR_RenderModelEditor.cs" />
+    <Compile Include="Assets\SDKs\SteamVR\Editor\SteamVR_Settings.cs" />
+    <Compile Include="Assets\SDKs\SteamVR\Editor\SteamVR_SkyboxEditor.cs" />
+    <Compile Include="Assets\SDKs\SteamVR\Editor\SteamVR_UnitySettingsWindow.cs" />
+    <Compile Include="Assets\SDKs\SteamVR\Editor\SteamVR_Update.cs" />
+    <Compile Include="Assets\SDKs\SteamVR\Editor\SteamVR_UpdateModeEditor.cs" />
+    <Compile Include="Assets\SDKs\SteamVR\Input\Editor\SteamVR_CopyExampleInputFiles.cs" />
+    <Compile Include="Assets\SDKs\SteamVR\Input\Editor\SteamVR_Input_Action_Boolean_PropertyEditor.cs" />
+    <Compile Include="Assets\SDKs\SteamVR\Input\Editor\SteamVR_Input_Action_GenericPropertyEditor.cs" />
+    <Compile Include="Assets\SDKs\SteamVR\Input\Editor\SteamVR_Input_Action_In_PropertyEditor.cs" />
+    <Compile Include="Assets\SDKs\SteamVR\Input\Editor\SteamVR_Input_Action_Out_PropertyEditor.cs" />
+    <Compile Include="Assets\SDKs\SteamVR\Input\Editor\SteamVR_Input_Action_Pose_PropertyEditor.cs" />
+    <Compile Include="Assets\SDKs\SteamVR\Input\Editor\SteamVR_Input_Action_PropertyEditor.cs" />
+    <Compile Include="Assets\SDKs\SteamVR\Input\Editor\SteamVR_Input_Action_Single_PropertyEditor.cs" />
+    <Compile Include="Assets\SDKs\SteamVR\Input\Editor\SteamVR_Input_Action_Skeleton_PropertyEditor.cs" />
+    <Compile Include="Assets\SDKs\SteamVR\Input\Editor\SteamVR_Input_Action_Vector2_PropertyEditor.cs" />
+    <Compile Include="Assets\SDKs\SteamVR\Input\Editor\SteamVR_Input_Action_Vector3_PropertyEditor.cs" />
+    <Compile Include="Assets\SDKs\SteamVR\Input\Editor\SteamVR_Input_Action_Vibration_PropertyEditor.cs" />
+    <Compile Include="Assets\SDKs\SteamVR\Input\Editor\SteamVR_Input_ActionSetPropertyEditor.cs" />
+    <Compile Include="Assets\SDKs\SteamVR\Input\Editor\SteamVR_Input_EditorWindow.cs" />
+    <Compile Include="Assets\SDKs\SteamVR\Input\Editor\SteamVR_Input_Generator.cs" />
+    <Compile Include="Assets\SDKs\SteamVR\Input\Editor\SteamVR_Input_LiveWindow.cs" />
+    <Compile Include="Assets\SDKs\SteamVR\Input\Editor\SteamVR_Input_PostProcessBuild.cs" />
     <Reference Include="Unity.RenderPipelines.Core.Editor">
       <HintPath>Z:/CoolNamePending/CoolNamePending/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>
@@ -405,9 +405,6 @@
     <Reference Include="EasyRoads3Dv3">
       <HintPath>Z:/CoolNamePending/CoolNamePending/Assets/Models/EasyRoads3D/lib/EasyRoads3Dv3.dll</HintPath>
     </Reference>
-    <Reference Include="Valve.Newtonsoft.Json">
-      <HintPath>Z:/CoolNamePending/CoolNamePending/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>C:/Users/wreggit/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
@@ -428,6 +425,12 @@
     </Reference>
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+    </Reference>
+    <Reference Include="Valve.Newtonsoft.Json">
+      <HintPath>Z:/CoolNamePending/CoolNamePending/Assets/SDKs/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="DelaunayER">
+      <HintPath>Z:/CoolNamePending/CoolNamePending/Assets/Models/EasyRoads3D/lib/DelaunayER.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/mscorlib.dll</HintPath>
