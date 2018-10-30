@@ -3074,7 +3074,7 @@ MonoBehaviour:
     connection: 2
     blendType: 0
   indentVecs: []
-  sourcePrefab: {fileID: 1004286425583388}
+  sourcePrefab: {fileID: 0}
   prefabId: 51
   prioritySegments: 
   minNodeDistance: 3

@@ -5570,7 +5570,7 @@ MonoBehaviour:
   surfaceConnectionInt: 
   tCrossingBlendData: []
   indentVecs: []
-  sourcePrefab: {fileID: 1662397013494394}
+  sourcePrefab: {fileID: 0}
   prefabId: 52
   prioritySegments: 
   minNodeDistance: 3

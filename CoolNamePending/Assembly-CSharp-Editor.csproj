@@ -402,8 +402,14 @@
     <Reference Include="EasyRoads3Dv3Editor">
       <HintPath>Z:/CoolNamePending/CoolNamePending/Assets/Models/EasyRoads3D/Editor/EasyRoads3Dv3Editor.dll</HintPath>
     </Reference>
+    <Reference Include="DelaunayER">
+      <HintPath>Z:/CoolNamePending/CoolNamePending/Assets/Models/EasyRoads3D/lib/DelaunayER.dll</HintPath>
+    </Reference>
     <Reference Include="EasyRoads3Dv3">
       <HintPath>Z:/CoolNamePending/CoolNamePending/Assets/Models/EasyRoads3D/lib/EasyRoads3Dv3.dll</HintPath>
+    </Reference>
+    <Reference Include="Valve.Newtonsoft.Json">
+      <HintPath>Z:/CoolNamePending/CoolNamePending/Assets/SDKs/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>C:/Users/wreggit/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
@@ -425,12 +431,6 @@
     </Reference>
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
-    </Reference>
-    <Reference Include="Valve.Newtonsoft.Json">
-      <HintPath>Z:/CoolNamePending/CoolNamePending/Assets/SDKs/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="DelaunayER">
-      <HintPath>Z:/CoolNamePending/CoolNamePending/Assets/Models/EasyRoads3D/lib/DelaunayER.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/mscorlib.dll</HintPath>

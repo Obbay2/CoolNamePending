@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: DoubleYellowRoadMaterial
-  m_Shader: {fileID: 4800000, guid: 9e2e2a8e97d306e4d91720e1324356dd, type: 3}
+  m_Shader: {fileID: 4800000, guid: 4b6ecda8d5dd9514f8739bcfde806342, type: 3}
   m_ShaderKeywords: _NORMALMAP
   m_LightmapFlags: 6
   m_EnableInstancingVariants: 0
