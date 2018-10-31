@@ -24,29 +24,33 @@ public class Test : MonoBehaviour {
             guid = inst.InstanceGuid;
         }
 
-        var joystick = new Joystick(directInput, guid);
-        joystick.Acquire();
+        if (guid != Guid.Empty)
+        {
+            var joystick = new Joystick(directInput, guid);
+            joystick.Acquire();
 
-        //joystick.Properties.
+            //joystick.Properties.
 
-        var allEffects = joystick.GetEffects();
+            var allEffects = joystick.GetEffects();
 
-        foreach (var effectInfo in allEffects) {
-            velocityText.text += effectInfo.Name + "\n";
-            
+            foreach (var effectInfo in allEffects)
+            {
+                velocityText.text += effectInfo.Name + "\n";
+
+            }
+
+            velocityText.text += allEffects[0].StaticParameters;
+            velocityText.text += allEffects[0].DynamicParameters;
+
+            //velocityText.text += allEffects[0].Type;
+
+            ////Console.WriteLine("Effect available {0}", effectInfo.Name);
+            EffectParameters b = new EffectParameters();
+            velocityText.text += joystick.CreatedEffects;
+
+            ////Effect blah = new Effect(joystick, guid, b);
+            ////blah.Start();
         }
-
-        velocityText.text += allEffects[0].StaticParameters;
-        velocityText.text += allEffects[0].DynamicParameters;
-
-        //velocityText.text += allEffects[0].Type;
-
-        ////Console.WriteLine("Effect available {0}", effectInfo.Name);
-        EffectParameters b = new EffectParameters();
-        velocityText.text += joystick.CreatedEffects;
-
-        ////Effect blah = new Effect(joystick, guid, b);
-        ////blah.Start();
 
     }
 	
