@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+using SharpDX.DirectInput;
 
 namespace UnityStandardAssets.Vehicles.Car
 {
@@ -12,6 +13,18 @@ namespace UnityStandardAssets.Vehicles.Car
         public Transform SteeringWheelMesh;
         private CarController m_Car; // the car controller we want to use
         private static int SteerMultiplier = 450;
+
+        private void Start()
+        {
+            var directInput = new DirectInput();
+            var guid = Guid.Empty;
+
+            foreach (var inst in directInput.GetDevices(SharpDX.DirectInput.DeviceType.Driving, DeviceEnumerationFlags.AllDevices))
+            {
+                print(inst.InstanceName);
+                Console.WriteLine(inst.InstanceName);
+            }
+        }
 
 
         private void Awake()
@@ -38,7 +51,7 @@ namespace UnityStandardAssets.Vehicles.Car
                 float v = Input.GetAxis("Accelerator"); // -1 to 1 => 0 to 1
                 v = (v + 1) / 2;
                 SteeringWheelMesh.eulerAngles = new Vector3(SteeringWheelMesh.eulerAngles.x, SteeringWheelMesh.eulerAngles.y, h * SteerMultiplier);
-                print(v + " " + h + " " + footbrake);
+                //print(v + " " + h + " " + footbrake);
                 m_Car.Move(h, v, footbrake, 0);
             }
             else

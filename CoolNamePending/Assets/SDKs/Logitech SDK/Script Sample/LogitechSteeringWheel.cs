@@ -56,6 +56,7 @@ public class LogitechSteeringWheel : MonoBehaviour
     void Update()
     {
         //All the test functions are called on the first device plugged in(index = 0)
+        print(LogitechGSDK.LogiIsConnected(0));
         if (LogitechGSDK.LogiUpdate() && LogitechGSDK.LogiIsConnected(0))
         {
 

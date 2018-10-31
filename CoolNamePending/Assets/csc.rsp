@@ -1,0 +1,2 @@
+-r:Assets/Plugins/SharpDX.dll
+-r:Assets/Plugins/SharpDX.DirectInput.dll
