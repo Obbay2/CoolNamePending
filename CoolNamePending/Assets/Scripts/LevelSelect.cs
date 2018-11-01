@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PostProcessing;
+using UnityStandardAssets.Effects;
+using PostProcess;
 
 public class LevelSelect : MonoBehaviour {
 
     public GameObject PlayerVehicle;
-    private Rigidbody VehicleRb;
 
     public Transform Level1Start;
     public Transform Level2Start;
@@ -19,25 +21,26 @@ public class LevelSelect : MonoBehaviour {
     public GameObject DayCamera;
     public GameObject NightCamera;
 
+    public PostProcessingProfile profile;
+
     public int Level = 1;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         SetLevel(1);
-        VehicleRb = PlayerVehicle.GetComponent<Rigidbody>();
     }
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+
+    // Update is called once per frame
+    void FixedUpdate () {
         if (Input.GetKeyDown(KeyCode.F1))
         {
-            SetLevelDay();
+            SetLevel(1);
         }
         else if (Input.GetKeyDown(KeyCode.F2))
         {
-            SetLevelNight();
+            SetLevel(2);
         }
-        
     }
 
     public void SetLevel(int level)
@@ -60,7 +63,7 @@ public class LevelSelect : MonoBehaviour {
         RenderSettings.skybox = DaySkyBox;
         NightCamera.SetActive(false);
         DayCamera.SetActive(true);
-        VehicleRb.velocity = Vector3.zero;
+        PlayerVehicle.GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
 
     public void SetLevelNight()
@@ -72,6 +75,17 @@ public class LevelSelect : MonoBehaviour {
         RenderSettings.skybox = NightSkyBox;
         NightCamera.SetActive(true);
         DayCamera.SetActive(false);
-        VehicleRb.velocity = Vector3.zero;
+        PlayerVehicle.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        InvokeRepeating("BlinkRandomizer", 5, 7);
+    }
+
+    void BlinkRandomizer()
+    {
+        Invoke("Blink", Random.Range(1, 3));
+    }
+
+    void Blink()
+    {
+        NightCamera.GetComponent<BlinkEffect>().Blink();
     }
 }

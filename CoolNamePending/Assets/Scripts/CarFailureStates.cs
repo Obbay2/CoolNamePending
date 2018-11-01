@@ -9,13 +9,8 @@ public class CarFailureStates : MonoBehaviour {
     private LevelSelect selector;
     private CarController carController;
 
-    private Rigidbody rb;
-
-    private double MpSToMpH = 2.23693629;
-
     // Use this for initialization
     void Start () {
-        rb = GetComponent<Rigidbody>();
         selector = orchestrator.GetComponent<LevelSelect>();
         carController = GetComponent<CarController>();
     }
@@ -35,7 +30,6 @@ public class CarFailureStates : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        print(other.name);
         if (other.tag == "Water")
         {
             print("Dead; Drowned");

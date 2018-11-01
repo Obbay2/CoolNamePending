@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Eye Blink Effect\Scripts\BlinkEffect.cs" />
     <Compile Include="Assets\Models\EasyRoads3D\Scripts\ERVegetationStudio.cs" />
     <Compile Include="Assets\Models\EasyRoads3D\Scripts\runtimeScript.cs" />
     <Compile Include="Assets\Models\KEI - Speed Signs\Resources\Scripts\Control.cs" />
@@ -291,6 +292,7 @@
     <None Include="Assets\SDKs\SteamVR\Resources\SteamVR_ClearAll.shader" />
     <None Include="Assets\SDKs\SteamVR\InteractionSystem\Hints\Shaders\ControllerButtonHints.shader" />
     <None Include="Assets\PostProcessing\Editor Resources\UI\CurveBackground.shader" />
+    <None Include="Assets\Eye Blink Effect\Shaders\Blink Straight.shader" />
     <None Include="Assets\PostProcessing\Resources\Shaders\ScreenSpaceReflection.shader" />
     <None Include="Assets\SDKs\SteamVR\InteractionSystem\Samples\BuggyBuddy\Materials\LightCone.shader" />
     <None Include="Assets\PostProcessing\Utilities\CustomMotionTexture\Shaders\CustomMotionVectorTexture.shader" />
@@ -330,6 +332,7 @@
     <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.cginc" />
     <None Include="Assets\PostProcessing\Resources\Shaders\ScreenSpaceRaytrace.cginc" />
     <None Include="Assets\PostProcessing\Resources\Shaders\Bloom.shader" />
+    <None Include="Assets\Eye Blink Effect\Shaders\Blink Curved.shader" />
     <None Include="Assets\SDKs\SteamVR\Resources\SteamVR_SphericalProjection.shader" />
     <None Include="Assets\SDKs\SteamVR\Resources\SteamVR_AlphaOut.shader" />
     <None Include="Assets\Models\EasyRoads3D\shaders\ER Road Transparency.shader" />
