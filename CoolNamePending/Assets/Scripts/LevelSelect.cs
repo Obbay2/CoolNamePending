@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class LevelSelect : MonoBehaviour {
 
-    public Transform PlayerVehicle;
+    public GameObject PlayerVehicle;
+    private Rigidbody VehicleRb;
 
     public Transform Level1Start;
     public Transform Level2Start;
@@ -18,10 +19,13 @@ public class LevelSelect : MonoBehaviour {
     public GameObject DayCamera;
     public GameObject NightCamera;
 
+    public int Level = 1;
+
 	// Use this for initialization
 	void Start () {
-		
-	}
+        SetLevel(1);
+        VehicleRb = PlayerVehicle.GetComponent<Rigidbody>();
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -33,27 +37,41 @@ public class LevelSelect : MonoBehaviour {
         {
             SetLevelNight();
         }
+        
+    }
+
+    public void SetLevel(int level)
+    {
+        switch (level)
+        {
+            case 1: SetLevelDay(); break;
+            case 2: SetLevelNight(); break;
+        }
+
+        Level = level;
     }
 
     public void SetLevelDay()
     {
-        PlayerVehicle.eulerAngles = Level1Start.eulerAngles;
+        PlayerVehicle.transform.eulerAngles = Level1Start.eulerAngles;
         PlayerVehicle.transform.position = Level1Start.transform.position;
         NightObjects.SetActive(false);
         DayObjects.SetActive(true);
         RenderSettings.skybox = DaySkyBox;
         NightCamera.SetActive(false);
         DayCamera.SetActive(true);
+        VehicleRb.velocity = Vector3.zero;
     }
 
     public void SetLevelNight()
     {
-        PlayerVehicle.eulerAngles = Level2Start.eulerAngles;
+        PlayerVehicle.transform.eulerAngles = Level2Start.eulerAngles;
         PlayerVehicle.transform.position = Level2Start.transform.position;
         NightObjects.SetActive(true);
         DayObjects.SetActive(false);
         RenderSettings.skybox = NightSkyBox;
         NightCamera.SetActive(true);
         DayCamera.SetActive(false);
+        VehicleRb.velocity = Vector3.zero;
     }
 }

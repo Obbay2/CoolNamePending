@@ -1,20 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Vehicles.Car;
 
 public class CarFailureStates : MonoBehaviour {
 
+    public GameObject orchestrator;
+    private LevelSelect selector;
+    private CarController carController;
 
     private Rigidbody rb;
-    private CarReset carReset;
 
     private double MpSToMpH = 2.23693629;
 
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody>();
-        carReset = GetComponent<CarReset>();
-	}
+        selector = orchestrator.GetComponent<LevelSelect>();
+        carController = GetComponent<CarController>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -23,7 +27,7 @@ public class CarFailureStates : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.relativeVelocity.magnitude * MpSToMpH > 20) // We don't really want magnitude here, this will say we died if we hit vertically at slow speed due to fast forward trajectory
+        if (carController.CurrentSpeed > 20) // We don't really want magnitude here, this will say we died if we hit vertically at slow speed due to fast forward trajectory
         {
             print("Dead; Collision");
         }
@@ -31,10 +35,15 @@ public class CarFailureStates : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
+        print(other.name);
         if (other.tag == "Water")
         {
             print("Dead; Drowned");
-            carReset.Reset();
+            selector.SetLevel(selector.Level);
+        }
+        else if (other.name == "Level2Trigger" && selector.Level < 2)
+        {
+            selector.SetLevel(2);
         }
     }
 }
