@@ -109,6 +109,7 @@
     <Compile Include="Assets\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
     <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
+    <Compile Include="Assets\Scripts\BetterWaypointFollower.cs" />
     <Compile Include="Assets\Scripts\CarFailureStates.cs" />
     <Compile Include="Assets\Scripts\CarReset.cs" />
     <Compile Include="Assets\Scripts\CarUI.cs" />
