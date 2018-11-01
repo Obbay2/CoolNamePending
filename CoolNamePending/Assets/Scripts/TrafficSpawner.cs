@@ -14,7 +14,7 @@ public class TrafficSpawner : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Spawn() {
         /*
 		 * If we decide to have multiple spawn points then we just uncomment the code below
 		 * int spawnPointIdx = Random.Range(0, spawnPoints.Length);
