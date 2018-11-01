@@ -345,25 +345,28 @@
       <HintPath>Assets/SDKs/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
-      <HintPath>C:/Users/wreggit/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
+      <HintPath>C:/Users/Wreggit/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
-      <HintPath>C:/Users/wreggit/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
+      <HintPath>C:/Users/Wreggit/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Analytics">
-      <HintPath>C:/Users/wreggit/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/Editor/UnityEditor.Analytics.dll</HintPath>
+      <HintPath>C:/Users/Wreggit/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/Editor/UnityEditor.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Purchasing">
-      <HintPath>C:/Users/wreggit/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
+      <HintPath>C:/Users/Wreggit/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.NRefactory">
-      <HintPath>C:/Users/wreggit/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.render-pipelines.core@3.0.0-preview/CoreRP/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
+      <HintPath>C:/Users/Wreggit/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.render-pipelines.core@3.0.0-preview/CoreRP/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
-      <HintPath>C:/Users/wreggit/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/Wreggit/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.DirectInput 1">
+      <HintPath>Assets/Plugins/SharpDX.DirectInput 1.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\mscorlib.dll</HintPath>
@@ -711,13 +714,13 @@
       <HintPath>C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\unityscript\Boo.Lang.dll</HintPath>
     </Reference>
     <Reference Include="SharpDX">
-      <HintPath>Assets\SharpDX.dll</HintPath>
-    </Reference>
-    <Reference Include="SharpDX.XInput">
-      <HintPath>Assets\SharpDX.XInput.dll</HintPath>
+      <HintPath>Assets\Plugins\SharpDX.dll</HintPath>
     </Reference>
     <Reference Include="SharpDX.DirectInput">
-      <HintPath>Assets\SharpDX.DirectInput.dll</HintPath>
+      <HintPath>Assets\Plugins\SharpDX.DirectInput.dll</HintPath>
+    </Reference>
+    <Reference Include="SlimDX">
+      <HintPath>Assets\Plugins\SlimDX.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -810,6 +813,7 @@
     <None Include="Assets\Models\EasyRoads3D\shaders\EasyRoads3D - Unity 2018 Standard.shader" />
     <None Include="Assets\Models\EasyRoads3D\shaders\EasyRoads3D-Surface-Offset.shader" />
     <None Include="Assets\Models\Stylized Forest Lite\Readme.txt" />
+    <None Include="Assets\Plugins\SharpDX.DirectInput.xml" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramRender.shader" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\ParadeRender.shader" />
@@ -864,8 +868,6 @@
     <None Include="Assets\SDKs\SteamVR\Resources\SteamVR_Fade.shader" />
     <None Include="Assets\SDKs\SteamVR\Resources\SteamVR_SphericalProjection.shader" />
     <None Include="Assets\SDKs\SteamVR\readme.txt" />
-    <None Include="Assets\SharpDX.DirectInput.xml" />
-    <None Include="Assets\SharpDX.XInput.xml" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\Standard Assets\Effects\ImageEffects\Readme.txt" />

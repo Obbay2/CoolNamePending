@@ -9,17 +9,17 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1347499978919948}
+  m_RootGameObject: {fileID: 1768709797206782}
   m_IsPrefabAsset: 1
---- !u!1 &1347499978919948
+--- !u!1 &1768709797206782
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4592086092691400}
-  - component: {fileID: 114201973971296254}
+  - component: {fileID: 4730050410726170}
+  - component: {fileID: 114187712818157084}
   m_Layer: 0
   m_Name: ERSideObjectsLog
   m_TagString: Untagged
@@ -27,12 +27,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4592086092691400
+--- !u!4 &4730050410726170
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1347499978919948}
+  m_GameObject: {fileID: 1768709797206782}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,12 +40,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114201973971296254
+--- !u!114 &114187712818157084
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1347499978919948}
+  m_GameObject: {fileID: 1768709797206782}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 353395545, guid: f56d46228aee4734f9114056c53bb57e, type: 3}
@@ -56,8 +56,8 @@ MonoBehaviour:
   roadPresets:
   - roadTypeName: Default Road
     id: 1
-    timestamp: 1481875527.1197023
-    roadWidth: 5
+    timestamp: 1520960221.8587415
+    roadWidth: 6
     faceDistance: 2
     angleTreshold: 45
     uvTiling: 1
@@ -74,12 +74,18 @@ MonoBehaviour:
       rightSidewalkOffset: 0
       selectedNode: 0
       selectedLaneNode: 0
-    roadShape: []
+    roadShape:
+    - {x: -3, y: 0}
+    - {x: 3, y: 0}
     roadShapeExt: []
     doConnectionTri: 
-    roadShapeUVs: []
+    roadShapeUVs:
+    - 0
+    - 1
     roadShapeExtUVs: []
-    roadShapeUVs2: []
+    roadShapeUVs2:
+    - 0
+    - 1
     hardEdge: 
     roadShapeVecsString: 
     defaultSidewalk: 0
@@ -98,55 +104,7 @@ MonoBehaviour:
     subSegments: 1
     soData: []
     soDataExt: []
-    soDataLog:
-    - id: 1439970267.5877771
-      active: 0
-    - id: 4
-      active: 0
-    - id: 3
-      active: 0
-    - id: 1422295189.0945766
-      active: 0
-    - id: 1422205435.6632535
-      active: 0
-    - id: 1422205525.016364
-      active: 0
-    - id: 1422201194.1206512
-      active: 0
-    - id: 1422201446.4010808
-      active: 0
-    - id: 1
-      active: 0
-    - id: 2
-      active: 0
-    - id: 1422283879.5397072
-      active: 0
-    - id: 1422283828.2437732
-      active: 0
-    - id: 1422360239.977985
-      active: 0
-    - id: 1422360127.2965398
-      active: 0
-    - id: 1477318170.983913
-      active: 0
-    - id: 1422283787.149423
-      active: 0
-    - id: 1422280172.2846642
-      active: 0
-    - id: 1454519638.6173558
-      active: 0
-    - id: 6
-      active: 0
-    - id: 5
-      active: 0
-    - id: 1438703293.2729063
-      active: 0
-    - id: 1454521147.777675
-      active: 0
-    - id: 1424540279.96035
-      active: 0
-    - id: 1424540150.6289527
-      active: 0
+    soDataLog: []
     layer: 0
     tag: 
     splatMapActive: 0
