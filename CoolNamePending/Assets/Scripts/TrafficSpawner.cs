@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class TrafficSpawner : MonoBehaviour {
 
-    public GameObject car;          // The car prefab to be spawned.
+    private int iterator = 0;       // The iterator count.
+    public GameObject[] cars;       // The car prefab to be spawned.
     public float spawnTime = 3f;    // How long between each spawn.
-    public Transform[] spawnPoints;    // The spawn point the car can spawn from.
+    public Transform spawnPoint;    // The spawn point the car can spawn from.
 
 	// Use this for initialization
 	void Start () {
@@ -15,14 +16,9 @@ public class TrafficSpawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Spawn() {
-        /*
-		 * If we decide to have multiple spawn points then we just uncomment the code below
-		 * int spawnPointIdx = Random.Range(0, spawnPoints.Length);
-		 * 
-		 */
-
-        int spawnPointIdx = 0;
-
-        Instantiate(car, spawnPoints[spawnPointIdx].position, spawnPoints[spawnPointIdx].rotation);
+        if (iterator < cars.Length) {
+            Instantiate(cars[iterator], spawnPoint.position, spawnPoint.rotation);
+            iterator++;
+        }
 	}
 }
