@@ -8,18 +8,19 @@ using PostProcess;
 public class LevelSelect : MonoBehaviour {
 
     public GameObject PlayerVehicle;
+    public GameObject Terrain;
+    public GameObject RoadNetwork;
 
     public Transform Level1Start;
     public Transform Level2Start;
 
-    public GameObject DayObjects;
-    public GameObject NightObjects;
+    public static int numberOfLevels = 4;
 
-    public Material DaySkyBox;
-    public Material NightSkyBox;
+    [SerializeField] private GameObject[] levelObjects = new GameObject[numberOfLevels]; // Level 0: Game Start UI, Level 1: Day time, Level 2: Night time, Level 3: Ending
 
-    public GameObject DayCamera;
-    public GameObject NightCamera;
+    [SerializeField] private Material[] levelSkybox = new Material[numberOfLevels]; // Level 0: Game Start UI, Level 1: Day time, Level 2: Night time, Level 3: Ending
+
+    [SerializeField] public GameObject[] levelCameras = new GameObject[numberOfLevels]; // Level 0: Game Start UI, Level 1: Day time, Level 2: Night time, Level 3: Ending
 
     public PostProcessingProfile profile;
 
@@ -35,11 +36,19 @@ public class LevelSelect : MonoBehaviour {
     void FixedUpdate () {
         if (Input.GetKeyDown(KeyCode.F1))
         {
-            SetLevel(1);
+            SetLevel(0);
         }
         else if (Input.GetKeyDown(KeyCode.F2))
         {
+            SetLevel(1);
+        }
+        else if (Input.GetKeyDown(KeyCode.F3))
+        {
             SetLevel(2);
+        }
+        else if (Input.GetKeyDown(KeyCode.F4))
+        {
+            SetLevel(3);
         }
     }
 
@@ -47,36 +56,68 @@ public class LevelSelect : MonoBehaviour {
     {
         switch (level)
         {
-            case 1: SetLevelDay(); break;
-            case 2: SetLevelNight(); break;
+            case 0:
+                PlayerVehicle.SetActive(false);
+                Terrain.SetActive(false);
+                RoadNetwork.SetActive(false);
+                break;
+            case 1:
+                PlayerVehicle.SetActive(true);
+                Terrain.SetActive(true);
+                RoadNetwork.SetActive(true);
+                SetVehiclePosition(Level1Start);
+                break;
+            case 2:
+                PlayerVehicle.SetActive(true);
+                Terrain.SetActive(true);
+                RoadNetwork.SetActive(true);
+                SetVehiclePosition(Level2Start);
+                CancelInvoke("BlinkRandomizer");
+                CancelInvoke("Blink");
+                InvokeRepeating("BlinkRandomizer", 5, 7);
+                break;
+            case 3:
+                PlayerVehicle.SetActive(false);
+                Terrain.SetActive(false);
+                RoadNetwork.SetActive(false);
+                break;
         }
 
+        EnableObjects(level, levelCameras);
+        EnableObjects(level, levelObjects);
+        SetSkybox(level);
         Level = level;
     }
 
-    public void SetLevelDay()
+    private void EnableObjects(int level, GameObject[] objects)
     {
-        PlayerVehicle.transform.eulerAngles = Level1Start.eulerAngles;
-        PlayerVehicle.transform.position = Level1Start.transform.position;
-        NightObjects.SetActive(false);
-        DayObjects.SetActive(true);
-        RenderSettings.skybox = DaySkyBox;
-        NightCamera.SetActive(false);
-        DayCamera.SetActive(true);
+        if (objects[level] != null)
+        {
+            objects[level].SetActive(true); // We do this first to make sure we don't have weird camera flicker
+        }
+        
+        for (int i = 0; i < numberOfLevels; i++)
+        {
+            if (i != level && objects[i] != null)
+            {
+                objects[i].SetActive(false);
+            }
+        }
+    }
+
+    private void SetVehiclePosition(Transform t)
+    {
+        PlayerVehicle.transform.eulerAngles = t.eulerAngles;
+        PlayerVehicle.transform.position = t.transform.position;
         PlayerVehicle.GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
 
-    public void SetLevelNight()
+    private void SetSkybox(int level)
     {
-        PlayerVehicle.transform.eulerAngles = Level2Start.eulerAngles;
-        PlayerVehicle.transform.position = Level2Start.transform.position;
-        NightObjects.SetActive(true);
-        DayObjects.SetActive(false);
-        RenderSettings.skybox = NightSkyBox;
-        NightCamera.SetActive(true);
-        DayCamera.SetActive(false);
-        PlayerVehicle.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        InvokeRepeating("BlinkRandomizer", 5, 7);
+        if(levelSkybox[level] != null)
+        {
+            RenderSettings.skybox = levelSkybox[level];
+        }
     }
 
     void BlinkRandomizer()
@@ -86,6 +127,6 @@ public class LevelSelect : MonoBehaviour {
 
     void Blink()
     {
-        NightCamera.GetComponent<BlinkEffect>().Blink();
+        levelCameras[2].GetComponent<BlinkEffect>().Blink();
     }
 }

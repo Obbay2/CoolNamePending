@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
-using SharpDX.DirectInput;
 
 namespace UnityStandardAssets.Vehicles.Car
 {
