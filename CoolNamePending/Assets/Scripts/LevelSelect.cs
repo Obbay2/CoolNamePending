@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.PostProcessing;
 using UnityStandardAssets.Effects;
 using PostProcess;
+using Valve.VR;
 
 public class LevelSelect : MonoBehaviour {
 
@@ -25,6 +26,12 @@ public class LevelSelect : MonoBehaviour {
     public PostProcessingProfile profile;
 
     public int Level = 1;
+
+    public delegate void LevelChangedHandler();
+    public event LevelChangedHandler OnLevelChanged;
+
+    public int FadeOutTime = 1;
+    public int FadeInTime = 5;
 
     // Use this for initialization
     void Start()
@@ -54,6 +61,10 @@ public class LevelSelect : MonoBehaviour {
 
     public void SetLevel(int level)
     {
+        OnLevelChanged();
+        SteamVR_Fade.View(Color.black, FadeOutTime);
+        Invoke("FadeIn", FadeOutTime);
+
         switch (level)
         {
             case 0:
@@ -83,6 +94,7 @@ public class LevelSelect : MonoBehaviour {
                 break;
         }
 
+        
         EnableObjects(level, levelCameras);
         EnableObjects(level, levelObjects);
         SetSkybox(level);
@@ -118,6 +130,11 @@ public class LevelSelect : MonoBehaviour {
         {
             RenderSettings.skybox = levelSkybox[level];
         }
+    }
+
+    private void FadeIn()
+    {
+        SteamVR_Fade.View(Color.clear, FadeInTime);
     }
 
     void BlinkRandomizer()
