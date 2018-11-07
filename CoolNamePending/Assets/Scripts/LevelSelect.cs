@@ -27,7 +27,7 @@ public class LevelSelect : MonoBehaviour {
 
     public int Level = 1;
 
-    public delegate void LevelChangedHandler();
+    public delegate void LevelChangedHandler(int level);
     public event LevelChangedHandler OnLevelChanged;
 
     public int FadeOutTime = 1;
@@ -61,7 +61,10 @@ public class LevelSelect : MonoBehaviour {
 
     public void SetLevel(int level)
     {
-        OnLevelChanged();
+        if (OnLevelChanged != null)
+        {
+            OnLevelChanged(level);
+        }
         SteamVR_Fade.View(Color.black, FadeOutTime);
         Invoke("FadeIn", FadeOutTime);
 
