@@ -11,6 +11,7 @@ public class LevelSelect : MonoBehaviour {
     public GameObject Terrain;
     public GameObject RoadNetwork;
 
+    public Transform Level0Start;
     public Transform Level1Start;
     public Transform Level2Start;
 
