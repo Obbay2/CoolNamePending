@@ -116,6 +116,7 @@
     <Compile Include="Assets\Scripts\CopLightChange.cs" />
     <Compile Include="Assets\Scripts\LevelSelect.cs" />
     <Compile Include="Assets\Scripts\RadioScript.cs" />
+    <Compile Include="Assets\Scripts\StartLevel.cs" />
     <Compile Include="Assets\Scripts\TrafficSpawner.cs" />
     <Compile Include="Assets\SDKs\SteamVR\Extras\SteamVR_GazeTracker.cs" />
     <Compile Include="Assets\SDKs\SteamVR\Extras\SteamVR_TestThrow.cs" />
@@ -292,6 +293,7 @@
     <None Include="Assets\PostProcessing\Resources\Shaders\Tonemapping.cginc" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
     <None Include="Assets\PostProcessing\Resources\Shaders\Uber.shader" />
+    <None Include="Assets\Fonts\Jupiter\LICENSE.txt" />
     <None Include="Assets\SDKs\SteamVR\InteractionSystem\Teleport\Shaders\Highlight.shader" />
     <None Include="Assets\PostProcessing\Resources\Shaders\Blit.shader" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\WaveformRender.shader" />
@@ -303,6 +305,7 @@
     <None Include="Assets\Models\EasyRoads3D\shaders\EasyRoads3D-Surface-Offset.shader" />
     <None Include="Assets\Models\EasyRoads3D\lib\DelaunayER.txt" />
     <None Include="Assets\PostProcessing\Resources\Bluenoise64\LICENSE.txt" />
+    <None Include="Assets\Models\Textures and Sprites\SF UI\Background\LICENSE.txt" />
     <None Include="Assets\PostProcessing\Resources\Shaders\BuiltinDebugViews.shader" />
     <None Include="Assets\PostProcessing\Resources\Shaders\Common.cginc" />
     <None Include="Assets\PostProcessing\Resources\Bluenoise64\COPYING.txt" />
