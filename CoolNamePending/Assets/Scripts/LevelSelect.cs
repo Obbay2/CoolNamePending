@@ -33,10 +33,15 @@ public class LevelSelect : MonoBehaviour {
     public int FadeOutTime = 1;
     public int FadeInTime = 5;
 
+    private CarFailureStates carStates;
+
     // Use this for initialization
     void Start()
     {
-        SetLevel(1);
+        SetLevel(0);
+        carStates = PlayerVehicle.GetComponent<CarFailureStates>();
+        carStates.OnCollision += PlayerVehicleCollisionHandler;
+        carStates.OnLevelTriggerEntered += PlayerVehicleLevelChangeHandler;
     }
 
     // Update is called once per frame
@@ -61,10 +66,11 @@ public class LevelSelect : MonoBehaviour {
 
     public void SetLevel(int level)
     {
-        if (OnLevelChanged != null)
-        {
-            OnLevelChanged(level);
-        }
+        EnableObjects(level, levelCameras);
+        EnableObjects(level, levelObjects);
+        SetSkybox(level);
+        Level = level;
+        
         SteamVR_Fade.View(Color.black, FadeOutTime);
         Invoke("FadeIn", FadeOutTime);
 
@@ -97,11 +103,11 @@ public class LevelSelect : MonoBehaviour {
                 break;
         }
 
-        
-        EnableObjects(level, levelCameras);
-        EnableObjects(level, levelObjects);
-        SetSkybox(level);
-        Level = level;
+        if (OnLevelChanged != null)
+        {
+            print("Level Changing Fire");
+            OnLevelChanged(level);
+        }
     }
 
     private void EnableObjects(int level, GameObject[] objects)
@@ -125,6 +131,7 @@ public class LevelSelect : MonoBehaviour {
         PlayerVehicle.transform.eulerAngles = t.eulerAngles;
         PlayerVehicle.transform.position = t.transform.position;
         PlayerVehicle.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        PlayerVehicle.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
     }
 
     private void SetSkybox(int level)
@@ -138,6 +145,30 @@ public class LevelSelect : MonoBehaviour {
     private void FadeIn()
     {
         SteamVR_Fade.View(Color.clear, FadeInTime);
+    }
+
+    private void PlayerVehicleCollisionHandler()
+    {
+        if (Level == 1)
+        {
+            SetLevel(1);
+        }
+        else if (Level == 2)
+        {
+            SetLevel(3);
+        }
+    }
+
+    private void PlayerVehicleLevelChangeHandler(string levelTriggerName)
+    {
+        if (levelTriggerName == "Level2Trigger" && Level == 1)
+        {
+            SetLevel(2);
+        }
+        else if (levelTriggerName == "Level3Trigger" && Level == 2)
+        {
+            SetLevel(3);
+        }
     }
 
     void BlinkRandomizer()

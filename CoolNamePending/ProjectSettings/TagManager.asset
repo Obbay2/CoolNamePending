@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Tree
   - Water
+  - OtherCar
+  - Terrain
+  - Road
   layers:
   - Default
   - TransparentFX
