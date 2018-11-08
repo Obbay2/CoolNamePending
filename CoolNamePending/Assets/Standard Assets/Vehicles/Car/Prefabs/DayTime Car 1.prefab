@@ -90,7 +90,6 @@ GameObject:
   - component: {fileID: 114262725316254754}
   - component: {fileID: 114459822719730514}
   - component: {fileID: 114216375871699146}
-  - component: {fileID: 114363245622350658}
   - component: {fileID: 114802289073733250}
   m_Layer: 0
   m_Name: DayTime Car 1
@@ -2758,25 +2757,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carController: {fileID: 114459822719730514}
---- !u!114 &114363245622350658
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1235310218012504}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5cb22d331ef7d64796f917c6a455a32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  circuit: {fileID: 0}
-  lookAheadForTargetOffset: 15
-  lookAheadForTargetFactor: 0.1
-  lookAheadForSpeedOffset: 20
-  lookAheadForSpeedFactor: 0.5
-  progressStyle: 0
-  pointToPointThreshold: 0.2
-  target: {fileID: 4946719965074914}
 --- !u!114 &114459822719730514
 MonoBehaviour:
   m_ObjectHideFlags: 1

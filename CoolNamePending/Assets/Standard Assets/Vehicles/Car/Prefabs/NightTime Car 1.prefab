@@ -209,7 +209,6 @@ GameObject:
   - component: {fileID: 114594837585153820}
   - component: {fileID: 114132377531121502}
   - component: {fileID: 114134744804403164}
-  - component: {fileID: 114320145967466020}
   - component: {fileID: 114436752401916074}
   m_Layer: 0
   m_Name: NightTime Car 1
@@ -2365,25 +2364,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheel: {fileID: 1938785643867612}
---- !u!114 &114320145967466020
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1623195772640364}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5cb22d331ef7d64796f917c6a455a32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  circuit: {fileID: 0}
-  lookAheadForTargetOffset: 15
-  lookAheadForTargetFactor: 0.1
-  lookAheadForSpeedOffset: 20
-  lookAheadForSpeedFactor: 0.5
-  progressStyle: 0
-  pointToPointThreshold: 0.2
-  target: {fileID: 4399724654748738}
 --- !u!114 &114434016940006942
 MonoBehaviour:
   m_ObjectHideFlags: 1
