@@ -155,12 +155,14 @@ namespace UnityStandardAssets.Vehicles.Car
 
             //Set the handbrake.
             //Assuming that wheels 2 and 3 are the rear wheels.
-            if (handbrake > 0f)
-            {
+            //if (handbrake > 0f)
+            //{
+                print("Inside " + handbrake);
                 var hbTorque = handbrake*m_MaxHandbrakeTorque;
+                print("Applied torque " + hbTorque);
                 m_WheelColliders[2].brakeTorque = hbTorque;
                 m_WheelColliders[3].brakeTorque = hbTorque;
-            }
+            //}
 
 
             CalculateRevs();
@@ -219,6 +221,7 @@ namespace UnityStandardAssets.Vehicles.Car
 
             }
 
+            
             for (int i = 0; i < 4; i++)
             {
                 if (CurrentSpeed > 5 && Vector3.Angle(transform.forward, m_Rigidbody.velocity) < 50f)

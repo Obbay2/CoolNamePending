@@ -14,10 +14,16 @@ namespace UnityStandardAssets.Vehicles.Car
         private CarController m_Car; // the car controller we want to use
         private static int SteerMultiplier = 450;
 
+        private bool hasTouchedAccelerator;
+        private float initialThrottle;
+
         private void Awake()
         {
             // get the car controller
             m_Car = GetComponent<CarController>();
+            hasTouchedAccelerator = false;
+            initialThrottle = Input.GetAxis("Accelerator");
+            print(hasTouchedAccelerator + " " + initialThrottle);
         }
 
 
@@ -38,12 +44,25 @@ namespace UnityStandardAssets.Vehicles.Car
                 
                 if (Pedals)
                 {
-                    float footbrake = Input.GetAxis("Footbrake"); // -1 to 1 => 0 to 1
+                    float footbrake = Input.GetAxis("Footbrake"); // -1 to 1 => 0 to -1
+                    print("Unscaled " + footbrake);
+                    //footbrake = -((footbrake + 1) / 2);
                     footbrake = (footbrake + 1) / 2;
-                    float v = Input.GetAxis("Accelerator"); // -1 to 1 => 0 to 1
-                    v = (v + 1) / 2;
-                    //print(v + " " + h + " " + footbrake);
-                    m_Car.Move(h, v, footbrake, 0);
+                    float v = Input.GetAxis("Accelerator"); // -1 to 1 => 0 to 1                    
+
+                    if (v == initialThrottle && !hasTouchedAccelerator)
+                    {
+                        v = 0;
+                    }
+                    else
+                    {
+                        hasTouchedAccelerator = true;
+                        v = (v + 1) / 2;
+                    }
+
+                    m_Car.Move(h, v, 0, footbrake);
+                    print(v + " " + h + " " + footbrake + " " + hasTouchedAccelerator);
+
                 }
                 else
                 {
