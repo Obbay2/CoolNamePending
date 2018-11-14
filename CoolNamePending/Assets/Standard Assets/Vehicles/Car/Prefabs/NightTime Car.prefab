@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 114134744804403164}
   - component: {fileID: 114436752401916074}
   m_Layer: 0
-  m_Name: NightTime Car 1
+  m_Name: NightTime Car
   m_TagString: OtherCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2472,10 +2472,29 @@ MonoBehaviour:
   - 1
   - 1
   - 1
-  - 0.7
-  - 0.7
-  - 0.7
-  - 0.7
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
   - 1
   - 1
   - 1
@@ -2517,7 +2536,7 @@ MonoBehaviour:
   - 1
   - 1
   invokeMethods: 1
-  invokeWaypointEnabled: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001
+  invokeWaypointEnabled: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   invokeNames:
   - 
   - 
@@ -2614,8 +2633,46 @@ MonoBehaviour:
   - 
   - 
   - 
-  - ResetWaypointCircuit
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   invokeDelay:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   - 0
   - 0
   - 0
@@ -2808,7 +2865,26 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 114594837585153820}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114612999774326062
 MonoBehaviour:
   m_ObjectHideFlags: 1

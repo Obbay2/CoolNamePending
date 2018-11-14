@@ -157,9 +157,9 @@ namespace UnityStandardAssets.Vehicles.Car
             //Assuming that wheels 2 and 3 are the rear wheels.
             //if (handbrake > 0f)
             //{
-                print("Inside " + handbrake);
+                //print("Inside " + handbrake);
                 var hbTorque = handbrake*m_MaxHandbrakeTorque;
-                print("Applied torque " + hbTorque);
+                //print("Applied torque " + hbTorque);
                 m_WheelColliders[2].brakeTorque = hbTorque;
                 m_WheelColliders[3].brakeTorque = hbTorque;
             //}

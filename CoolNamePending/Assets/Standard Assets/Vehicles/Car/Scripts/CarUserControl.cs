@@ -23,7 +23,7 @@ namespace UnityStandardAssets.Vehicles.Car
             m_Car = GetComponent<CarController>();
             hasTouchedAccelerator = false;
             initialThrottle = Input.GetAxis("Accelerator");
-            print(hasTouchedAccelerator + " " + initialThrottle);
+            //print(hasTouchedAccelerator + " " + initialThrottle);
         }
 
 

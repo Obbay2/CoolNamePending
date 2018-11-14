@@ -20,8 +20,14 @@ public class CarFailureStates : MonoBehaviour {
 
     private bool OnRoad = true;
 
+    private Rigidbody rb;
+    private float lastVelocity;
+
+
     // Use this for initialization
     void Start () {
+        rb = GetComponent<Rigidbody>();
+        lastVelocity = rb.velocity.magnitude;
     }
 	
 	// Update is called once per frame
@@ -29,17 +35,24 @@ public class CarFailureStates : MonoBehaviour {
         GroundCheck();
 	}
 
-    void OnCollisionEnter(Collision col)
+    void FixedUpdate()
     {
-        if(col.collider.tag == "Terrain" && col.impulse.magnitude > 20000)
+        print("Current: " + rb.velocity.magnitude * 2.23693629f + " Last: " + lastVelocity);
+        if(rb.velocity.magnitude * 2.23693629f < lastVelocity - 5)
         {
-            print("Collided with tree");
+            print("Crashed!");
             if (OnCollision != null)
             {
                 OnCollision();
             }
         }
-        else if(col.collider.tag == "OtherCar")
+        lastVelocity = rb.velocity.magnitude * 2.23693629f;
+
+    }
+
+    void OnCollisionEnter(Collision col)
+    {
+        if(col.collider.tag == "OtherCar")
         {
             print("Collided with other car");
             if (OnCollision != null)

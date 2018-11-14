@@ -35,13 +35,21 @@ public class LevelSelect : MonoBehaviour {
 
     private CarFailureStates carStates;
 
+    private bool HMDActive = false;
+
     // Use this for initialization
     void Start()
     {
+        HMDActive = OpenVR.IsHmdPresent();
         StartCoroutine(SetLevel(0, false));
         carStates = PlayerVehicle.GetComponent<CarFailureStates>();
         carStates.OnCollision += PlayerVehicleCollisionHandler;
         carStates.OnLevelTriggerEntered += PlayerVehicleLevelChangeHandler;
+
+        RenderSettings.ambientSkyColor = new Color32(54, 58, 66, 0);
+        RenderSettings.ambientEquatorColor = new Color32(29, 32, 34, 0);
+        RenderSettings.ambientGroundColor = new Color32(12, 11, 9, 0);
+        RenderSettings.fogDensity = 0.005f;
     }
 
     // Update is called once per frame
@@ -66,13 +74,14 @@ public class LevelSelect : MonoBehaviour {
 
     public IEnumerator SetLevel(int level, bool delay)
     {
-        if (delay)
+        if (delay && HMDActive)
         {
             SteamVR_Fade.View(Color.black, FadeOutTime);
             Invoke("FadeIn", FadeOutTime);
             yield return new WaitForSeconds(FadeOutTime);
         }
 
+        RenderSettings.fog = false;
         EnableObjects(level, levelCameras);
         EnableObjects(level, levelObjects);
         SetSkybox(level);
@@ -90,6 +99,7 @@ public class LevelSelect : MonoBehaviour {
                 Terrain.SetActive(true);
                 RoadNetwork.SetActive(true);
                 SetVehiclePosition(Level1Start);
+                RenderSettings.ambientIntensity = 0;
                 break;
             case 2:
                 PlayerVehicle.SetActive(true);
@@ -99,6 +109,8 @@ public class LevelSelect : MonoBehaviour {
                 CancelInvoke("BlinkRandomizer");
                 CancelInvoke("Blink");
                 InvokeRepeating("BlinkRandomizer", 5, 7);
+                RenderSettings.ambientIntensity = -2;
+                RenderSettings.fog = true;
                 break;
             case 3:
                 PlayerVehicle.SetActive(false);
