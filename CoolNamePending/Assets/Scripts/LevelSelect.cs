@@ -25,7 +25,7 @@ public class LevelSelect : MonoBehaviour {
 
     public PostProcessingProfile profile;
 
-    public int Level = 1;
+    public int Level = 0;
 
     public delegate void LevelChangedHandler(int level);
     public event LevelChangedHandler OnLevelChanged;
@@ -41,7 +41,7 @@ public class LevelSelect : MonoBehaviour {
     void Start()
     {
         HMDActive = OpenVR.IsHmdPresent();
-        StartCoroutine(SetLevel(0, false));
+        StartCoroutine(SetLevel(Level, false));
         carStates = PlayerVehicle.GetComponent<CarFailureStates>();
         carStates.OnCollision += PlayerVehicleCollisionHandler;
         carStates.OnLevelTriggerEntered += PlayerVehicleLevelChangeHandler;
@@ -49,7 +49,7 @@ public class LevelSelect : MonoBehaviour {
         RenderSettings.ambientSkyColor = new Color32(54, 58, 66, 0);
         RenderSettings.ambientEquatorColor = new Color32(29, 32, 34, 0);
         RenderSettings.ambientGroundColor = new Color32(12, 11, 9, 0);
-        RenderSettings.fogDensity = 0.005f;
+        RenderSettings.fog = true;
     }
 
     // Update is called once per frame
@@ -81,7 +81,6 @@ public class LevelSelect : MonoBehaviour {
             yield return new WaitForSeconds(FadeOutTime);
         }
 
-        RenderSettings.fog = false;
         EnableObjects(level, levelCameras);
         EnableObjects(level, levelObjects);
         SetSkybox(level);
@@ -93,6 +92,7 @@ public class LevelSelect : MonoBehaviour {
                 PlayerVehicle.SetActive(false);
                 Terrain.SetActive(false);
                 RoadNetwork.SetActive(false);
+                RenderSettings.fogDensity = 0;
                 break;
             case 1:
                 PlayerVehicle.SetActive(true);
@@ -100,6 +100,7 @@ public class LevelSelect : MonoBehaviour {
                 RoadNetwork.SetActive(true);
                 SetVehiclePosition(Level1Start);
                 RenderSettings.ambientIntensity = 0;
+                RenderSettings.fogDensity = 0.0005f;
                 break;
             case 2:
                 PlayerVehicle.SetActive(true);
@@ -110,12 +111,13 @@ public class LevelSelect : MonoBehaviour {
                 CancelInvoke("Blink");
                 InvokeRepeating("BlinkRandomizer", 5, 7);
                 RenderSettings.ambientIntensity = -2;
-                RenderSettings.fog = true;
+                RenderSettings.fogDensity = 0.005f;
                 break;
             case 3:
                 PlayerVehicle.SetActive(false);
                 Terrain.SetActive(false);
                 RoadNetwork.SetActive(false);
+                RenderSettings.fogDensity = 0;
                 break;
         }
 

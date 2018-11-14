@@ -16,16 +16,21 @@ public class CarFailureStates : MonoBehaviour {
     public event LeavingRoadHandler OnLeavingRoad;
     public event LeavingRoadHandler OnEnteringRoad;
 
-    public Text warningText;
-
     private bool OnRoad = true;
 
     private Rigidbody rb;
     private float lastVelocity;
 
+    public AudioSource crashSource;
+    public GameObject fire;
+
+    public GameObject LevelOrchestrator;
+    private LevelSelect selector;
 
     // Use this for initialization
     void Start () {
+        selector = LevelOrchestrator.GetComponent<LevelSelect>();
+        selector.OnLevelChanged += LevelChanged;
         rb = GetComponent<Rigidbody>();
         lastVelocity = rb.velocity.magnitude;
     }
@@ -41,6 +46,8 @@ public class CarFailureStates : MonoBehaviour {
         if(rb.velocity.magnitude * 2.23693629f < lastVelocity - 5)
         {
             print("Crashed!");
+            crashSource.Play();
+            fire.SetActive(true);
             if (OnCollision != null)
             {
                 OnCollision();
@@ -59,8 +66,7 @@ public class CarFailureStates : MonoBehaviour {
             {
                 OnCollision();
             }
-        }
-        
+        } 
     }
 
     private void OnTriggerEnter(Collider other)
@@ -129,11 +135,9 @@ public class CarFailureStates : MonoBehaviour {
         }
     }
 
-    private void ActivateWarning()
+    void LevelChanged(int level)
     {
-        GameObject obj = warningText.transform.parent.gameObject;
-        warningText.text = "Warning\nLeaving Roadway";
-        obj.SetActive(true);
+        fire.SetActive(false);
     }
 }
 
