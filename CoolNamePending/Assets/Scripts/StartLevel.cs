@@ -17,6 +17,7 @@ public class StartLevel : MonoBehaviour
 
     public void StartGivenLevel()
     {
-        levelSelect.SetLevel(level);
+        print("Clicked First");
+        StartCoroutine(levelSelect.SetLevel(level, true));
     }
 }

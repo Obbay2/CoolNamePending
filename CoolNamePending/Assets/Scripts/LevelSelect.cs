@@ -38,7 +38,7 @@ public class LevelSelect : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        SetLevel(0);
+        StartCoroutine(SetLevel(0, false));
         carStates = PlayerVehicle.GetComponent<CarFailureStates>();
         carStates.OnCollision += PlayerVehicleCollisionHandler;
         carStates.OnLevelTriggerEntered += PlayerVehicleLevelChangeHandler;
@@ -48,31 +48,35 @@ public class LevelSelect : MonoBehaviour {
     void FixedUpdate () {
         if (Input.GetKeyDown(KeyCode.F1))
         {
-            SetLevel(0);
+            StartCoroutine(SetLevel(0, false));
         }
         else if (Input.GetKeyDown(KeyCode.F2))
         {
-            SetLevel(1);
+           StartCoroutine(SetLevel(1, false));
         }
         else if (Input.GetKeyDown(KeyCode.F3))
         {
-            SetLevel(2);
+            StartCoroutine(SetLevel(2, false));
         }
         else if (Input.GetKeyDown(KeyCode.F4))
         {
-            SetLevel(3);
+            StartCoroutine(SetLevel(3, false));
         }
     }
 
-    public void SetLevel(int level)
+    public IEnumerator SetLevel(int level, bool delay)
     {
+        if (delay)
+        {
+            SteamVR_Fade.View(Color.black, FadeOutTime);
+            Invoke("FadeIn", FadeOutTime);
+            yield return new WaitForSeconds(FadeOutTime);
+        }
+
         EnableObjects(level, levelCameras);
         EnableObjects(level, levelObjects);
         SetSkybox(level);
         Level = level;
-        
-        SteamVR_Fade.View(Color.black, FadeOutTime);
-        Invoke("FadeIn", FadeOutTime);
 
         switch (level)
         {
@@ -151,11 +155,11 @@ public class LevelSelect : MonoBehaviour {
     {
         if (Level == 1)
         {
-            SetLevel(1);
+            StartCoroutine(SetLevel(1, true));
         }
         else if (Level == 2)
         {
-            SetLevel(3);
+            StartCoroutine(SetLevel(3, true));
         }
     }
 
@@ -163,11 +167,12 @@ public class LevelSelect : MonoBehaviour {
     {
         if (levelTriggerName == "Level2Trigger" && Level == 1)
         {
-            SetLevel(2);
+            StartCoroutine(DecelerateVehicle());  
+            StartCoroutine(SetLevel(2, true));
         }
         else if (levelTriggerName == "Level3Trigger" && Level == 2)
         {
-            SetLevel(3);
+            StartCoroutine(SetLevel(3, true));
         }
     }
 
@@ -179,5 +184,15 @@ public class LevelSelect : MonoBehaviour {
     void Blink()
     {
         levelCameras[2].GetComponent<BlinkEffect>().Blink();
+    }
+
+    public IEnumerator DecelerateVehicle()
+    {
+        for (int i = 0; i < FadeOutTime; i++)
+        {
+            Rigidbody r = PlayerVehicle.GetComponent<Rigidbody>();
+            r.velocity *= 1 / 2;
+            yield return new WaitForSeconds(1);
+        }
     }
 }
