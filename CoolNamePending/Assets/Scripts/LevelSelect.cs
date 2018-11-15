@@ -23,6 +23,8 @@ public class LevelSelect : MonoBehaviour {
 
     [SerializeField] public GameObject[] levelCameras = new GameObject[numberOfLevels]; // Level 0: Game Start UI, Level 1: Day time, Level 2: Night time, Level 3: Ending
 
+    [SerializeField] public PostProcessingProfile[] postProcessingProfiles = new PostProcessingProfile[3];
+
     public PostProcessingProfile profile;
 
     public int Level = 0;
@@ -41,7 +43,7 @@ public class LevelSelect : MonoBehaviour {
     void Start()
     {
         HMDActive = OpenVR.IsHmdPresent();
-        StartCoroutine(SetLevel(Level, false));
+        StartCoroutine(SetLevel(Level, 0, false));
         carStates = PlayerVehicle.GetComponent<CarFailureStates>();
         carStates.OnCollision += PlayerVehicleCollisionHandler;
         carStates.OnLevelTriggerEntered += PlayerVehicleLevelChangeHandler;
@@ -56,23 +58,23 @@ public class LevelSelect : MonoBehaviour {
     void FixedUpdate () {
         if (Input.GetKeyDown(KeyCode.F1))
         {
-            StartCoroutine(SetLevel(0, false));
+            StartCoroutine(SetLevel(0, 0, false));
         }
         else if (Input.GetKeyDown(KeyCode.F2))
         {
-           StartCoroutine(SetLevel(1, false));
+           StartCoroutine(SetLevel(1, 0, false));
         }
         else if (Input.GetKeyDown(KeyCode.F3))
         {
-            StartCoroutine(SetLevel(2, false));
+            StartCoroutine(SetLevel(2, 3, false));
         }
         else if (Input.GetKeyDown(KeyCode.F4))
         {
-            StartCoroutine(SetLevel(3, false));
+            StartCoroutine(SetLevel(3, 0, false));
         }
     }
 
-    public IEnumerator SetLevel(int level, bool delay)
+    public IEnumerator SetLevel(int level, int difficulty, bool delay)
     {
         if (delay && HMDActive)
         {
@@ -85,7 +87,8 @@ public class LevelSelect : MonoBehaviour {
         EnableObjects(level, levelObjects);
         SetSkybox(level);
         Level = level;
-
+        CancelInvoke("BlinkRandomizer");
+        CancelInvoke("Blink");
         switch (level)
         {
             case 0:
@@ -107,9 +110,7 @@ public class LevelSelect : MonoBehaviour {
                 Terrain.SetActive(true);
                 RoadNetwork.SetActive(true);
                 SetVehiclePosition(Level2Start);
-                CancelInvoke("BlinkRandomizer");
-                CancelInvoke("Blink");
-                InvokeRepeating("BlinkRandomizer", 5, 7);
+                TriggerLevelTwoWithDifficulty(difficulty);
                 RenderSettings.ambientIntensity = -2;
                 RenderSettings.fogDensity = 0.005f;
                 break;
@@ -125,6 +126,21 @@ public class LevelSelect : MonoBehaviour {
         {
             print("Level Changing Fire");
             OnLevelChanged(level);
+        }
+    }
+    
+    private void TriggerLevelTwoWithDifficulty(int difficulty)
+    {
+        switch (difficulty)
+        {
+            case 1: // easy
+                break;
+            case 2: // medium
+                InvokeRepeating("BlinkRandomizer", 5, 14);
+                break;
+            case 3: // hard
+                InvokeRepeating("BlinkRandomizer", 5, 7);
+                break;
         }
     }
 
@@ -169,11 +185,11 @@ public class LevelSelect : MonoBehaviour {
     {
         if (Level == 1)
         {
-            StartCoroutine(SetLevel(1, true));
+            StartCoroutine(SetLevel(1, 0, true));
         }
         else if (Level == 2)
         {
-            StartCoroutine(SetLevel(3, true));
+            StartCoroutine(SetLevel(3, 0, true));
         }
     }
 
@@ -182,11 +198,11 @@ public class LevelSelect : MonoBehaviour {
         if (levelTriggerName == "Level2Trigger" && Level == 1)
         {
             StartCoroutine(DecelerateVehicle());  
-            StartCoroutine(SetLevel(2, true));
+            StartCoroutine(SetLevel(0, 0, true));
         }
         else if (levelTriggerName == "Level3Trigger" && Level == 2)
         {
-            StartCoroutine(SetLevel(3, true));
+            StartCoroutine(SetLevel(3, 0, true));
         }
     }
 

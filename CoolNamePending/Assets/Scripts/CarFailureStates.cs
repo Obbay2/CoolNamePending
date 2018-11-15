@@ -42,7 +42,7 @@ public class CarFailureStates : MonoBehaviour {
 
     void FixedUpdate()
     {
-        print("Current: " + rb.velocity.magnitude * 2.23693629f + " Last: " + lastVelocity);
+        //print("Current: " + rb.velocity.magnitude * 2.23693629f + " Last: " + lastVelocity);
         if(rb.velocity.magnitude * 2.23693629f < lastVelocity - 5)
         {
             print("Crashed!");

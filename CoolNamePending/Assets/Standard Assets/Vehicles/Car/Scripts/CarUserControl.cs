@@ -17,19 +17,19 @@ namespace UnityStandardAssets.Vehicles.Car
         private bool hasTouchedAccelerator;
         private float initialThrottle;
 
-        private void Awake()
+        void Awake()
         {
             // get the car controller
             m_Car = GetComponent<CarController>();
             hasTouchedAccelerator = false;
             initialThrottle = Input.GetAxis("Accelerator");
-            //print(hasTouchedAccelerator + " " + initialThrottle);
+            print(hasTouchedAccelerator + " " + initialThrottle);
         }
 
 
-        private void FixedUpdate()
+        void FixedUpdate()
         {
-
+            print("DPad Vertical: " + Input.GetKeyDown(KeyCode.UpArrow));
             float h;
             // pass the input to the car!
             if (Controller)
@@ -41,34 +41,34 @@ namespace UnityStandardAssets.Vehicles.Car
             else if (SteeringWheel)
             {
                 h = Input.GetAxis("SteeringWheel"); // -1 to 1
-                
                 if (Pedals)
                 {
                     float footbrake = Input.GetAxis("Footbrake"); // -1 to 1 => 0 to -1
-                    print("Unscaled " + footbrake);
-                    //footbrake = -((footbrake + 1) / 2);
+                    //print("Unscaled footbreak value: " + footbrake);
                     footbrake = (footbrake + 1) / 2;
-                    float v = Input.GetAxis("Accelerator"); // -1 to 1 => 0 to 1                    
+                    float acc = Input.GetAxis("Accelerator"); // -1 to 1 => 0 to 1                    
+                    //print("Unscaled accelerator value: " + footbrake);
 
-                    if (v == initialThrottle && !hasTouchedAccelerator)
+
+                    if (acc == initialThrottle && !hasTouchedAccelerator)
                     {
-                        v = 0;
+                        acc = 0;
                     }
                     else
                     {
                         hasTouchedAccelerator = true;
-                        v = (v + 1) / 2;
+                        acc = (acc + 1) / 2;
                     }
 
-                    m_Car.Move(h, v, 0, footbrake);
-                    print(v + " " + h + " " + footbrake + " " + hasTouchedAccelerator);
+                    m_Car.Move(h, acc, 0, footbrake);
+                    //print(acc + " " + h + " " + footbrake + " " + hasTouchedAccelerator);
 
                 }
                 else
                 {
-                    
+
                 }
-                
+
             }
             else
             {
