@@ -27,6 +27,8 @@ public class CarFailureStates : MonoBehaviour {
     public GameObject LevelOrchestrator;
     private LevelSelect selector;
 
+    private bool LevelChanging = false;
+
     // Use this for initialization
     void Start () {
         selector = LevelOrchestrator.GetComponent<LevelSelect>();
@@ -43,17 +45,24 @@ public class CarFailureStates : MonoBehaviour {
     void FixedUpdate()
     {
         //print("Current: " + rb.velocity.magnitude * 2.23693629f + " Last: " + lastVelocity);
-        if(rb.velocity.magnitude * 2.23693629f < lastVelocity - 5)
+        if(rb.velocity.magnitude * 2.23693629f < lastVelocity - 5 && !LevelChanging)
         {
             print("Crashed!");
             crashSource.Play();
             fire.SetActive(true);
             if (OnCollision != null)
             {
+                LevelChanging = true;
                 OnCollision();
+                lastVelocity = 0f;
+                return;
             }
         }
-        lastVelocity = rb.velocity.magnitude * 2.23693629f;
+
+        if (!LevelChanging)
+        {
+            lastVelocity = rb.velocity.magnitude * 2.23693629f;
+        }
 
     }
 
@@ -137,6 +146,7 @@ public class CarFailureStates : MonoBehaviour {
 
     void LevelChanged(int level)
     {
+        LevelChanging = false;
         fire.SetActive(false);
     }
 }

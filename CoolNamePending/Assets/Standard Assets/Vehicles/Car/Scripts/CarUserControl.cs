@@ -29,7 +29,6 @@ namespace UnityStandardAssets.Vehicles.Car
 
         void FixedUpdate()
         {
-            print("DPad Vertical: " + Input.GetKeyDown(KeyCode.UpArrow));
             float h;
             // pass the input to the car!
             if (Controller)

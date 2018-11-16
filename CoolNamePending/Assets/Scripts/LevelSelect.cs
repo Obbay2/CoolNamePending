@@ -25,8 +25,6 @@ public class LevelSelect : MonoBehaviour {
 
     [SerializeField] public PostProcessingProfile[] postProcessingProfiles = new PostProcessingProfile[3];
 
-    public PostProcessingProfile profile;
-
     public int Level = 0;
 
     public delegate void LevelChangedHandler(int level);
@@ -85,6 +83,13 @@ public class LevelSelect : MonoBehaviour {
 
         EnableObjects(level, levelCameras);
         EnableObjects(level, levelObjects);
+
+        if (OnLevelChanged != null)
+        {
+            print("Level Changing Fire");
+            OnLevelChanged(level);
+        }
+
         SetSkybox(level);
         Level = level;
         CancelInvoke("BlinkRandomizer");
@@ -111,6 +116,7 @@ public class LevelSelect : MonoBehaviour {
                 RoadNetwork.SetActive(true);
                 SetVehiclePosition(Level2Start);
                 TriggerLevelTwoWithDifficulty(difficulty);
+                levelCameras[2].GetComponent<PostProcessingBehaviour>().profile = postProcessingProfiles[difficulty - 1];
                 RenderSettings.ambientIntensity = -2;
                 RenderSettings.fogDensity = 0.005f;
                 break;
@@ -122,11 +128,7 @@ public class LevelSelect : MonoBehaviour {
                 break;
         }
 
-        if (OnLevelChanged != null)
-        {
-            print("Level Changing Fire");
-            OnLevelChanged(level);
-        }
+        
     }
     
     private void TriggerLevelTwoWithDifficulty(int difficulty)
