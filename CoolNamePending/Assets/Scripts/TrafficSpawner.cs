@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Utility;
 
 public class TrafficSpawner : MonoBehaviour {
 
@@ -13,6 +14,8 @@ public class TrafficSpawner : MonoBehaviour {
 
     public GameObject orchestrator;
     private LevelSelect selector;
+
+    public WaypointCircuit circuit;
 
 	// Use this for initialization
 	void Start () {
@@ -28,6 +31,7 @@ public class TrafficSpawner : MonoBehaviour {
     void Spawn() {
         if (iterator < cars.Length) {
             GameObject newCar = Instantiate(cars[iterator], spawnPoint.position, spawnPoint.rotation);
+            newCar.GetComponent<BetterWaypointFollower>().circuit = circuit;
             spawnedCars.Add(newCar);
             iterator++;
         }
@@ -42,7 +46,6 @@ public class TrafficSpawner : MonoBehaviour {
         }
         spawnedCars.Clear();
 
-        print("fired");
         if (transform.parent.name == "DayTimeObjects" && level == 1)
         {
             InvokeRepeating("Spawn", spawnTime, spawnTime);

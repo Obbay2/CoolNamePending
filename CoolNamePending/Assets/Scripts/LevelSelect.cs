@@ -5,6 +5,7 @@ using UnityEngine.PostProcessing;
 using UnityStandardAssets.Effects;
 using PostProcess;
 using Valve.VR;
+using UnityStandardAssets.Vehicles.Car;
 
 public class LevelSelect : MonoBehaviour {
 
@@ -34,6 +35,8 @@ public class LevelSelect : MonoBehaviour {
     public int FadeInTime = 5;
 
     private CarFailureStates carStates;
+    private CarUserControl carUserControl;
+    private CarController carController;
 
     private bool HMDActive = false;
 
@@ -41,10 +44,11 @@ public class LevelSelect : MonoBehaviour {
     void Start()
     {
         HMDActive = OpenVR.IsHmdPresent();
-        StartCoroutine(SetLevel(Level, 0, false));
         carStates = PlayerVehicle.GetComponent<CarFailureStates>();
-        carStates.OnCollision += PlayerVehicleCollisionHandler;
-        carStates.OnLevelTriggerEntered += PlayerVehicleLevelChangeHandler;
+        carUserControl = PlayerVehicle.GetComponent<CarUserControl>();
+        carController = PlayerVehicle.GetComponent<CarController>();
+        StartCoroutine(SetLevel(Level, 0, false));
+        carStates.OnLevelChangeTrigger += PlayerVehicleLevelChangeHandler;
 
         RenderSettings.ambientSkyColor = new Color32(54, 58, 66, 0);
         RenderSettings.ambientEquatorColor = new Color32(29, 32, 34, 0);
@@ -84,12 +88,6 @@ public class LevelSelect : MonoBehaviour {
         EnableObjects(level, levelCameras);
         EnableObjects(level, levelObjects);
 
-        if (OnLevelChanged != null)
-        {
-            print("Level Changing Fire");
-            OnLevelChanged(level);
-        }
-
         SetSkybox(level);
         Level = level;
         CancelInvoke("BlinkRandomizer");
@@ -118,7 +116,7 @@ public class LevelSelect : MonoBehaviour {
                 TriggerLevelTwoWithDifficulty(difficulty);
                 levelCameras[2].GetComponent<PostProcessingBehaviour>().profile = postProcessingProfiles[difficulty - 1];
                 RenderSettings.ambientIntensity = -2;
-                RenderSettings.fogDensity = 0.005f;
+                RenderSettings.fogDensity = 0.002f;
                 break;
             case 3:
                 PlayerVehicle.SetActive(false);
@@ -128,7 +126,11 @@ public class LevelSelect : MonoBehaviour {
                 break;
         }
 
-        
+        carUserControl.TakingInput = true;
+        if (OnLevelChanged != null)
+        {
+            OnLevelChanged(level);
+        }
     }
     
     private void TriggerLevelTwoWithDifficulty(int difficulty)
@@ -183,26 +185,27 @@ public class LevelSelect : MonoBehaviour {
         SteamVR_Fade.View(Color.clear, FadeInTime);
     }
 
-    private void PlayerVehicleCollisionHandler()
+    private void PlayerVehicleLevelChangeHandler(string triggerName)
     {
-        if (Level == 1)
+        if (triggerName == "crash")
         {
-            StartCoroutine(SetLevel(1, 0, true));
+            switch(Level)
+            {
+                case 1:
+                    StartCoroutine(SetLevel(1, 0, true));
+                    break;
+                case 2:
+                    StartCoroutine(SetLevel(3, 0, true));
+                    break;
+            }
         }
-        else if (Level == 2)
+        else if (triggerName == "Level2Trigger")
         {
-            StartCoroutine(SetLevel(3, 0, true));
+            carUserControl.TakingInput = false;
+            carController.Move(0, 0, -1, 1);
+            StartCoroutine(SetLevel(2, 3, true));
         }
-    }
-
-    private void PlayerVehicleLevelChangeHandler(string levelTriggerName)
-    {
-        if (levelTriggerName == "Level2Trigger" && Level == 1)
-        {
-            StartCoroutine(DecelerateVehicle());  
-            StartCoroutine(SetLevel(0, 0, true));
-        }
-        else if (levelTriggerName == "Level3Trigger" && Level == 2)
+        else if (triggerName == "Level3Trigger")
         {
             StartCoroutine(SetLevel(3, 0, true));
         }
@@ -216,15 +219,5 @@ public class LevelSelect : MonoBehaviour {
     void Blink()
     {
         levelCameras[2].GetComponent<BlinkEffect>().Blink();
-    }
-
-    public IEnumerator DecelerateVehicle()
-    {
-        for (int i = 0; i < FadeOutTime; i++)
-        {
-            Rigidbody r = PlayerVehicle.GetComponent<Rigidbody>();
-            r.velocity *= 1 / 2;
-            yield return new WaitForSeconds(1);
-        }
-    }
+    } 
 }
