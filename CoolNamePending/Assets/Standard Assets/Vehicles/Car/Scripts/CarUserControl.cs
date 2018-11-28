@@ -9,7 +9,6 @@ namespace UnityStandardAssets.Vehicles.Car
     {
         public bool Controller;
         public bool SteeringWheel;
-        public bool Pedals;
         public Transform SteeringWheelMesh;
         private CarController m_Car; // the car controller we want to use
         private static int SteerMultiplier = 450;
@@ -39,44 +38,37 @@ namespace UnityStandardAssets.Vehicles.Car
                 {
                     float v = Input.GetAxis("Right Trigger") - Input.GetAxis("Left Trigger");
                     h = Input.GetAxis("Left Joystick");
+
                     m_Car.Move(h, v, v, 0);
                 }
                 else if (SteeringWheel)
                 {
                     h = Input.GetAxis("SteeringWheel"); // -1 to 1
-                    if (Pedals)
+                    float footbrake = Input.GetAxis("Footbrake"); // -1 to 1 => 0 to -1
+                                                                  //print("Unscaled footbreak value: " + footbrake);
+                    footbrake = (footbrake + 1) / 2;
+                    float acc = Input.GetAxis("Accelerator"); // -1 to 1 => 0 to 1                    
+                                                              //print("Unscaled accelerator value: " + footbrake);
+
+
+                    if (acc == initialThrottle && !hasTouchedAccelerator)
                     {
-                        float footbrake = Input.GetAxis("Footbrake"); // -1 to 1 => 0 to -1
-                                                                      //print("Unscaled footbreak value: " + footbrake);
-                        footbrake = (footbrake + 1) / 2;
-                        float acc = Input.GetAxis("Accelerator"); // -1 to 1 => 0 to 1                    
-                                                                  //print("Unscaled accelerator value: " + footbrake);
-
-
-                        if (acc == initialThrottle && !hasTouchedAccelerator)
-                        {
-                            acc = 0;
-                        }
-                        else
-                        {
-                            hasTouchedAccelerator = true;
-                            acc = (acc + 1) / 2;
-                        }
-
-                        m_Car.Move(h, acc, 0, footbrake);
-                        //print(acc + " " + h + " " + footbrake + " " + hasTouchedAccelerator);
-
+                        acc = 0;
                     }
                     else
                     {
-
+                        hasTouchedAccelerator = true;
+                        acc = (acc + 1) / 2;
                     }
+
+                    m_Car.Move(h, acc, 0, footbrake);
 
                 }
                 else
                 {
                     h = CrossPlatformInputManager.GetAxis("Horizontal");
                     float v = CrossPlatformInputManager.GetAxis("Vertical");
+
                     m_Car.Move(h, v, v, 0);
                 }
 

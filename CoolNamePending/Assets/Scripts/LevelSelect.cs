@@ -6,12 +6,18 @@ using UnityStandardAssets.Effects;
 using PostProcess;
 using Valve.VR;
 using UnityStandardAssets.Vehicles.Car;
+using UnityEngine.UI;
 
 public class LevelSelect : MonoBehaviour {
 
     public GameObject PlayerVehicle;
+    public GameObject HeadLights;
     public GameObject Terrain;
     public GameObject RoadNetwork;
+
+    public GameObject MessageUI;
+    public Text MessageText;
+    public Text NextMessageText;
 
     public Transform Level1Start;
     public Transform Level2Start;
@@ -47,7 +53,7 @@ public class LevelSelect : MonoBehaviour {
         carStates = PlayerVehicle.GetComponent<CarFailureStates>();
         carUserControl = PlayerVehicle.GetComponent<CarUserControl>();
         carController = PlayerVehicle.GetComponent<CarController>();
-        StartCoroutine(SetLevel(Level, 0, false));
+        StartCoroutine(SetLevel(Level, 0, false, false));
         carStates.OnLevelChangeTrigger += PlayerVehicleLevelChangeHandler;
 
         RenderSettings.ambientSkyColor = new Color32(54, 58, 66, 0);
@@ -60,24 +66,25 @@ public class LevelSelect : MonoBehaviour {
     void FixedUpdate () {
         if (Input.GetKeyDown(KeyCode.F1))
         {
-            StartCoroutine(SetLevel(0, 0, false));
+            StartCoroutine(SetLevel(0, 0, false, false));
         }
         else if (Input.GetKeyDown(KeyCode.F2))
         {
-           StartCoroutine(SetLevel(1, 0, false));
+           StartCoroutine(SetLevel(1, 0, false, true));
         }
         else if (Input.GetKeyDown(KeyCode.F3))
         {
-            StartCoroutine(SetLevel(2, 3, false));
+            StartCoroutine(SetLevel(2, 3, false, true));
         }
         else if (Input.GetKeyDown(KeyCode.F4))
         {
-            StartCoroutine(SetLevel(3, 0, false));
+            StartCoroutine(SetLevel(3, 0, false, false));
         }
     }
 
-    public IEnumerator SetLevel(int level, int difficulty, bool delay)
+    public IEnumerator SetLevel(int level, int difficulty, bool delay, bool showMessages)
     {
+        carUserControl.TakingInput = false;
         if (delay && HMDActive)
         {
             SteamVR_Fade.View(Color.black, FadeOutTime);
@@ -102,21 +109,37 @@ public class LevelSelect : MonoBehaviour {
                 break;
             case 1:
                 PlayerVehicle.SetActive(true);
+                HeadLights.SetActive(false);
                 Terrain.SetActive(true);
                 RoadNetwork.SetActive(true);
                 SetVehiclePosition(Level1Start);
-                RenderSettings.ambientIntensity = 0;
                 RenderSettings.fogDensity = 0.0005f;
+                RenderSettings.ambientSkyColor = new Color(0.8510008f, 0.9106251f, 1.035294f);
+                RenderSettings.ambientEquatorColor = new Color(0.454902f, 0.5019608f, 0.5333334f);
+                RenderSettings.ambientGroundColor = new Color(0.1882353f, 0.172549f, 0.1411765f);
+                if (showMessages)
+                {
+                    print("Showing Level Messages");
+                    print(level);
+                    yield return StartCoroutine(ShowLevelMessages(level));
+                }
                 break;
             case 2:
                 PlayerVehicle.SetActive(true);
+                HeadLights.SetActive(true);
                 Terrain.SetActive(true);
                 RoadNetwork.SetActive(true);
                 SetVehiclePosition(Level2Start);
                 TriggerLevelTwoWithDifficulty(difficulty);
                 levelCameras[2].GetComponent<PostProcessingBehaviour>().profile = postProcessingProfiles[difficulty - 1];
-                RenderSettings.ambientIntensity = -2;
                 RenderSettings.fogDensity = 0.002f;
+                RenderSettings.ambientSkyColor = new Color(0.05318755f, 0.05691407f, 0.06470588f);
+                RenderSettings.ambientEquatorColor = new Color(0.02843137f, 0.03137255f, 0.03333334f);
+                RenderSettings.ambientGroundColor = new Color(0.01176471f, 0.01078431f, 0.00882353f);
+                if (showMessages)
+                {
+                    yield return StartCoroutine(ShowLevelMessages(level));
+                }
                 break;
             case 3:
                 PlayerVehicle.SetActive(false);
@@ -192,10 +215,10 @@ public class LevelSelect : MonoBehaviour {
             switch(Level)
             {
                 case 1:
-                    StartCoroutine(SetLevel(1, 0, true));
+                    StartCoroutine(SetLevel(1, 0, true, false));
                     break;
                 case 2:
-                    StartCoroutine(SetLevel(3, 0, true));
+                    StartCoroutine(SetLevel(3, 0, true, false));
                     break;
             }
         }
@@ -203,12 +226,30 @@ public class LevelSelect : MonoBehaviour {
         {
             carUserControl.TakingInput = false;
             carController.Move(0, 0, -1, 1);
-            StartCoroutine(SetLevel(2, 3, true));
+            StartCoroutine(SetLevel(2, 3, true, true));
         }
         else if (triggerName == "Level3Trigger")
         {
-            StartCoroutine(SetLevel(3, 0, true));
+            StartCoroutine(SetLevel(3, 0, true, false));
         }
+    }
+
+    private IEnumerator ShowLevelMessages(int level)
+    {
+        print(level);
+        MessageUI.SetActive(true);
+        switch(level)
+        {
+            case 1:
+                MessageText.text = "You're on your way to a party in town.";
+                yield return StartCoroutine(TextUtilities.ShowTextSmoothly(0.5f, 0.5f, 1, MessageText, NextMessageText));
+                MessageText.text = "You've decided to take a route you've never driven before because of traffic.";
+                yield return StartCoroutine(TextUtilities.ShowTextSmoothly(0.5f, 0.5f, 1, MessageText, NextMessageText));
+                break;
+            case 2:
+                break;
+        }
+        MessageUI.SetActive(false);
     }
 
     void BlinkRandomizer()
