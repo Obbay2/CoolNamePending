@@ -119,6 +119,7 @@
     <Compile Include="Assets\Scripts\FullScreenSprite.cs" />
     <Compile Include="Assets\Scripts\LevelHighlightAndSelect.cs" />
     <Compile Include="Assets\Scripts\LevelSelect.cs" />
+    <Compile Include="Assets\Scripts\MessageManager.cs" />
     <Compile Include="Assets\Scripts\RadioScript.cs" />
     <Compile Include="Assets\Scripts\StartLevel.cs" />
     <Compile Include="Assets\Scripts\TextBlinkEffect.cs" />

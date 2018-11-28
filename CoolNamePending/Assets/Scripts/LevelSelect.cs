@@ -37,11 +37,13 @@ public class LevelSelect : MonoBehaviour {
     public delegate void LevelChangedHandler(int level);
     public event LevelChangedHandler OnLevelChanged;
 
+    public delegate void ShowMessagesHandler(int level, bool show);
+    public event ShowMessagesHandler OnLevelChangeShowMessage;
+
     public int FadeOutTime = 1;
     public int FadeInTime = 5;
 
     private CarFailureStates carStates;
-    private CarUserControl carUserControl;
     private CarController carController;
 
     private bool HMDActive = false;
@@ -51,14 +53,9 @@ public class LevelSelect : MonoBehaviour {
     {
         HMDActive = OpenVR.IsHmdPresent();
         carStates = PlayerVehicle.GetComponent<CarFailureStates>();
-        carUserControl = PlayerVehicle.GetComponent<CarUserControl>();
         carController = PlayerVehicle.GetComponent<CarController>();
         StartCoroutine(SetLevel(Level, 0, false, false));
         carStates.OnLevelChangeTrigger += PlayerVehicleLevelChangeHandler;
-
-        RenderSettings.ambientSkyColor = new Color32(54, 58, 66, 0);
-        RenderSettings.ambientEquatorColor = new Color32(29, 32, 34, 0);
-        RenderSettings.ambientGroundColor = new Color32(12, 11, 9, 0);
         RenderSettings.fog = true;
     }
 
@@ -70,7 +67,7 @@ public class LevelSelect : MonoBehaviour {
         }
         else if (Input.GetKeyDown(KeyCode.F2))
         {
-           StartCoroutine(SetLevel(1, 0, false, true));
+            StartCoroutine(SetLevel(1, 0, false, true));
         }
         else if (Input.GetKeyDown(KeyCode.F3))
         {
@@ -84,7 +81,6 @@ public class LevelSelect : MonoBehaviour {
 
     public IEnumerator SetLevel(int level, int difficulty, bool delay, bool showMessages)
     {
-        carUserControl.TakingInput = false;
         if (delay && HMDActive)
         {
             SteamVR_Fade.View(Color.black, FadeOutTime);
@@ -117,12 +113,6 @@ public class LevelSelect : MonoBehaviour {
                 RenderSettings.ambientSkyColor = new Color(0.8510008f, 0.9106251f, 1.035294f);
                 RenderSettings.ambientEquatorColor = new Color(0.454902f, 0.5019608f, 0.5333334f);
                 RenderSettings.ambientGroundColor = new Color(0.1882353f, 0.172549f, 0.1411765f);
-                if (showMessages)
-                {
-                    print("Showing Level Messages");
-                    print(level);
-                    yield return StartCoroutine(ShowLevelMessages(level));
-                }
                 break;
             case 2:
                 PlayerVehicle.SetActive(true);
@@ -136,10 +126,6 @@ public class LevelSelect : MonoBehaviour {
                 RenderSettings.ambientSkyColor = new Color(0.05318755f, 0.05691407f, 0.06470588f);
                 RenderSettings.ambientEquatorColor = new Color(0.02843137f, 0.03137255f, 0.03333334f);
                 RenderSettings.ambientGroundColor = new Color(0.01176471f, 0.01078431f, 0.00882353f);
-                if (showMessages)
-                {
-                    yield return StartCoroutine(ShowLevelMessages(level));
-                }
                 break;
             case 3:
                 PlayerVehicle.SetActive(false);
@@ -149,10 +135,15 @@ public class LevelSelect : MonoBehaviour {
                 break;
         }
 
-        carUserControl.TakingInput = true;
         if (OnLevelChanged != null)
         {
             OnLevelChanged(level);
+            
+        }
+
+        if (OnLevelChangeShowMessage != null)
+        {
+            OnLevelChangeShowMessage(level, showMessages);
         }
     }
     
@@ -224,32 +215,14 @@ public class LevelSelect : MonoBehaviour {
         }
         else if (triggerName == "Level2Trigger")
         {
-            carUserControl.TakingInput = false;
             carController.Move(0, 0, -1, 1);
             StartCoroutine(SetLevel(2, 3, true, true));
         }
         else if (triggerName == "Level3Trigger")
         {
+            carController.Move(0, 0, -1, 1);
             StartCoroutine(SetLevel(3, 0, true, false));
         }
-    }
-
-    private IEnumerator ShowLevelMessages(int level)
-    {
-        print(level);
-        MessageUI.SetActive(true);
-        switch(level)
-        {
-            case 1:
-                MessageText.text = "You're on your way to a party in town.";
-                yield return StartCoroutine(TextUtilities.ShowTextSmoothly(0.5f, 0.5f, 1, MessageText, NextMessageText));
-                MessageText.text = "You've decided to take a route you've never driven before because of traffic.";
-                yield return StartCoroutine(TextUtilities.ShowTextSmoothly(0.5f, 0.5f, 1, MessageText, NextMessageText));
-                break;
-            case 2:
-                break;
-        }
-        MessageUI.SetActive(false);
     }
 
     void BlinkRandomizer()

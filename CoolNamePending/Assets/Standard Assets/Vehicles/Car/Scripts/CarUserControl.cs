@@ -73,7 +73,11 @@ namespace UnityStandardAssets.Vehicles.Car
                 }
 
                 SteeringWheelMesh.eulerAngles = new Vector3(SteeringWheelMesh.eulerAngles.x, SteeringWheelMesh.eulerAngles.y, h * SteerMultiplier);
+            } else
+            {
+                m_Car.Move(0, 0, 0, 0);
             }
+            
         }
     }
 }
