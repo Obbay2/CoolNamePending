@@ -18,12 +18,13 @@ public class CarFailureStates : MonoBehaviour {
     public GameObject LevelOrchestrator;
     private LevelSelect selector;
 
-    private bool LevelChanging = false;
+    private bool IsLevelChanging = false;
 
     // Use this for initialization
     void Start () {
         selector = LevelOrchestrator.GetComponent<LevelSelect>();
         selector.OnLevelChanged += LevelChanged;
+        selector.OnLevelChanging += LevelChanging;
         rb = GetComponent<Rigidbody>();
         lastVelocity = rb.velocity.magnitude;
     }
@@ -35,7 +36,7 @@ public class CarFailureStates : MonoBehaviour {
     void FixedUpdate()
     {
         //print("Current: " + rb.velocity.magnitude * 2.23693629f + " Last: " + lastVelocity);
-        if (!LevelChanging)
+        if (!IsLevelChanging)
         {
             if (rb.velocity.magnitude * 2.23693629f < lastVelocity - 5)
             {
@@ -44,9 +45,7 @@ public class CarFailureStates : MonoBehaviour {
                 fire.SetActive(true);
                 if (OnLevelChangeTrigger != null)
                 {
-                    LevelChanging = true;
                     OnLevelChangeTrigger("crash");
-                    lastVelocity = 0f;
                     return;
                 }
             }
@@ -62,8 +61,6 @@ public class CarFailureStates : MonoBehaviour {
         {
             if (OnLevelChangeTrigger != null)
             {
-                LevelChanging = true;
-                lastVelocity = 0f;
                 OnLevelChangeTrigger(other.name);
             } 
         }
@@ -71,8 +68,6 @@ public class CarFailureStates : MonoBehaviour {
         {
             if (OnLevelChangeTrigger != null)
             {
-                LevelChanging = true;
-                lastVelocity = 0f;
                 OnLevelChangeTrigger(other.name);
             }
         }
@@ -80,9 +75,15 @@ public class CarFailureStates : MonoBehaviour {
 
     void LevelChanged(int level)
     {
-        print("Inactivating Fire");
-        LevelChanging = false;
+        print("Deactivating Fire");
+        IsLevelChanging = false;
         fire.SetActive(false);
+    }
+
+    void LevelChanging()
+    {
+        IsLevelChanging = true;
+        lastVelocity = 0f;
     }
 }
 

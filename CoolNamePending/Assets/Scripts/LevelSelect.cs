@@ -15,10 +15,6 @@ public class LevelSelect : MonoBehaviour {
     public GameObject Terrain;
     public GameObject RoadNetwork;
 
-    public GameObject MessageUI;
-    public Text MessageText;
-    public Text NextMessageText;
-
     public Transform Level1Start;
     public Transform Level2Start;
 
@@ -37,6 +33,9 @@ public class LevelSelect : MonoBehaviour {
     public delegate void LevelChangedHandler(int level);
     public event LevelChangedHandler OnLevelChanged;
 
+    public delegate void LevelChangingHandler();
+    public event LevelChangingHandler OnLevelChanging;
+
     public delegate void ShowMessagesHandler(int level, bool show);
     public event ShowMessagesHandler OnLevelChangeShowMessage;
 
@@ -44,7 +43,7 @@ public class LevelSelect : MonoBehaviour {
     public int FadeInTime = 5;
 
     private CarFailureStates carStates;
-    private CarController carController;
+    private CarUserControl carUserControl;
 
     private bool HMDActive = false;
 
@@ -53,7 +52,7 @@ public class LevelSelect : MonoBehaviour {
     {
         HMDActive = OpenVR.IsHmdPresent();
         carStates = PlayerVehicle.GetComponent<CarFailureStates>();
-        carController = PlayerVehicle.GetComponent<CarController>();
+        carUserControl = PlayerVehicle.GetComponent<CarUserControl>();
         StartCoroutine(SetLevel(Level, 0, false, false));
         carStates.OnLevelChangeTrigger += PlayerVehicleLevelChangeHandler;
         RenderSettings.fog = true;
@@ -81,10 +80,15 @@ public class LevelSelect : MonoBehaviour {
 
     public IEnumerator SetLevel(int level, int difficulty, bool delay, bool showMessages)
     {
+        carUserControl.IsChangingLevel = true; // This script instance can't see the current script due to namespace issues otherwise we would have it subscribe to the following event
+        if (OnLevelChanging != null)
+        {
+            OnLevelChanging();
+        }
+
         if (delay && HMDActive)
         {
             SteamVR_Fade.View(Color.black, FadeOutTime);
-            Invoke("FadeIn", FadeOutTime);
             yield return new WaitForSeconds(FadeOutTime);
         }
 
@@ -135,31 +139,29 @@ public class LevelSelect : MonoBehaviour {
                 break;
         }
 
+        // The level "changes" before the player can see it, thus letting us reset other systems subscribed to this event
         if (OnLevelChanged != null)
         {
             OnLevelChanged(level);
-            
         }
 
+        // Show messages before we fade view back in (although the use won't see fade in, there is a delay if we put this after fade in)
         if (OnLevelChangeShowMessage != null)
         {
             OnLevelChangeShowMessage(level, showMessages);
         }
-    }
-    
-    private void TriggerLevelTwoWithDifficulty(int difficulty)
-    {
-        switch (difficulty)
+
+        // Extra one second wait before fade in makes the transition smoother
+        if (delay && HMDActive)
         {
-            case 1: // easy
-                break;
-            case 2: // medium
-                InvokeRepeating("BlinkRandomizer", 5, 14);
-                break;
-            case 3: // hard
-                InvokeRepeating("BlinkRandomizer", 5, 7);
-                break;
+            yield return new WaitForSeconds(1.0f);
+            SteamVR_Fade.View(Color.clear, FadeInTime);
+            yield return new WaitForSeconds(FadeInTime);
         }
+
+        
+
+        carUserControl.IsChangingLevel = false; // Work around hack described above
     }
 
     private void EnableObjects(int level, GameObject[] objects)
@@ -194,11 +196,6 @@ public class LevelSelect : MonoBehaviour {
         }
     }
 
-    private void FadeIn()
-    {
-        SteamVR_Fade.View(Color.clear, FadeInTime);
-    }
-
     private void PlayerVehicleLevelChangeHandler(string triggerName)
     {
         if (triggerName == "crash")
@@ -215,13 +212,31 @@ public class LevelSelect : MonoBehaviour {
         }
         else if (triggerName == "Level2Trigger")
         {
-            carController.Move(0, 0, -1, 1);
             StartCoroutine(SetLevel(2, 3, true, true));
         }
         else if (triggerName == "Level3Trigger")
         {
-            carController.Move(0, 0, -1, 1);
             StartCoroutine(SetLevel(3, 0, true, false));
+        }
+    }
+
+    public void ExternalSetLevel(int level, int difficulty)
+    {
+        StartCoroutine(SetLevel(level, difficulty, true, true));
+    }
+
+    private void TriggerLevelTwoWithDifficulty(int difficulty)
+    {
+        switch (difficulty)
+        {
+            case 1: // easy
+                break;
+            case 2: // medium
+                InvokeRepeating("BlinkRandomizer", 5, 14);
+                break;
+            case 3: // hard
+                InvokeRepeating("BlinkRandomizer", 5, 7);
+                break;
         }
     }
 

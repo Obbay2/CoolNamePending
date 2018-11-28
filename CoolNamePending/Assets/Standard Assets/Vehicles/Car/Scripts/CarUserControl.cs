@@ -10,6 +10,7 @@ namespace UnityStandardAssets.Vehicles.Car
         public bool Controller;
         public bool SteeringWheel;
         public Transform SteeringWheelMesh;
+
         private CarController m_Car; // the car controller we want to use
         private static int SteerMultiplier = 450;
 
@@ -17,6 +18,8 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private bool hasTouchedAccelerator;
         private float initialThrottle;
+
+        public bool IsChangingLevel = false;
 
         void Awake()
         {
@@ -30,7 +33,7 @@ namespace UnityStandardAssets.Vehicles.Car
 
         void FixedUpdate()
         {
-            if (TakingInput)
+            if (TakingInput && !IsChangingLevel)
             {
                 float h;
                 // pass the input to the car!
@@ -73,9 +76,10 @@ namespace UnityStandardAssets.Vehicles.Car
                 }
 
                 SteeringWheelMesh.eulerAngles = new Vector3(SteeringWheelMesh.eulerAngles.x, SteeringWheelMesh.eulerAngles.y, h * SteerMultiplier);
-            } else
+            }
+            else
             {
-                m_Car.Move(0, 0, 0, 0);
+                m_Car.Move(0, 0, 0, 1);
             }
             
         }

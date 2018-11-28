@@ -17,6 +17,6 @@ public class StartLevel : MonoBehaviour
 
     public void StartGivenLevel()
     {
-        StartCoroutine(levelSelect.SetLevel(level, difficulty, true, true));
+        levelSelect.ExternalSetLevel(level, difficulty);
     }
 }
