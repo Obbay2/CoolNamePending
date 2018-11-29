@@ -2,18 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Valve.VR;
 
 public class FadeInText : MonoBehaviour {
 
     public TextMeshProUGUI[] uiElement;
+    private bool HMDActive;
+    public float FadeInTime = 3.0f;
 
     public void Start()
     {
+        HMDActive = OpenVR.IsHmdPresent();
         StartCoroutine(FadeCanvasGroup(uiElement));
     }
 
     public IEnumerator FadeCanvasGroup(TextMeshProUGUI[] cg)
     {
+
+        if (HMDActive)
+        {
+            yield return new WaitForSeconds(1.0f);
+            SteamVR_Fade.View(Color.clear, FadeInTime);
+            yield return new WaitForSeconds(FadeInTime);
+        }
+
         for (int i = 0; i < cg.Length; i++)
         {
             /*timeSinceStartTime = Time.time - startTime;
