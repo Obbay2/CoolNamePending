@@ -230,12 +230,15 @@ public class LevelSelect : MonoBehaviour {
         switch (difficulty)
         {
             case 1: // easy
+                carUserControl.SetInputLag(0);
                 break;
             case 2: // medium
                 InvokeRepeating("BlinkRandomizer", 5, 14);
+                carUserControl.SetInputLag(150);
                 break;
             case 3: // hard
                 InvokeRepeating("BlinkRandomizer", 5, 7);
+                carUserControl.SetInputLag(300);
                 break;
         }
     }
