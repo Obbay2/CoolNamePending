@@ -7,6 +7,7 @@ using PostProcess;
 using Valve.VR;
 using UnityStandardAssets.Vehicles.Car;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelSelect : MonoBehaviour {
 
@@ -62,6 +63,7 @@ public class LevelSelect : MonoBehaviour {
     void FixedUpdate () {
         if (Input.GetKeyDown(KeyCode.F1))
         {
+            SceneManager.LoadScene("CrashFinalScene");
             StartCoroutine(SetLevel(0, 0, false, false));
         }
         else if (Input.GetKeyDown(KeyCode.F2))
