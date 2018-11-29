@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 2d056ac30ecc9e542b26e06133f23602, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 965a4c3cf8f0acb408f15384c947b3fd, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,8 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0014925376, g: 0.0013667671, b: 0.0012952195, a: 1}
+  m_IndirectSpecularColor: {r: 0.00007971838, g: 0.000076551834, b: 0.00007552406,
+    a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -271,8 +272,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 3600
-  m_fontSizeBase: 3600
+  m_fontSize: 3500
+  m_fontSizeBase: 3500
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -402,7 +403,7 @@ MonoBehaviour:
   m_text: '
 
 
-    In the United States,  29 people die from being a DUI accident every day.'
+    In the United States,  29 people die from being in a DUI accident every day.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -429,8 +430,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 3600
-  m_fontSizeBase: 3600
+  m_fontSize: 3300
+  m_fontSizeBase: 3300
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -470,10 +471,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1519930223}
-    characterCount: 75
+    characterCount: 78
     spriteCount: 0
-    spaceCount: 16
-    wordCount: 15
+    spaceCount: 17
+    wordCount: 16
     linkCount: 0
     lineCount: 3
     pageCount: 1
@@ -562,7 +563,9 @@ MonoBehaviour:
 
 
 
-    Be smart and don''t drink and drive.'
+    Be smart.
+
+    Don''t drink and drive.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -589,8 +592,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 3600
-  m_fontSizeBase: 3600
+  m_fontSize: 3500
+  m_fontSizeBase: 3500
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -630,12 +633,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1752940177}
-    characterCount: 39
+    characterCount: 36
     spriteCount: 0
-    spaceCount: 10
-    wordCount: 8
+    spaceCount: 9
+    wordCount: 7
     linkCount: 0
-    lineCount: 5
+    lineCount: 6
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0
@@ -753,6 +756,7 @@ MonoBehaviour:
   - {fileID: 654001264}
   - {fileID: 1519930223}
   - {fileID: 1752940177}
+  FadeInTime: 3
 --- !u!1 &2006419150
 GameObject:
   m_ObjectHideFlags: 0

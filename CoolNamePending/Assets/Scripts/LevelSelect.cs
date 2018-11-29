@@ -41,6 +41,7 @@ public class LevelSelect : MonoBehaviour {
     public event ShowMessagesHandler OnLevelChangeShowMessage;
 
     public int FadeOutTime = 1;
+    public int SwitchOutTime = 3;
     public int FadeInTime = 5;
 
     private CarFailureStates carStates;
@@ -210,8 +211,8 @@ public class LevelSelect : MonoBehaviour {
                     carUserControl.IsChangingLevel = true; // This script instance can't see the current script due to namespace issues otherwise we would have it subscribe to the following event
                     if (HMDActive)
                     {
-                        SteamVR_Fade.View(Color.black, FadeOutTime);
-                        Invoke("TransitionCrashScene", FadeOutTime + 1.0f);
+                        SteamVR_Fade.View(Color.black, SwitchOutTime);
+                        Invoke("TransitionCrashScene", SwitchOutTime + 1.0f);
                     }
                     else
                     {
@@ -231,8 +232,8 @@ public class LevelSelect : MonoBehaviour {
             //StartCoroutine(SetLevel(3, 0, true, false));
             if (HMDActive)
             {
-                SteamVR_Fade.View(Color.black, FadeOutTime);
-                Invoke("TransitionPoliceScene", FadeOutTime + +1.0f);
+                SteamVR_Fade.View(Color.black, SwitchOutTime);
+                Invoke("TransitionPoliceScene", SwitchOutTime + +1.0f);
             }
             else
             {
