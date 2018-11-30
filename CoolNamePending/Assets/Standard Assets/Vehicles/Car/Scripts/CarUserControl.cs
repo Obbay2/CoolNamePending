@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+using System;
+using System.Collections.Generic;
 
 namespace UnityStandardAssets.Vehicles.Car
 {
@@ -21,6 +23,13 @@ namespace UnityStandardAssets.Vehicles.Car
 
         public bool IsChangingLevel = false;
 
+        private Queue<float> controllerHQueue = new Queue<float>();
+        private Queue<float> vQueue = new Queue<float>();
+        private Queue<float> hQueue = new Queue<float>();
+        private Queue<float> accQueue = new Queue<float>();
+        private Queue<float> footbrakeQueue = new Queue<float>();
+        List<Queue<float>> inputQueues = new List<Queue<float>>();
+
         void Awake()
         {
             // get the car controller
@@ -28,6 +37,23 @@ namespace UnityStandardAssets.Vehicles.Car
             hasTouchedAccelerator = false;
             initialThrottle = Input.GetAxis("Accelerator");
             print(hasTouchedAccelerator + " " + initialThrottle);
+            inputQueues.Add(controllerHQueue);
+            inputQueues.Add(vQueue);
+            inputQueues.Add(hQueue);
+            inputQueues.Add(accQueue);
+            inputQueues.Add(footbrakeQueue);
+        }
+
+        public void SetInputLag(float ms)
+        {
+            foreach (Queue<float> q in inputQueues)
+            {
+                q.Clear();
+                for (int i = 0; i < ms / 20; i++)
+                {
+                    q.Enqueue(0);
+                }
+            }
         }
 
 
@@ -35,43 +61,48 @@ namespace UnityStandardAssets.Vehicles.Car
         {
             if (TakingInput && !IsChangingLevel)
             {
-                float h;
                 // pass the input to the car!
+                float h;
                 if (Controller)
                 {
-                    float v = Input.GetAxis("Right Trigger") - Input.GetAxis("Left Trigger");
-                    h = Input.GetAxis("Left Joystick");
+                    float newV = Input.GetAxis("Right Trigger") - Input.GetAxis("Left Trigger");
+                    float newControllerH = Input.GetAxis("Left Joystick");
+                    vQueue.Enqueue(newV);
+                    controllerHQueue.Enqueue(newControllerH);
 
+                    float v = vQueue.Dequeue();
+                    h = hQueue.Dequeue();
                     m_Car.Move(h, v, v, 0);
                 }
                 else if (SteeringWheel)
                 {
-                    h = Input.GetAxis("SteeringWheel"); // -1 to 1
-                    float footbrake = Input.GetAxis("Footbrake"); // -1 to 1 => 0 to -1
-                                                                  //print("Unscaled footbreak value: " + footbrake);
-                    footbrake = (footbrake + 1) / 2;
-                    float acc = Input.GetAxis("Accelerator"); // -1 to 1 => 0 to 1                    
-                                                              //print("Unscaled accelerator value: " + footbrake);
+                    hQueue.Enqueue(Input.GetAxis("SteeringWheel")); // -1 to 1
+                    footbrakeQueue.Enqueue((Input.GetAxis("Footbrake") + 1) / 2);
 
+                    float new_acc = Input.GetAxis("Accelerator"); // -1 to 1 => 0 to 1                    
+                                                              //print("Unscaled accelerator value: " + footbrake
 
-                    if (acc == initialThrottle && !hasTouchedAccelerator)
+                    if (new_acc == initialThrottle && !hasTouchedAccelerator)
                     {
-                        acc = 0;
+                        new_acc = 0;
                     }
                     else
                     {
                         hasTouchedAccelerator = true;
-                        acc = (acc + 1) / 2;
+                        new_acc = (new_acc + 1) / 2;
                     }
-
-                    m_Car.Move(h, acc, 0, footbrake);
+                    accQueue.Enqueue(new_acc);
+                    h = hQueue.Dequeue();
+                    m_Car.Move(h, accQueue.Dequeue(), 0, footbrakeQueue.Dequeue());
 
                 }
                 else
                 {
-                    h = CrossPlatformInputManager.GetAxis("Horizontal");
-                    float v = CrossPlatformInputManager.GetAxis("Vertical");
+                    controllerHQueue.Enqueue(CrossPlatformInputManager.GetAxis("Horizontal"));
+                    vQueue.Enqueue(CrossPlatformInputManager.GetAxis("Vertical"));
 
+                    float v = vQueue.Dequeue();
+                    h = hQueue.Dequeue();
                     m_Car.Move(h, v, v, 0);
                 }
 
