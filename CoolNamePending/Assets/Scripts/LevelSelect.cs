@@ -7,7 +7,6 @@ using PostProcess;
 using Valve.VR;
 using UnityStandardAssets.Vehicles.Car;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class LevelSelect : MonoBehaviour {
 
@@ -41,7 +40,6 @@ public class LevelSelect : MonoBehaviour {
     public event ShowMessagesHandler OnLevelChangeShowMessage;
 
     public int FadeOutTime = 1;
-    public int SwitchOutTime = 3;
     public int FadeInTime = 5;
 
     private CarFailureStates carStates;
@@ -208,18 +206,7 @@ public class LevelSelect : MonoBehaviour {
                     StartCoroutine(SetLevel(1, 0, true, false));
                     break;
                 case 2:
-                    carUserControl.IsChangingLevel = true; // This script instance can't see the current script due to namespace issues otherwise we would have it subscribe to the following event
-                    if (HMDActive)
-                    {
-                        SteamVR_Fade.View(Color.black, SwitchOutTime);
-                        Invoke("TransitionCrashScene", SwitchOutTime + 1.0f);
-                    }
-                    else
-                    {
-                        TransitionCrashScene();
-                    }
-                    
-                    //StartCoroutine(SetLevel(3, 0, true, false));
+                    StartCoroutine(SetLevel(3, 0, true, false));
                     break;
             }
         }
@@ -229,27 +216,8 @@ public class LevelSelect : MonoBehaviour {
         }
         else if (triggerName == "Level3Trigger")
         {
-            //StartCoroutine(SetLevel(3, 0, true, false));
-            if (HMDActive)
-            {
-                SteamVR_Fade.View(Color.black, SwitchOutTime);
-                Invoke("TransitionPoliceScene", SwitchOutTime + +1.0f);
-            }
-            else
-            {
-                TransitionPoliceScene();
-            }
+            StartCoroutine(SetLevel(3, 0, true, false));
         }
-    }
-
-    public void TransitionCrashScene()
-    {
-        SceneManager.LoadScene("CrashFinalScene");
-    }
-
-    public void TransitionPoliceScene()
-    {
-        SceneManager.LoadScene("PoliceFinalScene");
     }
 
     public void ExternalSetLevel(int level, int difficulty)
@@ -262,11 +230,11 @@ public class LevelSelect : MonoBehaviour {
         switch (difficulty)
         {
             case 1: // easy
-                carUserControl.SetInputLag(0);
+                carUserControl.SetInputLag(100);
                 break;
             case 2: // medium
                 InvokeRepeating("BlinkRandomizer", 5, 14);
-                carUserControl.SetInputLag(150);
+                carUserControl.SetInputLag(200);
                 break;
             case 3: // hard
                 InvokeRepeating("BlinkRandomizer", 5, 7);
