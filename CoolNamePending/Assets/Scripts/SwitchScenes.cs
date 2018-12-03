@@ -4,18 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SwitchScenes : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.F1))
+        // return to main menu if F1 or a button on steering wheel is pressed
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.F1))
         {
-            Debug.Log("pressed f1");
-            //StartCoroutine("SwitchToMain");
+            SceneManager.LoadScene("MainScene");
         }
 	}
     
