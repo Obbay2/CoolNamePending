@@ -61,11 +61,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\KEI - Speed Signs\Resources\Scripts\Control.cs" />
-    <Compile Include="Assets\KEI - Speed Signs\Resources\Scripts\Rotate.cs" />
     <Compile Include="Assets\Models\EasyRoads3D\Scripts\ERVegetationStudio.cs" />
     <Compile Include="Assets\Models\EasyRoads3D\Scripts\runtimeScript.cs" />
     <Compile Include="Assets\Models\Eye Blink Effect\Scripts\BlinkEffect.cs" />
+    <Compile Include="Assets\Models\Road signs\KEI - Speed Signs\Resources\Scripts\Control.cs" />
+    <Compile Include="Assets\Models\Road signs\KEI - Speed Signs\Resources\Scripts\Rotate.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
