@@ -16,6 +16,9 @@ public class MessageManager : MonoBehaviour {
 
     private CarUserControl carUserControl;
 
+    public delegate void MessageCompleteHandler();
+    public event MessageCompleteHandler MessageComplete;
+
     // Use this for initialization
     void Start () {
         levelSelect = orchestrator.GetComponent<LevelSelect>();
@@ -45,10 +48,21 @@ public class MessageManager : MonoBehaviour {
                 yield return StartCoroutine(TextUtilities.ShowTextSmoothly(0.5f, 0.5f, 1, messageText, nextMessageText));
                 break;
             case 2:
+                messageText.text = "You were at a party and had a few too many drinks.";
+                yield return StartCoroutine(TextUtilities.ShowTextSmoothly(0.5f, 0.5f, 1, messageText, nextMessageText));
+                messageText.text = "Your mom called and she said to get home quick something bad has happened.";
+                yield return StartCoroutine(TextUtilities.ShowTextSmoothly(0.5f, 0.5f, 1, messageText, nextMessageText));
+                messageText.text = "She didn't say why...";
+                yield return StartCoroutine(TextUtilities.ShowTextSmoothly(0.5f, 0.5f, 1, messageText, nextMessageText));
                 break;
         }
         messageUI.SetActive(false);
         carUserControl.TakingInput = true;
+
+        if(MessageComplete != null)
+        {
+            MessageComplete();
+        }
     }
 	
 	
