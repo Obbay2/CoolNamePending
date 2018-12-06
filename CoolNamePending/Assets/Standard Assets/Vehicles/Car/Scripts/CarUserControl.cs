@@ -23,6 +23,8 @@ namespace UnityStandardAssets.Vehicles.Car
 
         public bool IsChangingLevel = false;
 
+        public float inputLagMs;
+
         private Queue<float> controllerHQueue = new Queue<float>();
         private Queue<float> vQueue = new Queue<float>();
         private Queue<float> hQueue = new Queue<float>();
@@ -42,10 +44,12 @@ namespace UnityStandardAssets.Vehicles.Car
             inputQueues.Add(hQueue);
             inputQueues.Add(accQueue);
             inputQueues.Add(footbrakeQueue);
+            inputLagMs = 0;
         }
 
         public void SetInputLag(float ms)
         {
+            inputLagMs = ms;
             foreach (Queue<float> q in inputQueues)
             {
                 q.Clear();
@@ -102,7 +106,7 @@ namespace UnityStandardAssets.Vehicles.Car
                     vQueue.Enqueue(CrossPlatformInputManager.GetAxis("Vertical"));
 
                     float v = vQueue.Dequeue();
-                    h = hQueue.Dequeue();
+                    h = controllerHQueue.Dequeue();
                     m_Car.Move(h, v, v, 0);
                 }
 

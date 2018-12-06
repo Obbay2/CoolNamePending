@@ -61,7 +61,7 @@ public class LevelSelect : MonoBehaviour
         StartCoroutine(SetLevel(Level, 0, false, false));
         carStates.OnLevelChangeTrigger += PlayerVehicleLevelChangeHandler;
         RenderSettings.fog = true;
-        InitializePostProcessingProfiles();
+        // InitializePostProcessingProfiles();
     }
 
     // Update is called once every 20 ms
@@ -87,31 +87,69 @@ public class LevelSelect : MonoBehaviour
         {
             PostProcessingTest();
         }
+        else if (Input.GetKeyDown(KeyCode.E))
+        {
+            InitializePostProcessingProfiles();
+        }
     }
 
     public void InitializePostProcessingProfiles()
     {
-        VignetteModel.Settings vignetteSettings = postProcessingProfiles[2].vignette.settings;
-        vignetteSettings.intensity = 0.119f;
-
+        print("InitializePostProcessingProfiles Called");
 
         // Set up profile 1
         // Set vignetting intensity to 0.119
         // set smoothness to 1
         // set roundness to 0.86    
+        VignetteModel.Settings vignetteSettings = postProcessingProfiles[0].vignette.settings;
+        vignetteSettings.intensity = 0f;
+        vignetteSettings.smoothness = 1;
+        vignetteSettings.roundness = 0.86f;
+        postProcessingProfiles[0].vignette.settings = vignetteSettings;
+        MotionBlurModel.Settings motionBlurSettings = postProcessingProfiles[0].motionBlur.settings;
+        motionBlurSettings.shutterAngle = 0;
+        motionBlurSettings.sampleCount = 0;
+        motionBlurSettings.frameBlending = 0;
+
         // Set up profile 2
-        // set smoothness to 1
+        // set intensity to 1
         // set roundness to 0.86    
+        vignetteSettings = postProcessingProfiles[1].vignette.settings;
+        vignetteSettings.intensity = 0f;
+        vignetteSettings.smoothness = 1;
+        vignetteSettings.roundness = 0.86f;
+        postProcessingProfiles[0].vignette.settings = vignetteSettings;
+        motionBlurSettings = postProcessingProfiles[0].motionBlur.settings;
+        motionBlurSettings.shutterAngle = 0;
+        motionBlurSettings.sampleCount = 0;
+        motionBlurSettings.frameBlending = 0;
+
         // Set up profile 3
-        // set smoothness to 1
+        // set intensity to 1
         // set roundness to 0.86    
+        vignetteSettings = postProcessingProfiles[2].vignette.settings;
+        vignetteSettings.intensity = 0f;
+        vignetteSettings.smoothness = 1;
+        vignetteSettings.roundness = 0.86f;
+        postProcessingProfiles[0].vignette.settings = vignetteSettings;
+        motionBlurSettings = postProcessingProfiles[0].motionBlur.settings;
+        motionBlurSettings.shutterAngle = 0;
+        motionBlurSettings.sampleCount = 0;
+        motionBlurSettings.frameBlending = 0;
     }
 
     public void PostProcessingTest()
     {
         print("PostProcessingTest called");
-        VignetteModel.Settings vignetteSettings = postProcessingProfiles[2].vignette.settings;
-        vignetteSettings.intensity = 1f;
+        VignetteModel.Settings vignetteSettingsEasy = postProcessingProfiles[0].vignette.settings;
+        vignetteSettingsEasy.intensity = 1;
+        postProcessingProfiles[0].vignette.settings = vignetteSettingsEasy;
+        VignetteModel.Settings vignetteSettingsMedium = postProcessingProfiles[1].vignette.settings;
+        vignetteSettingsMedium.intensity = 1;
+        postProcessingProfiles[1].vignette.settings = vignetteSettingsMedium;
+        VignetteModel.Settings vignetteSettingsHard = postProcessingProfiles[2].vignette.settings;
+        vignetteSettingsHard.intensity = 1;
+        postProcessingProfiles[2].vignette.settings = vignetteSettingsHard;
     }
 
     public IEnumerator SetLevel(int level, int difficulty, bool delay, bool showMessages)
@@ -306,6 +344,24 @@ public class LevelSelect : MonoBehaviour
                 InvokeRepeating("BlinkRandomizer", 5, 7);
                 carUserControl.SetInputLag(300);
                 break;
+        }
+    }
+
+    void incrementVignetting(float increment, float max)
+    {
+        
+    }
+
+    void incrementMotionBlur()
+    {
+
+    }
+
+    void incrementInputLag(float increment, float max)
+    {
+        if (max >= increment + carUserControl.inputLagMs)
+        {
+            carUserControl.SetInputLag(carUserControl.inputLagMs + increment);
         }
     }
 
