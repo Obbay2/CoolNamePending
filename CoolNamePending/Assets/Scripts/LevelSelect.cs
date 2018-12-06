@@ -192,6 +192,7 @@ public class LevelSelect : MonoBehaviour {
         PlayerVehicle.transform.position = t.transform.position;
         PlayerVehicle.GetComponent<Rigidbody>().velocity = Vector3.zero;
         PlayerVehicle.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        PlayerVehicle.GetComponentInChildren<CarUI>().ResetStartTime();
     }
 
     private void SetSkybox(int level)
