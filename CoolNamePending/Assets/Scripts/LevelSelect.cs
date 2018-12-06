@@ -9,7 +9,8 @@ using UnityStandardAssets.Vehicles.Car;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class LevelSelect : MonoBehaviour {
+public class LevelSelect : MonoBehaviour
+{
 
     public GameObject PlayerVehicle;
     public GameObject HeadLights;
@@ -49,6 +50,8 @@ public class LevelSelect : MonoBehaviour {
 
     private bool HMDActive = false;
 
+    // Test code
+
     // Use this for initialization
     void Start()
     {
@@ -58,10 +61,12 @@ public class LevelSelect : MonoBehaviour {
         StartCoroutine(SetLevel(Level, 0, false, false));
         carStates.OnLevelChangeTrigger += PlayerVehicleLevelChangeHandler;
         RenderSettings.fog = true;
+        InitializePostProcessingProfiles();
     }
 
-    // Update is called once per frame
-    void FixedUpdate () {
+    // Update is called once every 20 ms
+    void FixedUpdate()
+    {
         if (Input.GetKeyDown(KeyCode.F1))
         {
             StartCoroutine(SetLevel(0, 0, false, false));
@@ -78,6 +83,35 @@ public class LevelSelect : MonoBehaviour {
         {
             StartCoroutine(SetLevel(3, 0, false, false));
         }
+        else if (Input.GetKeyDown(KeyCode.Q))
+        {
+            PostProcessingTest();
+        }
+    }
+
+    public void InitializePostProcessingProfiles()
+    {
+        VignetteModel.Settings vignetteSettings = postProcessingProfiles[2].vignette.settings;
+        vignetteSettings.intensity = 0.119f;
+
+
+        // Set up profile 1
+        // Set vignetting intensity to 0.119
+        // set smoothness to 1
+        // set roundness to 0.86    
+        // Set up profile 2
+        // set smoothness to 1
+        // set roundness to 0.86    
+        // Set up profile 3
+        // set smoothness to 1
+        // set roundness to 0.86    
+    }
+
+    public void PostProcessingTest()
+    {
+        print("PostProcessingTest called");
+        VignetteModel.Settings vignetteSettings = postProcessingProfiles[2].vignette.settings;
+        vignetteSettings.intensity = 1f;
     }
 
     public IEnumerator SetLevel(int level, int difficulty, bool delay, bool showMessages)
@@ -161,7 +195,7 @@ public class LevelSelect : MonoBehaviour {
             yield return new WaitForSeconds(FadeInTime);
         }
 
-        
+
 
         carUserControl.IsChangingLevel = false; // Work around hack described above
     }
@@ -172,7 +206,7 @@ public class LevelSelect : MonoBehaviour {
         {
             objects[level].SetActive(true); // We do this first to make sure we don't have weird camera flicker
         }
-        
+
         for (int i = 0; i < numberOfLevels; i++)
         {
             if (i != level && objects[i] != null)
@@ -192,7 +226,7 @@ public class LevelSelect : MonoBehaviour {
 
     private void SetSkybox(int level)
     {
-        if(levelSkybox[level] != null)
+        if (levelSkybox[level] != null)
         {
             RenderSettings.skybox = levelSkybox[level];
         }
@@ -283,5 +317,5 @@ public class LevelSelect : MonoBehaviour {
     void Blink()
     {
         levelCameras[2].GetComponent<BlinkEffect>().Blink();
-    } 
+    }
 }
