@@ -31,6 +31,7 @@ public class LevelSelect : MonoBehaviour
     [SerializeField] public PostProcessingProfile[] postProcessingProfiles = new PostProcessingProfile[3];
 
     public int Level = 0;
+    private int Difficulty = 0;
 
     public delegate void LevelChangedHandler(int level);
     public event LevelChangedHandler OnLevelChanged;
@@ -47,6 +48,7 @@ public class LevelSelect : MonoBehaviour
 
     private CarFailureStates carStates;
     private CarUserControl carUserControl;
+    private MessageManager messageManager;
 
     private bool HMDActive = false;
 
@@ -58,8 +60,10 @@ public class LevelSelect : MonoBehaviour
         HMDActive = OpenVR.IsHmdPresent();
         carStates = PlayerVehicle.GetComponent<CarFailureStates>();
         carUserControl = PlayerVehicle.GetComponent<CarUserControl>();
+        messageManager = GetComponent<MessageManager>();
         StartCoroutine(SetLevel(Level, 0, false, false));
         carStates.OnLevelChangeTrigger += PlayerVehicleLevelChangeHandler;
+        messageManager.MessageComplete += StartLevelEffects;
         RenderSettings.fog = true;
         // InitializePostProcessingProfiles();
     }
@@ -173,6 +177,7 @@ public class LevelSelect : MonoBehaviour
         Level = level;
         CancelInvoke("BlinkRandomizer");
         CancelInvoke("Blink");
+        levelCameras[2].GetComponent<PostProcessingBehaviour>().profile = null;
         switch (level)
         {
             case 0:
@@ -198,8 +203,7 @@ public class LevelSelect : MonoBehaviour
                 Terrain.SetActive(true);
                 RoadNetwork.SetActive(true);
                 SetVehiclePosition(Level2Start);
-                TriggerLevelTwoWithDifficulty(difficulty);
-                levelCameras[2].GetComponent<PostProcessingBehaviour>().profile = postProcessingProfiles[difficulty - 1];
+                Difficulty = difficulty;
                 RenderSettings.fogDensity = 0.002f;
                 RenderSettings.ambientSkyColor = new Color(0.05318755f, 0.05691407f, 0.06470588f);
                 RenderSettings.ambientEquatorColor = new Color(0.02843137f, 0.03137255f, 0.03333334f);
@@ -260,6 +264,7 @@ public class LevelSelect : MonoBehaviour
         PlayerVehicle.transform.position = t.transform.position;
         PlayerVehicle.GetComponent<Rigidbody>().velocity = Vector3.zero;
         PlayerVehicle.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        PlayerVehicle.GetComponentInChildren<CarUI>().ResetStartTime();
     }
 
     private void SetSkybox(int level)
@@ -329,8 +334,16 @@ public class LevelSelect : MonoBehaviour
         StartCoroutine(SetLevel(level, difficulty, true, true));
     }
 
+    private void StartLevelEffects() {
+        if (Level == 2)
+        {
+            TriggerLevelTwoWithDifficulty(Difficulty);
+        }   
+    }
+
     private void TriggerLevelTwoWithDifficulty(int difficulty)
     {
+        levelCameras[2].GetComponent<PostProcessingBehaviour>().profile = postProcessingProfiles[difficulty - 1];
         switch (difficulty)
         {
             case 1: // easy
