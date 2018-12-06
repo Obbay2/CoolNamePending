@@ -47,7 +47,7 @@ namespace UnityStandardAssets.Vehicles.Car
             inputLagMs = 0;
         }
 
-        public void SetInputLag(float ms)
+        public void IncreaseInputLag(float ms)
         {
             inputLagMs = ms;
             foreach (Queue<float> q in inputQueues)
@@ -59,7 +59,6 @@ namespace UnityStandardAssets.Vehicles.Car
                 }
             }
         }
-
 
         void FixedUpdate()
         {

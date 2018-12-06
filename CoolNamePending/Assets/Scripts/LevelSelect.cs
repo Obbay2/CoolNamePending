@@ -8,6 +8,8 @@ using Valve.VR;
 using UnityStandardAssets.Vehicles.Car;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering.PostProcessing;
+
 
 public class LevelSelect : MonoBehaviour
 {
@@ -114,6 +116,7 @@ public class LevelSelect : MonoBehaviour
         motionBlurSettings.shutterAngle = 0;
         motionBlurSettings.sampleCount = 0;
         motionBlurSettings.frameBlending = 0;
+        postProcessingProfiles[0].motionBlur.settings = motionBlurSettings;
 
         // Set up profile 2
         // set intensity to 1
@@ -122,24 +125,27 @@ public class LevelSelect : MonoBehaviour
         vignetteSettings.intensity = 0f;
         vignetteSettings.smoothness = 1;
         vignetteSettings.roundness = 0.86f;
-        postProcessingProfiles[0].vignette.settings = vignetteSettings;
+        postProcessingProfiles[1].vignette.settings = vignetteSettings;
         motionBlurSettings = postProcessingProfiles[0].motionBlur.settings;
         motionBlurSettings.shutterAngle = 0;
-        motionBlurSettings.sampleCount = 0;
+        motionBlurSettings.sampleCount = 4;
         motionBlurSettings.frameBlending = 0;
+        postProcessingProfiles[1].motionBlur.settings = motionBlurSettings;
 
         // Set up profile 3
         // set intensity to 1
         // set roundness to 0.86    
+        // max frame blending of 0.298
         vignetteSettings = postProcessingProfiles[2].vignette.settings;
         vignetteSettings.intensity = 0f;
         vignetteSettings.smoothness = 1;
         vignetteSettings.roundness = 0.86f;
-        postProcessingProfiles[0].vignette.settings = vignetteSettings;
+        postProcessingProfiles[2].vignette.settings = vignetteSettings;
         motionBlurSettings = postProcessingProfiles[0].motionBlur.settings;
-        motionBlurSettings.shutterAngle = 0;
-        motionBlurSettings.sampleCount = 0;
-        motionBlurSettings.frameBlending = 0;
+        motionBlurSettings.shutterAngle = 331;
+        motionBlurSettings.sampleCount = 30;
+        motionBlurSettings.frameBlending = 0.1f;
+        postProcessingProfiles[2].motionBlur.settings = motionBlurSettings;
     }
 
     public void PostProcessingTest()
@@ -344,37 +350,71 @@ public class LevelSelect : MonoBehaviour
     private void TriggerLevelTwoWithDifficulty(int difficulty)
     {
         levelCameras[2].GetComponent<PostProcessingBehaviour>().profile = postProcessingProfiles[difficulty - 1];
+        InitializePostProcessingProfiles();
+        InvokeRepeating("incrementEffects", 1f, 5f);
         switch (difficulty)
         {
             case 1: // easy
-                carUserControl.SetInputLag(100);
+                carUserControl.IncreaseInputLag(100);
                 break;
             case 2: // medium
                 InvokeRepeating("BlinkRandomizer", 5, 14);
-                carUserControl.SetInputLag(200);
+                carUserControl.IncreaseInputLag(200);
                 break;
             case 3: // hard
                 InvokeRepeating("BlinkRandomizer", 5, 7);
-                carUserControl.SetInputLag(300);
+                carUserControl.IncreaseInputLag(300);
+                break;
+        }
+    }
+
+    void incrementEffects()
+    {
+        switch (Difficulty)
+        {
+            case 1:
+                incrementInputLag(20, 100);
+                incrementVignetting(0.04f, 1f); // DEBUG MUST REMOVE
+                break;
+            case 2:
+                incrementInputLag(40, 200);
+                incrementVignetting(0.04f, 1f);
+                break;
+            case 3:
+                incrementInputLag(60, 300);
+                incrementVignetting(0.04f, 1f);
+                incrementMotionBlur(0.04f, 0.3f);
                 break;
         }
     }
 
     void incrementVignetting(float increment, float max)
     {
-        
+        int idx = Difficulty - 1;
+        VignetteModel.Settings vignetteSettings = postProcessingProfiles[idx].vignette.settings;
+        if (max >= increment + vignetteSettings.intensity)
+        {
+            vignetteSettings.intensity = vignetteSettings.intensity + increment;
+        }
+        postProcessingProfiles[1].vignette.settings = vignetteSettings;
     }
 
-    void incrementMotionBlur()
+    void incrementMotionBlur(float increment, float max)
     {
-
+        int idx = Difficulty - 1;
+        MotionBlurModel.Settings motionBlurSettings = postProcessingProfiles[idx].motionBlur.settings;
+        if (max >= increment + motionBlurSettings.frameBlending)
+        {
+            motionBlurSettings.frameBlending = motionBlurSettings.frameBlending + increment;
+        }
+        postProcessingProfiles[idx].motionBlur.settings = motionBlurSettings;
     }
 
     void incrementInputLag(float increment, float max)
     {
         if (max >= increment + carUserControl.inputLagMs)
         {
-            carUserControl.SetInputLag(carUserControl.inputLagMs + increment);
+            carUserControl.IncreaseInputLag(increment);
         }
     }
 
