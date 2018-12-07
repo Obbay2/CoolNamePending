@@ -38,7 +38,8 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.00007971838, g: 0.000076551834, b: 0.00007552406,
+    a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -124,7 +125,7 @@ GameObject:
   - component: {fileID: 251007723}
   - component: {fileID: 251007722}
   m_Layer: 0
-  m_Name: Statistic
+  m_Name: Police Stat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -528,8 +529,8 @@ RectTransform:
   m_Children:
   - {fileID: 1617674362}
   - {fileID: 251007721}
-  - {fileID: 1222442214}
   - {fileID: 1590663083}
+  - {fileID: 1222442214}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -552,8 +553,8 @@ MonoBehaviour:
   uiElement:
   - {fileID: 1617674363}
   - {fileID: 251007722}
-  - {fileID: 1222442215}
   - {fileID: 1590663084}
+  - {fileID: 1222442215}
   FadeInTime: 3
 --- !u!1 &1222442213
 GameObject:
@@ -583,11 +584,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1015857333}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -156}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1222442215
@@ -725,7 +726,7 @@ GameObject:
   - component: {fileID: 1590663085}
   - component: {fileID: 1590663084}
   m_Layer: 0
-  m_Name: Press Button
+  m_Name: Crash Stat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -742,11 +743,11 @@ RectTransform:
   m_LocalScale: {x: 0.99998915, y: 0.99998915, z: 0.99998915}
   m_Children: []
   m_Father: {fileID: 1015857333}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.00000017881393}
+  m_AnchoredPosition: {x: 0, y: 142}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1590663084
@@ -770,7 +771,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: '
 
-    <Press any button on wheel to return to main menu>'
+    In the United States,  29 people die every day from being in a DUI accident.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -797,8 +798,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -838,12 +839,12 @@ MonoBehaviour:
   m_margin: {x: -379.38324, y: 161.81296, z: -382.6537, w: -287.03732}
   m_textInfo:
     textComponent: {fileID: 1590663084}
-    characterCount: 51
+    characterCount: 77
     spriteCount: 0
-    spaceCount: 10
-    wordCount: 11
+    spaceCount: 16
+    wordCount: 16
     linkCount: 0
-    lineCount: 2
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0
