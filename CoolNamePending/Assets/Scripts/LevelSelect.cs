@@ -97,6 +97,22 @@ public class LevelSelect : MonoBehaviour
         {
             InitializePostProcessingProfiles();
         }
+        else if (Input.GetKeyDown(KeyCode.F))
+        {
+            SnapCameraPosition();
+        }
+    }
+
+    public void SnapCameraPosition()
+    {
+
+        foreach (var camera in levelCameras)
+        {
+            if (camera != null)
+            {
+                //camera.transform.position = new Vector3(0.01179496f, 1.409049f, 0.2742594f);
+            }
+        }
     }
 
     public void InitializePostProcessingProfiles()
@@ -177,6 +193,11 @@ public class LevelSelect : MonoBehaviour
         }
 
         EnableObjects(level, levelCameras);
+
+        OpenVR.System.ResetSeatedZeroPose();
+        OpenVR.Compositor.SetTrackingSpace(ETrackingUniverseOrigin.TrackingUniverseSeated);
+        levelCameras[1].transform.parent.localPosition = new Vector3(-.372f, 1.2f, -0.1f);
+
         EnableObjects(level, levelObjects);
 
         SetSkybox(level);

@@ -26,7 +26,7 @@ public class CarUI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        velocityText.text = System.Convert.ToString((int) (rb.velocity.magnitude * MpSToMpH)) + " mph";
+        velocityText.text = System.Convert.ToString((int) (rb.velocity.magnitude * MpSToMpH * 7 / 8)) + " mph";
         songText.text = radioScript.playingSource.clip.name;
 
         float t = Time.time - startTime;
