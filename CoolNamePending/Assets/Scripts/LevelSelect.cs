@@ -24,6 +24,8 @@ public class LevelSelect : MonoBehaviour
     public Text timerText;
     public float startTime;
     public bool startCounting = false;
+    public float dayTimer;
+    private float dayTimerCounter; 
 
     public Transform Level1Start;
     public Transform Level2Start;
@@ -77,6 +79,7 @@ public class LevelSelect : MonoBehaviour
         carStates.OnLevelChangeTrigger += PlayerVehicleLevelChangeHandler;
         messageManager.MessageComplete += StartLevelEffects;
         RenderSettings.fog = true;
+        dayTimerCounter = dayTimer;
         // InitializePostProcessingProfiles();
     }
 
@@ -130,15 +133,24 @@ public class LevelSelect : MonoBehaviour
     public void ResetTimerText()
     {
         startTime = 0.0f;
-        timerText.text = "00:00";
+        dayTimerCounter = dayTimer;
+        timerText.text = "";
     }
 
     IEnumerator updateDayTimer()
     {
-        string min = ((int)startTime / 60).ToString("00");
-        string sec = (startTime % 60).ToString("00");
-        timerText.text = min + ":" + sec;
-        startTime += Time.deltaTime;
+        dayTimerCounter -= Time.deltaTime;
+        if (dayTimerCounter <= 0.0f)
+        {
+            StartCoroutine(SetLevel(2, 3, true, true));
+        }
+        else
+        {
+            string min = ((int)dayTimerCounter / 60).ToString("00");
+            string sec = (dayTimerCounter % 60).ToString("00");
+            timerText.text = min + ":" + sec;
+
+        }
         yield return null;
     }
 
@@ -221,7 +233,7 @@ public class LevelSelect : MonoBehaviour
         postProcessingProfiles[2].vignette.settings = vignetteSettingsHard;
     }
 
-    public IEnumerator SetLevel(int level, int difficulty, bool delay, bool showMessages)
+    public IEnumerator SetLevel(int level, int difficulty, bool delay, bool showMessages, bool resetDay = true)
     {
         carUserControl.IsChangingLevel = true; // This script instance can't see the current script due to namespace issues otherwise we would have it subscribe to the following event
         if (OnLevelChanging != null)
@@ -234,7 +246,11 @@ public class LevelSelect : MonoBehaviour
             SteamVR_Fade.View(Color.black, FadeOutTime);
             yield return new WaitForSeconds(FadeOutTime);
         }
-        ResetTimerText();
+        if (resetDay)
+        {
+            ResetTimerText();
+        }
+
         EnableObjects(level, levelCameras);
 
         OpenVR.System.ResetSeatedZeroPose();
@@ -361,7 +377,7 @@ public class LevelSelect : MonoBehaviour
             switch (Level)
             {
                 case 1:
-                    StartCoroutine(SetLevel(1, 0, true, false));
+                    StartCoroutine(SetLevel(1, 0, true, false, false));
                     break;
                 case 2:
                     carUserControl.IsChangingLevel = true; // This script instance can't see the current script due to namespace issues otherwise we would have it subscribe to the following event
