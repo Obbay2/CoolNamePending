@@ -38,6 +38,8 @@ public class MessageManager : MonoBehaviour {
     IEnumerator ShowMessages(int level)
     {
         carUserControl.TakingInput = false;
+        //levelSelect.startTime = 0.0f;
+        levelSelect.startCounting = false;
         messageUI.SetActive(true);
         switch (level)
         {
@@ -58,6 +60,7 @@ public class MessageManager : MonoBehaviour {
         }
         messageUI.SetActive(false);
         carUserControl.TakingInput = true;
+        levelSelect.startCounting = true;
 
         if(MessageComplete != null)
         {

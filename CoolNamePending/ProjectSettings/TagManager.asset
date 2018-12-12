@@ -9,6 +9,8 @@ TagManager:
   - OtherCar
   - Terrain
   - Road
+  - Fire
+  - Stats
   layers:
   - Default
   - TransparentFX

@@ -20,6 +20,11 @@ public class LevelSelect : MonoBehaviour
     public GameObject Terrain;
     public GameObject RoadNetwork;
 
+
+    public Text timerText;
+    public float startTime;
+    public bool startCounting = false;
+
     public Transform Level1Start;
     public Transform Level2Start;
 
@@ -53,7 +58,11 @@ public class LevelSelect : MonoBehaviour
     private CarUserControl carUserControl;
     private MessageManager messageManager;
 
+
     private bool HMDActive = false;
+
+
+
 
     // Test code
 
@@ -106,6 +115,40 @@ public class LevelSelect : MonoBehaviour
         {
             SnapCameraPosition();
         }
+
+        // If we are in daytime then we count down, else night we just count up
+        if (startCounting && Level == 1)
+        {
+            StartCoroutine(updateDayTimer());
+        }
+        else if (startCounting && Level == 2)
+        {
+            StartCoroutine(updateNightTimer());
+        }
+    }
+
+    public void ResetTimerText()
+    {
+        startTime = 0.0f;
+        timerText.text = "00:00";
+    }
+
+    IEnumerator updateDayTimer()
+    {
+        string min = ((int)startTime / 60).ToString("00");
+        string sec = (startTime % 60).ToString("00");
+        timerText.text = min + ":" + sec;
+        startTime += Time.deltaTime;
+        yield return null;
+    }
+
+    IEnumerator updateNightTimer()
+    {
+        string min = ((int)startTime / 60).ToString("00");
+        string sec = (startTime % 60).ToString("00");
+        timerText.text = min + ":" + sec;
+        startTime += Time.deltaTime;
+        yield return null;
     }
 
     public void SnapCameraPosition()
@@ -191,7 +234,7 @@ public class LevelSelect : MonoBehaviour
             SteamVR_Fade.View(Color.black, FadeOutTime);
             yield return new WaitForSeconds(FadeOutTime);
         }
-
+        ResetTimerText();
         EnableObjects(level, levelCameras);
 
         OpenVR.System.ResetSeatedZeroPose();
@@ -301,7 +344,6 @@ public class LevelSelect : MonoBehaviour
         PlayerVehicle.transform.position = t.transform.position;
         PlayerVehicle.GetComponent<Rigidbody>().velocity = Vector3.zero;
         PlayerVehicle.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-        PlayerVehicle.GetComponentInChildren<CarUI>().ResetStartTime();
     }
 
     private void SetSkybox(int level)
@@ -323,15 +365,7 @@ public class LevelSelect : MonoBehaviour
                     break;
                 case 2:
                     carUserControl.IsChangingLevel = true; // This script instance can't see the current script due to namespace issues otherwise we would have it subscribe to the following event
-                    if (HMDActive)
-                    {
-                        //SteamVR_Fade.View(Color.black, SwitchOutTime);
-                        StartCoroutine(SetLevel(3, 0, true, false));
-                    }
-                    else
-                    {
-                        StartCoroutine(SetLevel(3, 0, false, false));
-                    }
+                    StartCoroutine(SetLevel(3, 0, true, false));
                     break;
             }
         }
@@ -341,16 +375,7 @@ public class LevelSelect : MonoBehaviour
         }
         else if (triggerName == "Level3Trigger")
         {
-            if (HMDActive)
-            {
-                //SteamVR_Fade.View(Color.black, SwitchOutTime);
-                //Invoke("TransitionPoliceScene", SwitchOutTime + +1.0f);
-                StartCoroutine(SetLevel(4, 0, true, false));
-            }
-            else
-            {
-                StartCoroutine(SetLevel(4, 0, false, false));
-            }
+            StartCoroutine(SetLevel(4, 0, true, false));
         }
     }
 
