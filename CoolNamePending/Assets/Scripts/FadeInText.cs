@@ -13,7 +13,20 @@ public class FadeInText : MonoBehaviour {
     public void Start()
     {
         HMDActive = OpenVR.IsHmdPresent();
-        StartCoroutine(FadeCanvasGroup(uiElement));
+    }
+
+    void OnEnable()
+    {
+        StartCoroutine(FadeCanvasGroup(uiElement));  
+    }
+
+    public IEnumerator ResetCanvasGroup()
+    {
+        for (int i = 0; i < uiElement.Length; i++)
+        {
+            uiElement[i].color = new Color(uiElement[i].color.r, uiElement[i].color.g, uiElement[i].color.b, 0);
+        }
+        yield return null;
     }
 
     public IEnumerator FadeCanvasGroup(TextMeshProUGUI[] cg)
@@ -34,8 +47,6 @@ public class FadeInText : MonoBehaviour {
                 yield return new WaitForSecondsRealtime(1 / 51);
             }
         }
-
-
     }
 
 }

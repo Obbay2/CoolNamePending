@@ -9,6 +9,7 @@ using UnityStandardAssets.Vehicles.Car;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering.PostProcessing;
+using TMPro;
 
 
 public class LevelSelect : MonoBehaviour
@@ -88,6 +89,10 @@ public class LevelSelect : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.F4))
         {
             StartCoroutine(SetLevel(3, 0, false, false));
+        }
+        else if (Input.GetKeyDown(KeyCode.F5))
+        {
+            StartCoroutine(SetLevel(4, 0, false, false));
         }
         else if (Input.GetKeyDown(KeyCode.Q))
         {
@@ -231,12 +236,19 @@ public class LevelSelect : MonoBehaviour
                 RenderSettings.ambientEquatorColor = new Color(0.02843137f, 0.03137255f, 0.03333334f);
                 RenderSettings.ambientGroundColor = new Color(0.01176471f, 0.01078431f, 0.00882353f);
                 break;
-            case 3:
+            case 3: // crashing case
                 PlayerVehicle.SetActive(false);
                 Terrain.SetActive(false);
                 RoadNetwork.SetActive(false);
                 RenderSettings.fogDensity = 0;
                 break;
+            case 4: // police case
+                PlayerVehicle.SetActive(false);
+                Terrain.SetActive(false);
+                RoadNetwork.SetActive(false);
+                RenderSettings.fogDensity = 0;
+                break;
+
         }
 
         // The level "changes" before the player can see it, thus letting us reset other systems subscribed to this event
@@ -259,8 +271,6 @@ public class LevelSelect : MonoBehaviour
             yield return new WaitForSeconds(FadeInTime);
         }
 
-
-
         carUserControl.IsChangingLevel = false; // Work around hack described above
     }
 
@@ -275,6 +285,11 @@ public class LevelSelect : MonoBehaviour
         {
             if (i != level && objects[i] != null)
             {
+                // hacky way: check if object being deleted is a canvas, and if it is, reset all the alphas values to be 0 before setting inactive
+                if (objects[i].tag == "Stats") 
+                {
+                    StartCoroutine(objects[i].GetComponent<FadeInText>().ResetCanvasGroup());
+                }
                 objects[i].SetActive(false);
             }
         }
@@ -310,15 +325,13 @@ public class LevelSelect : MonoBehaviour
                     carUserControl.IsChangingLevel = true; // This script instance can't see the current script due to namespace issues otherwise we would have it subscribe to the following event
                     if (HMDActive)
                     {
-                        SteamVR_Fade.View(Color.black, SwitchOutTime);
-                        Invoke("TransitionCrashScene", SwitchOutTime + 1.0f);
+                        //SteamVR_Fade.View(Color.black, SwitchOutTime);
+                        StartCoroutine(SetLevel(3, 0, true, false));
                     }
                     else
                     {
-                        TransitionCrashScene();
+                        StartCoroutine(SetLevel(3, 0, false, false));
                     }
-
-                    //StartCoroutine(SetLevel(3, 0, true, false));
                     break;
             }
         }
@@ -328,28 +341,18 @@ public class LevelSelect : MonoBehaviour
         }
         else if (triggerName == "Level3Trigger")
         {
-            //StartCoroutine(SetLevel(3, 0, true, false));
             if (HMDActive)
             {
-                SteamVR_Fade.View(Color.black, SwitchOutTime);
-                Invoke("TransitionPoliceScene", SwitchOutTime + +1.0f);
+                //SteamVR_Fade.View(Color.black, SwitchOutTime);
+                //Invoke("TransitionPoliceScene", SwitchOutTime + +1.0f);
+                StartCoroutine(SetLevel(4, 0, true, false));
             }
             else
             {
-                TransitionPoliceScene();
+                StartCoroutine(SetLevel(4, 0, false, false));
             }
         }
     }
-
-    public void TransitionCrashScene()
-    {
-        SceneManager.LoadScene("CrashFinalScene");
-    }
-    public void TransitionPoliceScene()
-    {
-        SceneManager.LoadScene("PoliceFinalScene");
-    }
-
 
     public void ExternalSetLevel(int level, int difficulty)
     {
