@@ -25,12 +25,12 @@ public class LevelSelect : MonoBehaviour
     public float startTime;
     public bool startCounting = false;
     public float dayTimer;
-    private float dayTimerCounter; 
+    private float dayTimerCounter;
 
     public Transform Level1Start;
     public Transform Level2Start;
 
-    public static int numberOfLevels = 4;
+    public static int numberOfLevels = 5;
 
     [SerializeField] private GameObject[] levelObjects = new GameObject[numberOfLevels]; // Level 0: Game Start UI, Level 1: Day time, Level 2: Night time, Level 3: Ending
 
@@ -157,7 +157,7 @@ public class LevelSelect : MonoBehaviour
     IEnumerator updateNightTimer()
     {
         string min = ((int)startTime / 60).ToString("00");
-        string sec = ((int) startTime % 60).ToString("00");
+        string sec = ((int)startTime % 60).ToString("00");
         timerText.text = min + ":" + sec;
         startTime += Time.deltaTime;
         yield return null;
@@ -271,6 +271,7 @@ public class LevelSelect : MonoBehaviour
                 Terrain.SetActive(false);
                 RoadNetwork.SetActive(false);
                 RenderSettings.fogDensity = 0;
+                //ResetPoliceScene();
                 break;
             case 1:
                 PlayerVehicle.SetActive(true);
@@ -332,6 +333,13 @@ public class LevelSelect : MonoBehaviour
 
         carUserControl.IsChangingLevel = false; // Work around hack described above
     }
+
+    // redundant method, needed because can't find bug on police scene TODO: Fix bug on police scene switching and remove this method
+    /*private void ResetPoliceScene()
+    {
+        levelCameras[4].setActive(false);
+
+    }*/
 
     private void EnableObjects(int level, GameObject[] objects)
     {
