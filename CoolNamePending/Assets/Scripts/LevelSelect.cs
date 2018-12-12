@@ -147,7 +147,7 @@ public class LevelSelect : MonoBehaviour
         else
         {
             string min = ((int)dayTimerCounter / 60).ToString("00");
-            string sec = (dayTimerCounter % 60).ToString("00");
+            string sec = ((int)dayTimerCounter % 60).ToString("00");
             timerText.text = min + ":" + sec;
 
         }
