@@ -233,7 +233,7 @@ public class LevelSelect : MonoBehaviour
         postProcessingProfiles[2].vignette.settings = vignetteSettingsHard;
     }
 
-    public IEnumerator SetLevel(int level, int difficulty, bool delay, bool showMessages, bool resetDay = true)
+    public IEnumerator SetLevel(int level, int difficulty, bool delay, bool showMessages, float fadeTime = 1, bool resetDay = true)
     {
         carUserControl.IsChangingLevel = true; // This script instance can't see the current script due to namespace issues otherwise we would have it subscribe to the following event
         if (OnLevelChanging != null)
@@ -243,8 +243,8 @@ public class LevelSelect : MonoBehaviour
 
         if (delay && HMDActive)
         {
-            SteamVR_Fade.View(Color.black, FadeOutTime);
-            yield return new WaitForSeconds(FadeOutTime);
+            SteamVR_Fade.View(Color.black, fadeTime);
+            yield return new WaitForSeconds(fadeTime);
         }
         if (resetDay)
         {
@@ -377,11 +377,11 @@ public class LevelSelect : MonoBehaviour
             switch (Level)
             {
                 case 1:
-                    StartCoroutine(SetLevel(1, 0, true, false, false));
+                    StartCoroutine(SetLevel(1, 0, true, false, 1, false));
                     break;
                 case 2:
                     carUserControl.IsChangingLevel = true; // This script instance can't see the current script due to namespace issues otherwise we would have it subscribe to the following event
-                    StartCoroutine(SetLevel(3, 0, true, false));
+                    StartCoroutine(SetLevel(3, 0, true, false, SwitchOutTime));
                     break;
             }
         }
@@ -391,7 +391,7 @@ public class LevelSelect : MonoBehaviour
         }
         else if (triggerName == "Level3Trigger")
         {
-            StartCoroutine(SetLevel(4, 0, true, false));
+            StartCoroutine(SetLevel(4, 0, true, false, SwitchOutTime));
         }
     }
 
