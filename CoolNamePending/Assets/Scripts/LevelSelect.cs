@@ -147,7 +147,7 @@ public class LevelSelect : MonoBehaviour
         else
         {
             string min = ((int)dayTimerCounter / 60).ToString("00");
-            string sec = (dayTimerCounter % 60).ToString("00");
+            string sec = ((int) dayTimerCounter % 60).ToString("00");
             timerText.text = min + ":" + sec;
 
         }
@@ -333,13 +333,6 @@ public class LevelSelect : MonoBehaviour
 
         carUserControl.IsChangingLevel = false; // Work around hack described above
     }
-
-    // redundant method, needed because can't find bug on police scene TODO: Fix bug on police scene switching and remove this method
-    /*private void ResetPoliceScene()
-    {
-        levelCameras[4].setActive(false);
-
-    }*/
 
     private void EnableObjects(int level, GameObject[] objects)
     {
